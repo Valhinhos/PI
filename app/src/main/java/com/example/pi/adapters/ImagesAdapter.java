@@ -15,10 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pi.R;
-import com.example.pi.RecordsRHQuiz;
 import com.example.pi.models.DatabaseRA;
 import com.example.pi.models.ProjectInformation;
-import com.example.pi.models.StudentScore;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -54,7 +52,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         myDB = new DatabaseRA(context);
-        View v = LayoutInflater.from(context).inflate(R.layout.image_item, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.pi_post_item, parent, false);
         return new MyViewHolder(v);
     }
 
@@ -65,8 +63,9 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
         holder.professorName.setText(projectInformation.getProfessorName());
         holder.projectResume.setText(projectInformation.getProjectResume());
         holder.projectContact.setText(projectInformation.getProjectContact());
-        holder.uploaderUser.setText("Postado por " + projectInformation.getUserUploader() );
+        holder.uploaderUser.setText(projectInformation.getUserUploader() );
         String imageID = projectInformation.getImageName();
+
 
         if (passedName.equals(projectInformation.getUserUploader()) && passedRa.equals(projectInformation.getRaMatching())){
             holder.deletePost.setVisibility(View.VISIBLE);
@@ -99,7 +98,27 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String profilePicture = projectInformation.getUserProfileID();
+        String userRa = projectInformation.getRaMatching();
+        String userID = projectInformation.getUserID();
+        storageReference = FirebaseStorage.getInstance().getReference("userspictures/" +userRa + userID + "/" + profilePicture);
+        try {
+            File localfile = File.createTempFile("tempfile", ".png");
+            storageReference.getFile(localfile)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                            Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
+                            holder.profilePicture.setImageBitmap(bitmap);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
                         }
                     });
         } catch (IOException e) {
@@ -116,7 +135,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView projectName, professorName, projectResume, projectContact, uploaderUser;
-        ImageView imageView;
+        ImageView imageView, profilePicture;
         Button deletePost;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -127,6 +146,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
             uploaderUser = itemView.findViewById(R.id.useruploader);
             imageView = itemView.findViewById(R.id.projectimage);
             deletePost = itemView.findViewById(R.id.deleteprojectpostbt);
+            profilePicture = itemView.findViewById(R.id.userpicturepiitem);
         }
     }
 }

@@ -160,7 +160,7 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
                     if (passedUserName.equals(userInformation.getUserName()) && passedRa.equals(userInformation.getUserRa())){
                         profilePictureString = userInformation.getProfilePicture();
                         userCourses = userInformation.getCourses();
-                        passedUserName = userInformation.getCourses();
+                        passedUserName = userInformation.getUserName();
                         passedUsersStats = userInformation.getStatus();
 //                        studentStatus.setText("status: " + userInformation.getStatus());
                     }
@@ -178,7 +178,6 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        userProfilePictureIv.setImageResource(R.drawable.unknownprofilepicture);
 //                                        Toast.makeText(UsersPostsActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                     }
                                 });

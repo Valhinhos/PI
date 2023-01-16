@@ -9,10 +9,12 @@ public class ProjectInformation {
     private String imageName;
     private String raMatching;
     private String userUploader;
+    private String userProfileID;
+    private String userID;
 
     public ProjectInformation(){}
 
-    public ProjectInformation(String projectName, String professorName, String projectResume, String projectContact, String imageName, String raMatching, String userUploader) {
+    public ProjectInformation(String projectName, String professorName, String projectResume, String projectContact, String imageName, String raMatching, String userUploader, String userProfileID, String userID) {
         this.projectName = projectName;
         this.professorName = professorName;
         this.projectResume = projectResume;
@@ -20,6 +22,8 @@ public class ProjectInformation {
         this.imageName = imageName;
         this.raMatching = raMatching;
         this.userUploader = userUploader;
+        this.userProfileID = userProfileID;
+        this.userID = userID;
     }
 
     public String getProjectName() {
@@ -76,5 +80,21 @@ public class ProjectInformation {
 
     public void setUserUploader(String userUploader) {
         this.userUploader = userUploader;
+    }
+
+    public String getUserProfileID() {
+        return userProfileID;
+    }
+
+    public void setUserProfileID(String userProfileID) {
+        this.userProfileID = userProfileID;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 }

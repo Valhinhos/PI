@@ -24,10 +24,14 @@ import android.widget.Toast;
 import com.example.pi.models.DatabaseRA;
 import com.example.pi.models.MessageDialog;
 import com.example.pi.models.ProjectInformation;
+import com.example.pi.models.UserInformation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -40,7 +44,7 @@ public class ProjectsUploadActivity extends AppCompatActivity {
     DatabaseRA myDB;
     Boolean canUpload = false;
     ImageView pickedImage;
-    String passedUserName;
+    String passedUserName, passedRa, userProfilePictureID = "None", userId = "None";
 
     private static final int IMAGE_REQUEST = 2;
     private Uri imageUri;
@@ -63,6 +67,15 @@ public class ProjectsUploadActivity extends AppCompatActivity {
         }else{
             passedUserName = getIntent().getStringExtra("keyusername");
         }
+
+        if (getIntent().getBooleanExtra("keyra", false) == true){
+            passedRa = "None";
+        }else{
+            passedRa = getIntent().getStringExtra("keyra");
+        }
+
+        getUserInfos();
+        Toast.makeText(this, passedRa + " " + passedUserName, Toast.LENGTH_SHORT).show();
 
         uploadImagebt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,7 +141,8 @@ public class ProjectsUploadActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                     ///store the name of the file on the database to after retrieving
                     String ra = getRaFromDB();
-                    ProjectInformation projectInformation = new ProjectInformation(projectNameS, professorNameS, projectResumeS, projectContactS, imageName, ra, passedUserName);
+
+                    ProjectInformation projectInformation = new ProjectInformation(projectNameS, professorNameS, projectResumeS, projectContactS, imageName, ra, passedUserName, userProfilePictureID, userId);
 //                    FirebaseDatabase.getInstance().getReference().child("imagesnames").child("id" + System.currentTimeMillis()).setValue(imageName);
                     String projectid = "id" + imageName;
                     ///storage the project id to exclude after #implement
@@ -199,5 +213,25 @@ public class ProjectsUploadActivity extends AppCompatActivity {
         }else {
             openImage();
         }
+    }
+
+    public void getUserInfos(){
+        FirebaseDatabase.getInstance().getReference("users").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot snapshot1: snapshot.getChildren()){
+                    UserInformation userInformation = snapshot1.getValue(UserInformation.class);
+//                    verifica se o nome e ra do usuario é igual a de um dos posts, se for igual ele vai permitir excluir
+                    if (passedUserName.equals(userInformation.getUserName()) && passedRa.equals(userInformation.getUserRa())){
+                        userProfilePictureID = userInformation.getProfilePicture();
+                        userId = userInformation.getUserId();
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

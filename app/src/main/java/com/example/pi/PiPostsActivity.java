@@ -65,8 +65,6 @@ public class PiPostsActivity extends AppCompatActivity implements PostsRecyclerV
             passedRa = getIntent().getStringExtra("keyra");
         }
 
-        Toast.makeText(this, passedUserName, Toast.LENGTH_SHORT).show();
-
         recyclerView = findViewById(R.id.recyclerviewpi);
         databaseReference = FirebaseDatabase.getInstance().getReference("projects");
         storageReference = FirebaseStorage.getInstance().getReference("uploads/");
@@ -100,6 +98,7 @@ public class PiPostsActivity extends AppCompatActivity implements PostsRecyclerV
     public void postarProjeto(View v){
         Intent intent = new Intent(PiPostsActivity.this, ProjectsUploadActivity.class);
         intent.putExtra("keyusername", passedUserName);
+        intent.putExtra("keyra", passedRa);
         startActivity(intent);
     }
 

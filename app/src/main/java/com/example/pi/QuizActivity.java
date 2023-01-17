@@ -144,9 +144,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         String id = "id" + System.currentTimeMillis();
 
         if (passedQuiz.equals("quizlog")){
-            FirebaseDatabase.getInstance().getReference().child("rankingrhquizrh").child(id).setValue(studentScore);
+            FirebaseDatabase.getInstance().getReference().child("rankinglogquiz").child(id).setValue(studentScore);
         }else {
-            FirebaseDatabase.getInstance().getReference().child("rankingrhquizlog").child(id).setValue(studentScore);
+            FirebaseDatabase.getInstance().getReference().child("rankingrhquizrh").child(id).setValue(studentScore);
         }
 
         if(score > totalquestions*0.60){

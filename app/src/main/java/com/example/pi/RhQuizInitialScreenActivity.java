@@ -34,7 +34,7 @@ public class RhQuizInitialScreenActivity extends AppCompatActivity {
     }
 
     public void openRankingScreen(View v){
-        Intent intent = new Intent(RhQuizInitialScreenActivity.this, RecordsRHQuiz.class);
+        Intent intent = new Intent(RhQuizInitialScreenActivity.this, RHQuizRanking.class);
         startActivity(intent);
     }
 }

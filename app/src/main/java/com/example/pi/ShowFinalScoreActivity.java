@@ -25,7 +25,6 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
         observation = findViewById(R.id.observationtv);
         pontuationBox = findViewById(R.id.pontuationbox);
 
-
         passedName = getIntent().getStringExtra("keyname");
         passedScore = getIntent().getStringExtra("keyscore");
 
@@ -33,13 +32,14 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
 
         addLottieAnimation();
         setObservationText();
+        setBoxColor();
 
     }
 
     public void addLottieAnimation(){
         int intPassedScore = Integer.parseInt(passedScore);
         if (intPassedScore >= 60){
-            scoreLottie.setAnimation(R.raw.businessmanwinnerwithtrophy);
+            scoreLottie.setAnimation(R.raw.champion);
         }else if (intPassedScore >= 30){
             scoreLottie.setAnimation(R.raw.businessmanwinnerwithtrophy);
         }else if (intPassedScore <= 29){
@@ -65,7 +65,7 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
         }else if (intPassedScore >= 30){
             pontuationBox.setImageResource(R.drawable.greenbox);
         }else if (intPassedScore <= 29){
-            pontuationBox.setImageResource(R.drawable.greenbox);
+            pontuationBox.setImageResource(R.drawable.redbox);
         }
     }
 }

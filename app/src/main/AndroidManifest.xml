@@ -54,7 +54,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".RecordsRHQuiz"
+            android:name=".RHQuizRanking"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

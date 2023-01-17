@@ -2,19 +2,14 @@ package com.example.pi;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.pi.adapters.ImagesAdapter;
 import com.example.pi.models.DatabaseRA;
-import com.example.pi.models.ProjectInformation;
 import com.example.pi.models.StudentScore;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class RecordsRHQuiz extends AppCompatActivity {
+public class RHQuizRanking extends AppCompatActivity {
 
     DatabaseReference databaseReference;
     DatabaseRA myDB;

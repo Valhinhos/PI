@@ -55,7 +55,7 @@
         android:fontFamily="@font/icekingdom"
         android:backgroundTint="@color/orange_light"
         android:onClick="startQuizRh"
-        android:text="COMEÇAR"
+        android:text="INICIAR QUIZ"
         android:textColor="@color/black"
         android:textSize="30dp" />
 

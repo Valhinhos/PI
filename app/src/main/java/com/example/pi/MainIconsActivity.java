@@ -27,7 +27,7 @@ public class MainIconsActivity extends AppCompatActivity {
     DatabaseRA myDB;
     DatabaseReference databaseReference;
     Boolean logged = true;
-    ImageView credits, ava, aprendizagem, biblio, cursosDisponiveis, cursosSenac, games, mapeamento, pi, frequency, redeCarreiras;
+    ImageView credits, ava, aprendizagem, biblio, cursosDisponiveis, cursosSenac, games, mapeamento, pi, frequency, redeCarreiras, perfil, posts;
     String passedRa = "empty", passedUserName = "None", passedUserID = "None", passedOldProfilePicture = "None", passedStats = "None";
     TextView userName;
 
@@ -47,6 +47,8 @@ public class MainIconsActivity extends AppCompatActivity {
         cursosSenac  = findViewById(R.id.iconcursosenac);
         pi  = findViewById(R.id.iconpi);
         redeCarreiras  = findViewById(R.id.iconredecarreiras);
+        posts = findViewById(R.id.postsicon);
+        perfil = findViewById(R.id.profileicon);
         passedRa = getIntent().getStringExtra("keyra");
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
         userName = findViewById(R.id.username);
@@ -79,35 +81,43 @@ public class MainIconsActivity extends AppCompatActivity {
         frequency.setImageResource(R.drawable.frequenciapressed);
         abrirLink("https://www.mg.senac.br/ambienteacademico/detalheCurso");
     }
+
     public void mapeamento(View v){
 //        mapeamento.setImageResource(R.drawable.mapeamento);
         Toast.makeText(MainIconsActivity.this, "Recurso ainda não implementado", Toast.LENGTH_SHORT).show();
     }
+
     public void ava(View v){
         ava.setImageResource(R.drawable.ambientevirtualpressed);
         abrirLink("https://ava.mg.senac.br/edu/");
     }
+
     public void biblioteca(View v){
         biblio.setImageResource(R.drawable.bibliotecapressed);
         abrirLink("https://pergamum.mg.senac.br/pergamum/biblioteca_s/php/login_usu.php");
     }
+
     public void cursossenac(View v){
 //        cursosSenac.setImageResource(R.drawable.cursossenacpressed);
         ///abre a tela info cursos jenifer
         Toast.makeText(MainIconsActivity.this, "Recurso ainda não implementado", Toast.LENGTH_SHORT).show();
     }
+
     public void cursosdisponiveis(View v){
         cursosDisponiveis.setImageResource(R.drawable.cursosdisponiveispressed);
         abrirLink("https://www.mg.senac.br/programasenacdegratuidade/vagas.aspx");
     }
+
     public void aprendizagemcomercial(View v){
         aprendizagem.setImageResource(R.drawable.aprendizagemcomercailpressed);
         abrirLink("https://www.mg.senac.br/Paginas/aprendizagem-comercial.aspx");
     }
+
     public void redecarreiras(View v){
         redeCarreiras.setImageResource(R.drawable.redecarreiraspressed);
         abrirLink("https://www.mg.senac.br/Paginas/rededecarreiras.aspx");
     }
+
     public void projetoint(View v){
         if (logged){
             pi.setImageResource(R.drawable.projetointegradorpressed);
@@ -119,6 +129,7 @@ public class MainIconsActivity extends AppCompatActivity {
             Toast.makeText(this, "Você deve estar logado para usar esta ferramenta", Toast.LENGTH_SHORT).show();
         }
     }
+
     public void openCreditsActivity(View v){
         credits.setImageResource(R.drawable.creditospressed);
         Intent cred = new Intent(this, CreditsActivity.class);
@@ -131,6 +142,7 @@ public class MainIconsActivity extends AppCompatActivity {
         Uri uri = Uri.parse(link);
         startActivity(new Intent(Intent.ACTION_VIEW, uri));
     }
+
     public void openGames(View v){
         if (logged){
             games.setImageResource(R.drawable.jogospressed);
@@ -144,8 +156,8 @@ public class MainIconsActivity extends AppCompatActivity {
     }
 
     public void openStudentProfile(View v){
+        perfil.setImageResource(R.drawable.perfilpressed);
         if (logged){
-            games.setImageResource(R.drawable.jogospressed);
             Intent intent = new Intent(MainIconsActivity.this, UserProfileActivity.class);
             intent.putExtra("keyra", passedRa);
             intent.putExtra("keyusername", passedUserName);
@@ -158,6 +170,7 @@ public class MainIconsActivity extends AppCompatActivity {
     }
 
     public void openUsersPost(View v){
+        posts.setImageResource(R.drawable.postspressed);
         if (logged){
             Intent intent = new Intent(MainIconsActivity.this, UsersPostsActivity.class);
             intent.putExtra("keyra", passedRa);
@@ -207,6 +220,8 @@ public class MainIconsActivity extends AppCompatActivity {
         pi.setImageResource(R.drawable.projetointegrador);
         frequency.setImageResource(R.drawable.frequencia);
         redeCarreiras.setImageResource(R.drawable.rededecarreiras);
+        posts.setImageResource(R.drawable.posts);
+        perfil.setImageResource(R.drawable.perfil);
     }
 
     public void getUserFromFB(){

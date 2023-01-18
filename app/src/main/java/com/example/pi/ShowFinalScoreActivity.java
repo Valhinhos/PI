@@ -55,7 +55,7 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
             score.setTextColor(Color.rgb(146,208,80));
         }else if (intPassedScore >= 30){
             observation.setText("Estude mais!");
-            score.setTextColor(Color.rgb(146,208,80));
+            score.setTextColor(Color.rgb(243,226,186));
         }else if (intPassedScore <= 29){
             observation.setText("Que pena!!!");
             score.setTextColor(Color.rgb(186,78,78));
@@ -67,7 +67,7 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
         if (intPassedScore >= 60){
            pontuationBox.setImageResource(R.drawable.greenbox);
         }else if (intPassedScore >= 30){
-            pontuationBox.setImageResource(R.drawable.greenbox);
+            pontuationBox.setImageResource(R.drawable.yellowbox);
         }else if (intPassedScore <= 29){
             pontuationBox.setImageResource(R.drawable.redbox);
         }

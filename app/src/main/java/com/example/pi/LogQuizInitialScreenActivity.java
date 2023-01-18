@@ -35,4 +35,10 @@ public class LogQuizInitialScreenActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openRankingScreen(View v){
+        Intent intent = new Intent(LogQuizInitialScreenActivity.this, QuizRankingActivity.class);
+        intent.putExtra("rankingmode", "rankinglog");
+        startActivity(intent);
+    }
+
 }

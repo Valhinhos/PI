@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.pi.models.DatabaseRA;
@@ -21,21 +23,42 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class RHQuizRanking extends AppCompatActivity {
+public class QuizRankingActivity extends AppCompatActivity {
 
     DatabaseReference databaseReference;
     DatabaseRA myDB;
     ListView studentsScoreListView;
     ArrayList<StudentScore> studentScoresSortList;
     ArrayList<Integer> myScores;
-    TextView myRecord;
+    TextView myRecord, rankingTittle;
+    RelativeLayout display;
     int cont;
+    String rankingMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_records_rhquiz);
-        databaseReference = FirebaseDatabase.getInstance().getReference("rankingrhquiz");
+        setContentView(R.layout.activity_quiz_ranking);
+
+        display = findViewById(R.id.rankingdisplay);
+        rankingTittle = findViewById(R.id.ranking);
+
+        rankingMode = getIntent().getStringExtra("rankingmode");
+
+        if (getIntent().getBooleanExtra("rankingmode", false) == true){
+            rankingMode = "None";
+        }else{
+            rankingMode = getIntent().getStringExtra("rankingmode");
+        }
+
+        if (rankingMode.equals("rankinglog")){
+            display.setBackgroundColor(Color.rgb(139,195,74));
+            databaseReference = FirebaseDatabase.getInstance().getReference("rankinglogquiz");
+            rankingTittle.setText("Ranking Logística");
+        }else {
+            databaseReference = FirebaseDatabase.getInstance().getReference("rankingrhquiz");
+            rankingTittle.setText("Ranking RH");
+        }
         myDB = new DatabaseRA(this);
         studentsScoreListView = findViewById(R.id.rankinglist);
         studentScoresSortList = new ArrayList<>();
@@ -85,7 +108,6 @@ public class RHQuizRanking extends AppCompatActivity {
                 }
                 adapter.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 

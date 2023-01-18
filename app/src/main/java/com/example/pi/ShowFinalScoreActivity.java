@@ -2,6 +2,7 @@ package com.example.pi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -51,10 +52,13 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
         int intPassedScore = Integer.parseInt(passedScore);
         if (intPassedScore >= 60){
             observation.setText("Pefeito!");
+            score.setTextColor(Color.rgb(146,208,80));
         }else if (intPassedScore >= 30){
             observation.setText("Estude mais!");
+            score.setTextColor(Color.rgb(146,208,80));
         }else if (intPassedScore <= 29){
             observation.setText("Que pena!!!");
+            score.setTextColor(Color.rgb(186,78,78));
         }
     }
 

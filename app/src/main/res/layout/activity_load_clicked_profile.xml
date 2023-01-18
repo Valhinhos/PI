@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/studentinfogridcp"
         android:layout_width="340dp"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/customborder"

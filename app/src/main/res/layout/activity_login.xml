@@ -64,10 +64,16 @@
             android:layout_marginLeft="250dp"
             android:layout_marginTop="10dp" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/bt_entrar"
-            style="@style/button"
+            android:layout_height="70dp"
+            android:layout_width="300dp"
+            app:cornerRadius="20dp"
             android:text="@string/entrar"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edit_senha"/>

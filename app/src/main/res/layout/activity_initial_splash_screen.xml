@@ -35,7 +35,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/processingcircle2"
+        app:lottie_rawRes="@raw/loadingpointsblue"
         tools:ignore="ImageContrastCheck" />
 
     <ImageView

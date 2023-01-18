@@ -34,7 +34,6 @@ public class LoadClickedProfileActivity extends AppCompatActivity {
         checkPassedValues();
         connectViews();
         setValuesonViews();
-
     }
 
     public void checkPassedValues(){

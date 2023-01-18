@@ -94,6 +94,11 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(LoginActivity.this, "A senha ou RA estão incorretos", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 

@@ -45,7 +45,7 @@ import java.util.Calendar;
 
 public class UsersPostsActivity extends AppCompatActivity implements PostsRecyclerViewInterface {
 
-    String passedUserName = "None", passedRa = "None" , passedUserID = "None", date, profilePictureString = "None", userCourses = "None", passedUsersStats = "None";
+    String passedUserName = "None", passedRa = "None", passedUserID = "None", date, profilePictureString = "None", userCourses = "None", passedUsersStats = "None";
     RecyclerView recyclerView;
     ArrayList<userPost> list;
     DatabaseReference databaseReference;
@@ -79,27 +79,27 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
         postContent = findViewById(R.id.postcontentet);
         userProfilePictureIv = findViewById(R.id.userpictureiv);
 
-        if (getIntent().getBooleanExtra("keyusername", false) == true){
+        if (getIntent().getBooleanExtra("keyusername", false) == true) {
             passedUserName = "None";
-        }else{
+        } else {
             passedUserName = getIntent().getStringExtra("keyusername");
         }
 
-        if (getIntent().getBooleanExtra("keyra", false) == true){
+        if (getIntent().getBooleanExtra("keyra", false) == true) {
             passedRa = "None";
-        }else{
+        } else {
             passedRa = getIntent().getStringExtra("keyra");
         }
 
-        if (getIntent().getBooleanExtra("keyuserid", false) == true){
+        if (getIntent().getBooleanExtra("keyuserid", false) == true) {
             passedUserID = "None";
-        }else{
+        } else {
             passedUserID = getIntent().getStringExtra("keyuserid");
         }
 
-        if (getIntent().getBooleanExtra("keyuserstats", false) == true){
+        if (getIntent().getBooleanExtra("keyuserstats", false) == true) {
             passedUsersStats = "None";
-        }else{
+        } else {
             passedUsersStats = getIntent().getStringExtra("keyuserstats");
         }
 
@@ -118,11 +118,12 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
-                for (DataSnapshot dataSnapshot: snapshot.getChildren()){
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     userPost userPost = dataSnapshot.getValue(userPost.class);
+                    updateUserCourse(userPost.getUserID(), userPost.getPostID());
                     list.add(userPost);
-                    for (userPost up : list){
-                        if (up.getUserName().equals(passedUserName)){
+                    for (userPost up : list) {
+                        if (up.getUserName().equals(passedUserName)) {
                             up.setUserProfilePicture(profilePictureString);
                         }
                     }
@@ -136,11 +137,11 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
         });
     }
 
-    public void createPost(View v){
+    public void createPost(View v) {
 
-        if (postContent.getText().toString().matches("")){
+        if (postContent.getText().toString().matches("")) {
             Toast.makeText(this, "Você não pode fazer um post vazio", Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             String postContentString = postContent.getText().toString();
 
             String postid = String.valueOf(System.currentTimeMillis());
@@ -148,16 +149,19 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
             date = dateFormat.format(calendar.getTime());
             userPost userPost = new userPost(passedUserName, date, profilePictureString, postContentString, userCourses, passedRa, passedRa + postid, passedUserID, passedUsersStats);
             FirebaseDatabase.getInstance().getReference().child("usersposts/").child(passedRa + postid).setValue(userPost);
+            postContent.setText("");
+            Toast.makeText(this, "Sua publicação foi postada", Toast.LENGTH_SHORT).show();
         }
     }
+
     private void getTheUsers() {
         FirebaseDatabase.getInstance().getReference("users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot snapshot1: snapshot.getChildren()){
+                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
                     UserInformation userInformation = snapshot1.getValue(UserInformation.class);
 //                    verifica se o nome e ra do usuario é igual a de um dos posts, se for igual ele vai permitir excluir
-                    if (passedUserName.equals(userInformation.getUserName()) && passedRa.equals(userInformation.getUserRa())){
+                    if (passedUserName.equals(userInformation.getUserName()) && passedRa.equals(userInformation.getUserRa())) {
                         profilePictureString = userInformation.getProfilePicture();
                         userCourses = userInformation.getCourses();
                         passedUserName = userInformation.getUserName();
@@ -165,7 +169,7 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
 //                        studentStatus.setText("status: " + userInformation.getStatus());
                     }
 
-                    storageReference = FirebaseStorage.getInstance().getReference("userspictures/" + passedRa + passedUserID + "/" +userInformation.getProfilePicture());
+                    storageReference = FirebaseStorage.getInstance().getReference("userspictures/" + passedRa + passedUserID + "/" + userInformation.getProfilePicture());
                     try {
                         File localfile = File.createTempFile("tempfile", ".png");
                         storageReference.getFile(localfile)
@@ -195,15 +199,15 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
         });
     }
 
-    public void deletePost(View v){
-        for (userPost up : list){
-            if (up.getUserName().equals(passedUserName) && up.getUserRa().equals(passedRa)){
+    public void deletePost(View v) {
+        for (userPost up : list) {
+            if (up.getUserName().equals(passedUserName) && up.getUserRa().equals(passedRa)) {
                 FirebaseDatabase.getInstance().getReference("usersposts/").child(up.getPostID()).removeValue();
             }
         }
     }
 
-    public void onPostLongClick(int position){
+    public void onPostLongClick(int position) {
         list.remove(position);
         adapter.notifyItemRemoved(position);
     }
@@ -218,5 +222,30 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
         intent.putExtra("keyuserid", list.get(position).getUserID());
         intent.putExtra("keyuserstats", list.get(position).getUserStats());
         startActivity(intent);
+    }
+
+    public void updateUserCourse(String userId, String postId) {
+        FirebaseDatabase.getInstance().getReference("users").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+                    UserInformation userInformation = snapshot1.getValue(UserInformation.class);
+                    if (userInformation.getUserId().equals(userId)){
+                        FirebaseDatabase.getInstance().getReference().child("usersposts/").child(postId).child("userCourses").setValue(userInformation.getCourses());
+                        FirebaseDatabase.getInstance().getReference().child("usersposts/").child(postId).child("userName").setValue(userInformation.getUserName());
+                        FirebaseDatabase.getInstance().getReference().child("usersposts/").child(postId).child("userStats").setValue(userInformation.getStatus());
+                        break;
+                    }
+
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

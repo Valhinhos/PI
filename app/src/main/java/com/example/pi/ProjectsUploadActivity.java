@@ -131,6 +131,11 @@ public class ProjectsUploadActivity extends AppCompatActivity {
             String projectResumeS = projectResume.getText().toString();
             String projectContactS = projectContact.getText().toString();
 
+            projectName.setText("");
+            professorName.setText("");
+            projectResume.setText("");
+            projectContact.setText("");
+
             ///the ra will be picked from here using sql lite and inserted in a string to be put inside the projectinformation object
 
             ///storage the image

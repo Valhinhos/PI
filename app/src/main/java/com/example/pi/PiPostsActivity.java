@@ -102,12 +102,6 @@ public class PiPostsActivity extends AppCompatActivity implements PostsRecyclerV
         startActivity(intent);
     }
 
-    public void voltar(View v){
-        Intent intent = new Intent(PiPostsActivity.this, MainIconsActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
     public String getRaFromDB(){
         Cursor res = myDB.getAllData();
         if (res.getCount() == 0){

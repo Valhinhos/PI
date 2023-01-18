@@ -2,8 +2,10 @@ package com.example.pi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,9 +44,9 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
         if (intPassedScore >= 60){
             scoreLottie.setAnimation(R.raw.champion);
         }else if (intPassedScore >= 30){
-            scoreLottie.setAnimation(R.raw.businessmanwinnerwithtrophy);
+            scoreLottie.setAnimation(R.raw.confusedface);
         }else if (intPassedScore <= 29){
-            scoreLottie.setAnimation(R.raw.businessmanwinnerwithtrophy);
+            scoreLottie.setAnimation(R.raw.angrycloud);
         }
     }
 
@@ -71,5 +73,11 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
         }else if (intPassedScore <= 29){
             pontuationBox.setImageResource(R.drawable.redbox);
         }
+    }
+
+    public void goToMainMenu(View v){
+        Intent intent = new Intent(ShowFinalScoreActivity.this, GamesActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

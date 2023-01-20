@@ -1,7 +1,6 @@
 package com.example.pi.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -11,13 +10,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pi.R;
-import com.example.pi.UsersPostsActivity;
 import com.example.pi.models.PostsRecyclerViewInterface;
 import com.example.pi.models.userPost;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -31,7 +28,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder>{
+public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyViewHolder>{
 
     private final PostsRecyclerViewInterface postsRecyclerViewInterface;
     String passedName;
@@ -40,7 +37,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
     ArrayList<userPost> list;
     StorageReference storageReference;
 
-    public PostsAdapter(Context context, ArrayList<userPost> list, String passedName, String passedRa, PostsRecyclerViewInterface postsRecyclerViewInterface) {
+    public userPostAdapter(Context context, ArrayList<userPost> list, String passedName, String passedRa, PostsRecyclerViewInterface postsRecyclerViewInterface) {
         this.context = context;
         this.list = list;
         this.passedName = passedName;
@@ -56,7 +53,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PostsAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull userPostAdapter.MyViewHolder holder, int position) {
         userPost userPost = list.get(position);
         holder.userName.setText(userPost.getUserName());
         holder.userCourses.setText("cursos: " + userPost.getUserCourses());

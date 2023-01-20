@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,7 +28,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHolder> {
+public class piPostAdapter extends RecyclerView.Adapter<piPostAdapter.MyViewHolder> {
 
     StorageReference storageReference;
     DatabaseReference databaseReference;
@@ -41,7 +40,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
 
 //    public ImagesAdapter(RecordsRHQuiz context, ArrayList<StudentScore> list){}
 
-    public ImagesAdapter(Context context, ArrayList<ProjectInformation> list, String passedName, String passedRa) {
+    public piPostAdapter(Context context, ArrayList<ProjectInformation> list, String passedName, String passedRa) {
         this.context = context;
         this.list = list;
         this.passedName = passedName;
@@ -57,15 +56,15 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ImagesAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull piPostAdapter.MyViewHolder holder, int position) {
         ProjectInformation projectInformation = list.get(position);
         holder.projectName.setText(projectInformation.getProjectName());
-        holder.professorName.setText(projectInformation.getProfessorName());
+        holder.professorName.setText("Professor: " + projectInformation.getProfessorName());
         holder.projectResume.setText(projectInformation.getProjectResume());
         holder.projectContact.setText(projectInformation.getProjectContact());
+        holder.projectClass.setText("Truma: " + projectInformation.getProjectClass());
         holder.uploaderUser.setText(projectInformation.getUserUploader() );
         String imageID = projectInformation.getImageName();
-
 
         if (passedName.equals(projectInformation.getUserUploader()) && passedRa.equals(projectInformation.getRaMatching())){
             holder.deletePost.setVisibility(View.VISIBLE);
@@ -134,7 +133,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView projectName, professorName, projectResume, projectContact, uploaderUser;
+        TextView projectName, professorName, projectResume, projectContact, uploaderUser, projectClass;
         ImageView imageView, profilePicture;
         Button deletePost;
         public MyViewHolder(@NonNull View itemView) {
@@ -143,6 +142,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
             professorName = itemView.findViewById(R.id.professor);
             projectResume = itemView.findViewById(R.id.informationproject);
             projectContact = itemView.findViewById(R.id.contatoprojeto);
+            projectClass = itemView.findViewById(R.id.turmaprojeto);
             uploaderUser = itemView.findViewById(R.id.useruploader);
             imageView = itemView.findViewById(R.id.projectimage);
             deletePost = itemView.findViewById(R.id.deleteprojectpostbt);

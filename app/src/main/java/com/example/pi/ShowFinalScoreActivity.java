@@ -3,10 +3,13 @@ package com.example.pi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -14,7 +17,7 @@ import com.airbnb.lottie.LottieAnimationView;
 public class ShowFinalScoreActivity extends AppCompatActivity {
 
     TextView name, score, observation;
-    ImageView pontuationBox;
+    LinearLayout pontuationBox;
     String passedName, passedScore;
     LottieAnimationView scoreLottie;
 
@@ -67,11 +70,11 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
     public void setBoxColor(){
         int intPassedScore = Integer.parseInt(passedScore);
         if (intPassedScore >= 60){
-           pontuationBox.setImageResource(R.drawable.greenbox);
+           pontuationBox.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(146,208,80)));
         }else if (intPassedScore >= 30){
-            pontuationBox.setImageResource(R.drawable.yellowbox);
+            pontuationBox.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,217,102)));
         }else if (intPassedScore <= 29){
-            pontuationBox.setImageResource(R.drawable.redbox);
+            pontuationBox.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,107,107)));
         }
     }
 

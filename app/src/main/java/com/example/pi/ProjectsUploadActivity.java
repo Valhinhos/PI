@@ -40,7 +40,7 @@ import com.google.firebase.storage.UploadTask;
 public class ProjectsUploadActivity extends AppCompatActivity {
 
     Button uploadImagebt;
-    EditText projectName, professorName, projectResume, projectContact;
+    EditText projectName, professorName, projectResume, projectContact, projectClass;
     DatabaseRA myDB;
     Boolean canUpload = false;
     ImageView pickedImage;
@@ -61,6 +61,7 @@ public class ProjectsUploadActivity extends AppCompatActivity {
         projectContact = findViewById(R.id.contatoprojetoet);
         uploadImagebt = findViewById(R.id.postarprojetobt);
         pickedImage = findViewById(R.id.pickedimage);
+        projectClass = findViewById(R.id.turmaprojetoet);
 
         if (getIntent().getBooleanExtra("keyusername", false) == true){
             passedUserName = "None";
@@ -130,11 +131,13 @@ public class ProjectsUploadActivity extends AppCompatActivity {
             String professorNameS = professorName.getText().toString();
             String projectResumeS = projectResume.getText().toString();
             String projectContactS = projectContact.getText().toString();
+            String projectClassS = projectClass.getText().toString();
 
             projectName.setText("");
             professorName.setText("");
             projectResume.setText("");
             projectContact.setText("");
+            projectClass.setText("");
 
             ///the ra will be picked from here using sql lite and inserted in a string to be put inside the projectinformation object
 
@@ -147,7 +150,7 @@ public class ProjectsUploadActivity extends AppCompatActivity {
                     ///store the name of the file on the database to after retrieving
                     String ra = getRaFromDB();
 
-                    ProjectInformation projectInformation = new ProjectInformation(projectNameS, professorNameS, projectResumeS, projectContactS, imageName, ra, passedUserName, userProfilePictureID, userId);
+                    ProjectInformation projectInformation = new ProjectInformation(projectNameS, professorNameS, projectResumeS, projectContactS, imageName, ra, passedUserName, userProfilePictureID, userId, projectClassS);
 //                    FirebaseDatabase.getInstance().getReference().child("imagesnames").child("id" + System.currentTimeMillis()).setValue(imageName);
                     String projectid = "id" + imageName;
                     ///storage the project id to exclude after #implement
@@ -213,7 +216,8 @@ public class ProjectsUploadActivity extends AppCompatActivity {
         Boolean professorNameCheck = professorName.getText().toString().matches("");
         Boolean projectResumeCheck = projectResume.getText().toString().matches("");
         Boolean projectContactCheck = projectContact.getText().toString().matches("");
-        if (projectNameCheck == true || professorNameCheck == true || projectResumeCheck == true || projectContactCheck == true){
+        Boolean projectClassCheck = projectClass.getText().toString().matches("");
+        if (projectNameCheck == true || professorNameCheck == true || projectResumeCheck == true || projectContactCheck == true || projectClassCheck == true){
             Toast.makeText(ProjectsUploadActivity.this, "Um ou mais campos estao vazios", Toast.LENGTH_SHORT).show();
         }else {
             openImage();

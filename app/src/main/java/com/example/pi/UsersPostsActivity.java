@@ -10,18 +10,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pi.adapters.ImagesAdapter;
-import com.example.pi.adapters.PostsAdapter;
+import com.example.pi.adapters.userPostAdapter;
 import com.example.pi.models.PostsRecyclerViewInterface;
-import com.example.pi.models.ProjectInformation;
 import com.example.pi.models.UserInformation;
 import com.example.pi.models.userPost;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -38,8 +33,6 @@ import com.google.firebase.storage.StorageReference;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -50,7 +43,7 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
     ArrayList<userPost> list;
     DatabaseReference databaseReference;
     StorageReference storageReference;
-    PostsAdapter adapter;
+    userPostAdapter adapter;
     Calendar calendar;
     SimpleDateFormat dateFormat;
     TextView usernameTv;
@@ -103,7 +96,7 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
             passedUsersStats = getIntent().getStringExtra("keyuserstats");
         }
 
-        adapter = new PostsAdapter(this, list, passedUserName, passedRa, this);
+        adapter = new userPostAdapter(this, list, passedUserName, passedRa, this);
         recyclerView.setAdapter(adapter);
 
         usernameTv.setText(passedUserName);

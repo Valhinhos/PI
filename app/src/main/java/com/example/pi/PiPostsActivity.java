@@ -7,13 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.pi.adapters.ImagesAdapter;
+import com.example.pi.adapters.piPostAdapter;
 import com.example.pi.models.DatabaseRA;
 import com.example.pi.models.PostsRecyclerViewInterface;
 import com.example.pi.models.ProjectInformation;
@@ -33,7 +31,7 @@ public class PiPostsActivity extends AppCompatActivity implements PostsRecyclerV
     ArrayList<ProjectInformation> list;
     DatabaseReference databaseReference;
     StorageReference storageReference;
-    ImagesAdapter adapter;
+    piPostAdapter adapter;
     DatabaseRA myDB;
     Boolean deleteButtonPressed = false;
     String passedUserName, passedRa;
@@ -70,7 +68,7 @@ public class PiPostsActivity extends AppCompatActivity implements PostsRecyclerV
         storageReference = FirebaseStorage.getInstance().getReference("uploads/");
         list = new ArrayList<>();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new ImagesAdapter(this, list, passedUserName, passedRa);
+        adapter = new piPostAdapter(this, list, passedUserName, passedRa);
         recyclerView.setAdapter(adapter);
         myDB = new DatabaseRA(this);
 

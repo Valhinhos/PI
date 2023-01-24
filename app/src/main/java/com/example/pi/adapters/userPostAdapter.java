@@ -93,6 +93,9 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
                         @Override
                         public void onFailure(@NonNull Exception e) {
 //                            Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            if (userPost.getUserName().equals("None")){
+                                holder.imageView.setImageResource(R.drawable.unknownprofilepicture);
+                            }
                         }
                     });
         } catch (IOException e) {
@@ -135,7 +138,6 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
-                    userName.setTextColor(Color.RED);
                     return true;
                 }
             });

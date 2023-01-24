@@ -8,7 +8,7 @@
     android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".LoginActivity">
@@ -18,16 +18,14 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:src="@drawable/logo_senac_png"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"/>
 
         <View
             android:id="@+id/containerComponets"
             style="@style/ContainerComponents"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/logo"/>
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"/>
 
         <EditText
             android:id="@+id/edit_ra"
@@ -36,9 +34,8 @@
             android:textColorHint="@color/black"
             android:inputType="numberDecimal"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@id/containerComponets"
-            app:layout_constraintEnd_toEndOf="@id/containerComponets"
-            app:layout_constraintTop_toTopOf="@id/containerComponets" />
+            android:layout_alignTop="@id/containerComponets"
+            android:layout_centerHorizontal="true"/>
 
         <EditText
             android:id="@+id/edit_senha"
@@ -47,22 +44,21 @@
             android:textColorHint="@color/black"
             android:inputType="textPassword"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@id/containerComponets"
-            app:layout_constraintEnd_toEndOf="@id/containerComponets"
-            app:layout_constraintTop_toBottomOf="@id/edit_ra" />
+            android:layout_below="@id/edit_ra"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"/>
 
         <CheckBox
             android:id="@+id/ver_senha"
             android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:button="@drawable/showpassword"
             android:text="@string/vazio"
             android:textColor="@color/black"
-            app:layout_constraintTop_toTopOf="@id/edit_senha"
-            app:layout_constraintStart_toStartOf="@id/edit_senha"
-            app:layout_constraintEnd_toEndOf="@id/edit_senha"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignTop="@id/edit_senha"
+            android:layout_alignRight="@id/edit_senha" />
 
         <Button
             android:id="@+id/bt_entrar"
@@ -74,52 +70,34 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edit_senha"/>
-
-        <ProgressBar
-            android:id="@+id/progressbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:indeterminateTint="@color/white"
-            android:visibility="invisible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/containerComponets"/>
+            android:layout_below="@id/edit_senha"
+            android:layout_centerHorizontal="true"/>
 
         <TextView
             android:id="@+id/text_tela_cadastro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="60dp"
             android:onClick="registerScreen"
             android:text="@string/text_cadastro"
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/progressbar" />
+            android:layout_below="@id/bt_entrar"
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="33dp"
-            android:layout_marginEnd="91dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
             android:text="Entrar sem conta"
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold"
             android:onClick="enterWithoutUser"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_tela_cadastro" />
+            android:layout_below="@id/text_tela_cadastro"
+            android:layout_centerHorizontal="true"/>
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

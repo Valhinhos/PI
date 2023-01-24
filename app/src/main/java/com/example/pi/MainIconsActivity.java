@@ -98,10 +98,11 @@ public class MainIconsActivity extends AppCompatActivity {
     }
 
     public void cursossenac(View v){
-//        cursosSenac.setImageResource(R.drawable.cursossenacpressed);
-        ///abre a tela info cursos jenifer
-        Toast.makeText(MainIconsActivity.this, "Recurso ainda não implementado", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainIconsActivity.this, CoursesInfoActivity.class);
+        startActivity(intent);
+        cursosSenac.setImageResource(R.drawable.cursossenacpressed);
     }
+
 
     public void cursosdisponiveis(View v){
         cursosDisponiveis.setImageResource(R.drawable.cursosdisponiveispressed);
@@ -149,6 +150,7 @@ public class MainIconsActivity extends AppCompatActivity {
             Intent intent = new Intent(MainIconsActivity.this, GamesActivity.class);
             intent.putExtra("keyra", passedRa);
             intent.putExtra("keyusername", passedUserName);
+            intent.putExtra("keyuseroldprofilepic", passedOldProfilePicture);
             startActivity(intent);
         }else{
             Toast.makeText(this, "Você deve estar logado para usar esta ferramenta", Toast.LENGTH_SHORT).show();

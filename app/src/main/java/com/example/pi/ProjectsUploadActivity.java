@@ -76,7 +76,6 @@ public class ProjectsUploadActivity extends AppCompatActivity {
         }
 
         getUserInfos();
-        Toast.makeText(this, passedRa + " " + passedUserName, Toast.LENGTH_SHORT).show();
 
         uploadImagebt.setOnClickListener(new View.OnClickListener() {
             @Override

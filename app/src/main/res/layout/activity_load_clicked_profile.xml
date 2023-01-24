@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:background="@drawable/customborder"
+        android:background="@drawable/customwhiteborder"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
@@ -43,14 +43,14 @@
         <LinearLayout
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/customborder"
+            android:background="@drawable/customwhiteborder"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/studentcoursescp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="cursos:"
+                android:text="curso(s):"
                 android:textSize="30dp"
                 android:textColor="@color/white" />
 

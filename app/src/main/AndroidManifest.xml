@@ -12,6 +12,27 @@
         android:theme="@style/Theme.PI"
         tools:targetApi="31">
         <activity
+            android:name=".TecAgroActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TecSegActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TecEstInfoActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".LoadClickedProfileActivity"
             android:exported="false">
             <meta-data

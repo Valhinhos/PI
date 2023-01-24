@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         android:background="@color/blueicon">
 
         <LinearLayout
@@ -70,7 +70,7 @@
                 android:id="@+id/usercoursesitem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="cursos:"
+                android:text="curso(s):"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:layout_gravity="center"
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/customborder">
+                android:background="@drawable/customwhiteborder">
 
                 <TextView
                     android:id="@+id/postcontentitem"

@@ -11,7 +11,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/orangebackground"
+    android:background="@drawable/whitecurledbackground"
     tools:context=".ProjectsUploadActivity">
 
     <LinearLayout
@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:orientation="vertical"
-        android:background="@drawable/customborder"
+        android:background="@drawable/customorangeborder"
         android:layout_alignTop="@id/lottieproject"
         android:layout_toRightOf="@id/lottieproject"
         android:layout_marginLeft="2dp">
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:orientation="vertical"
-        android:background="@drawable/customborder"
+        android:background="@drawable/customorangeborder"
         android:layout_alignTop="@id/lottieclass"
         android:layout_toRightOf="@id/lottieclass"
         android:layout_marginLeft="2dp">
@@ -109,7 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:orientation="vertical"
-        android:background="@drawable/customborder"
+        android:background="@drawable/customorangeborder"
         android:layout_alignTop="@id/lottieprofessor"
         android:layout_toRightOf="@id/lottieproject"
         android:layout_marginLeft="2dp">
@@ -155,7 +155,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/customborder"
+        android:background="@drawable/customorangeborder"
         android:layout_alignTop="@id/lottieresume"
         android:layout_toRightOf="@id/lottieproject"
         android:layout_marginLeft="2dp">
@@ -201,7 +201,7 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:orientation="vertical"
-        android:background="@drawable/customborder"
+        android:background="@drawable/customorangeborder"
         android:layout_alignTop="@id/lottiecontact"
         android:layout_toRightOf="@id/lottieproject"
         android:layout_below="@id/projectresumelayout"
@@ -248,7 +248,7 @@
         android:layout_marginTop="30dp"
         app:lottie_rawRes="@raw/greenlight"
         app:lottie_autoPlay="true"
-        android:background="@drawable/customborder"/>
+        android:background="@drawable/customorangeborder"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieclass"
@@ -259,7 +259,7 @@
         android:layout_marginTop="30dp"
         app:lottie_rawRes="@raw/startupmeeting"
         app:lottie_autoPlay="true"
-        android:background="@drawable/customborder"/>
+        android:background="@drawable/customorangeborder"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieprofessor"
@@ -269,7 +269,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="3dp"
         android:layout_marginTop="18dp"
-        android:background="@drawable/customborder"
+        android:background="@drawable/customorangeborder"
         app:lottie_rawRes="@raw/businessmanwinnerwithtrophy"
         app:lottie_autoPlay="true" />
 
@@ -281,7 +281,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="3dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/customborder"
+        android:background="@drawable/customorangeborder"
         app:lottie_rawRes="@raw/resume"
         app:lottie_autoPlay="true" />
 
@@ -294,8 +294,8 @@
         android:layout_marginLeft="3dp"
         android:layout_below="@id/projectresumelayout"
         android:layout_marginTop="20dp"
-        android:background="@drawable/customborder"
-        app:lottie_rawRes="@raw/education"
+        android:background="@drawable/customorangeborder"
+        app:lottie_rawRes="@raw/email"
         app:lottie_autoPlay="true" />
     <LinearLayout
         android:id="@+id/imagelayout"
@@ -304,7 +304,7 @@
         android:layout_below="@id/projectcontactlayout"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
-        android:background="@color/white"
+        android:background="@color/orange_strong"
         android:layout_centerHorizontal="true">
 
         <ImageView

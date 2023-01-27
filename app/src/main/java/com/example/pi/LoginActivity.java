@@ -88,8 +88,16 @@ public class LoginActivity extends AppCompatActivity {
                 String ra = emailet.getText().toString();
                 dataBaseHelper.insertData(ra);
                 Toast.makeText(LoginActivity.this, "Login feito", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(LoginActivity.this, MainIconsActivity.class));
+
+                Intent intent = new Intent(LoginActivity.this, MainIconsActivity.class);
+                intent.putExtra("keyra", ra);
+                startActivity(intent);
                 finish();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(LoginActivity.this, "A senha ou RA estão incorretos", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -102,7 +110,9 @@ public class LoginActivity extends AppCompatActivity {
     public void enterWithoutUser(View v){
         String ra = "empty";
         dataBaseHelper.insertData(ra);
-        startActivity(new Intent(LoginActivity.this, MainIconsActivity.class));
+        Intent intent = new Intent(LoginActivity.this, MainIconsActivity.class);
+        intent.putExtra("keyra", "empty");
+        startActivity(intent);
         finish();
     }
 

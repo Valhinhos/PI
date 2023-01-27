@@ -12,6 +12,62 @@
         android:theme="@style/Theme.PI"
         tools:targetApi="31">
         <activity
+            android:name=".TecAgroActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TecSegActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TecEstInfoActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LoadClickedProfileActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UsersPostsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UserProfileActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LogQuizInitialScreenActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ShowFinalScoreActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".RhQuizInitialScreenActivity"
             android:exported="false">
             <meta-data
@@ -19,7 +75,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".RecordsRHQuiz"
+            android:name=".QuizRankingActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -34,7 +90,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".QuizRhActivity"
+            android:name=".QuizActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -50,7 +106,8 @@
         <activity
             android:name=".ProjectsUploadActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">>
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

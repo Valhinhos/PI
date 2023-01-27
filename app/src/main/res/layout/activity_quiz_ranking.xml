@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rankingdisplay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lightbluebackgorund"
+    tools:context=".QuizRankingActivity">
+
+    <TextView
+        android:id="@+id/ranking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="@font/adventure"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:text="RANKING" />
+
+    <TextView
+        android:id="@+id/studentspontuations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pontuação dos outros estudantes:"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/zrnic"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/youpontuationtext"
+        android:layout_marginTop="30dp"/>
+
+    <ListView
+        android:id="@+id/rankinglist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/studentspontuations">
+
+    </ListView>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="343dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/trophy"
+        android:layout_below="@id/ranking"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/minhapontuação"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="@font/farceb"
+        android:hint="0"
+        android:textSize="50dp"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/imageView4"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/youpontuationtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sua pontuação"
+        android:textSize="40dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/zrnic"
+        android:layout_below="@id/imageView4"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

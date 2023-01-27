@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pi.models.DatabaseRA;
 import com.example.pi.models.QuestionsLog;
@@ -42,7 +43,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         passedQuiz = getIntent().getStringExtra("keyquiz");
         if (passedQuiz.equals("quizlog")){
             totalquestions = QuestionsLog.question.length;
-        }else {
+        }else if (passedQuiz.equals("quizrh")){
             totalquestions = QuestionsRH.question.length;
         }
         question = findViewById(R.id.perguntatv);
@@ -69,6 +70,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         prog();
     ///carrega as perguntas
     loadNewQuestion();
+        Toast.makeText(this, passedQuiz, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -94,7 +96,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             answer2.setText(QuestionsLog.choices[currentQuestionIndex][1]);
             answer3.setText(QuestionsLog.choices[currentQuestionIndex][2]);
             answer4.setText(QuestionsLog.choices[currentQuestionIndex][3]);
-        }else {
+        }else if (passedQuiz.equals("quizrh")){
 
             question.setText(" '" + QuestionsRH.question[currentQuestionIndex] + "'");
             answer1.setText(QuestionsRH.choices[currentQuestionIndex][0]);
@@ -145,7 +147,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         if (passedQuiz.equals("quizlog")){
             FirebaseDatabase.getInstance().getReference().child("rankinglogquiz").child(id).setValue(studentScore);
-        }else {
+        }else if (passedQuiz.equals("quizrh")){
             FirebaseDatabase.getInstance().getReference().child("rankingrhquiz").child(id).setValue(studentScore);
         }
 
@@ -196,7 +198,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             if(selectedAnswer.equals(QuestionsLog.correctAnswers[currentQuestionIndex])){
                 score++;
             }
-        }else {
+        }else if (passedQuiz.equals("quizrh")){
             if(selectedAnswer.equals(QuestionsRH.correctAnswers[currentQuestionIndex])){
                 score++;
             }

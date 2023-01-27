@@ -55,7 +55,7 @@ public class QuizRankingActivity extends AppCompatActivity {
             display.setBackgroundColor(Color.rgb(139,195,74));
             databaseReference = FirebaseDatabase.getInstance().getReference("rankinglogquiz");
             rankingTittle.setText("Ranking Logística");
-        }else {
+        }else if (rankingMode.equals("rankingrh")){
             databaseReference = FirebaseDatabase.getInstance().getReference("rankingrhquiz");
             rankingTittle.setText("Ranking RH");
         }
@@ -83,8 +83,6 @@ public class QuizRankingActivity extends AppCompatActivity {
                             Collections.sort(myScores);
                             if (myScores.size() > 1){
                                 myRecord.setText(String.valueOf(myScores.get(myScores.size() -1)));
-                            }else{
-                                myRecord.setText("Você ainda não pontuou");
                             }
                         }
                         studentScoresSortList.add(studentScore);

@@ -83,4 +83,8 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    public void returnToQuizInitialScreen(View v){
+//        Intent intent = new Intent(ShowFinalScoreActivity.this, RhQuizInitialScreenActivity)
+    }
 }

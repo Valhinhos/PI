@@ -160,6 +160,7 @@
                     android:onClick="openGames"
                     android:paddingLeft="20dp"
                     android:paddingTop="15dp"
+                    android:backgroundTint="@color/blueicon"
                     android:layout_marginTop="10dp"
                     app:srcCompat="@drawable/jogos" />
 

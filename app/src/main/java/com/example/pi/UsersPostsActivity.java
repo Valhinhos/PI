@@ -1,14 +1,18 @@
 package com.example.pi;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -17,10 +21,13 @@ import android.widget.Toast;
 
 import com.example.pi.adapters.userPostAdapter;
 import com.example.pi.models.PostsRecyclerViewInterface;
+import com.example.pi.models.ProjectInformation;
 import com.example.pi.models.UserInformation;
 import com.example.pi.models.userPost;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.io.IOException;
@@ -38,7 +46,7 @@ import java.util.Calendar;
 
 public class UsersPostsActivity extends AppCompatActivity implements PostsRecyclerViewInterface {
 
-    String passedUserName = "None", passedRa = "None", passedUserID = "None", date, profilePictureString = "None", userCourses = "None", passedUsersStats = "None";
+    String passedUserName = "None", passedRa = "None", passedUserID = "None", date, profilePictureString = "None", userCourses = "None", passedUsersStats = "None", imageID = "None";
     RecyclerView recyclerView;
     ArrayList<userPost> list;
     DatabaseReference databaseReference;
@@ -48,7 +56,10 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
     SimpleDateFormat dateFormat;
     TextView usernameTv;
     EditText postContent;
-    ImageView userProfilePictureIv;
+    ImageView userProfilePictureIv, imagePreview;
+
+    private static final int IMAGE_REQUEST = 2;
+    private Uri imageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +82,11 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
         usernameTv = findViewById(R.id.usernametv);
         postContent = findViewById(R.id.postcontentet);
         userProfilePictureIv = findViewById(R.id.userpictureiv);
+        imagePreview = findViewById(R.id.imagePreview);
+        
+
+
+        imagePreview.setVisibility(View.GONE);
 
         if (getIntent().getBooleanExtra("keyusername", false) == true) {
             passedUserName = "None";
@@ -106,6 +122,25 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
 
     }
 
+    private void deletePostAfterSevenDays(userPost userPost) {
+        String postDate = userPost.getPosteDate();
+        dateFormat = new SimpleDateFormat("dd/MM/yyy HH:mm");
+        date = dateFormat.format(calendar.getTime());
+
+        char[] charsPostDate = new char[2];
+        char[] charsCurrentDate = new char[2];
+
+        postDate.getChars(3, 5, charsPostDate, 0);
+        date.getChars(3, 5, charsCurrentDate, 0);
+
+        String currentDateS = new String(charsCurrentDate);
+        String postDateS = new String(charsPostDate);
+        if (Integer.parseInt(currentDateS) - Integer.parseInt(postDateS) == 1){
+//            excluir o post
+            FirebaseDatabase.getInstance().getReference("usersposts/").child(userPost.getPostID()).removeValue();
+        }
+    }
+
     private void DisplayPosts() {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -113,6 +148,7 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
                 list.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     userPost userPost = dataSnapshot.getValue(userPost.class);
+                    deletePostAfterSevenDays(userPost);
                     updateUserCourse(userPost.getUserID(), userPost.getPostID());
                     list.add(userPost);
                     for (userPost up : list) {
@@ -140,10 +176,11 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
             String postid = String.valueOf(System.currentTimeMillis());
             dateFormat = new SimpleDateFormat("dd/MM/yyy HH:mm");
             date = dateFormat.format(calendar.getTime());
-            userPost userPost = new userPost(passedUserName, date, profilePictureString, postContentString, userCourses, passedRa, passedRa + postid, passedUserID, passedUsersStats);
+            userPost userPost = new userPost(passedUserName, date, profilePictureString, postContentString, userCourses, passedRa, passedRa + postid, passedUserID, passedUsersStats, imageID);
             FirebaseDatabase.getInstance().getReference().child("usersposts/").child(passedRa + postid).setValue(userPost);
             postContent.setText("");
             Toast.makeText(this, "Sua publicação foi postada", Toast.LENGTH_SHORT).show();
+            imagePreview.setVisibility(View.GONE);
         }
     }
 
@@ -240,5 +277,55 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
 
             }
         });
+    }
+
+    public void openImage(View v) {
+        Intent intent = new Intent();
+        intent.setType("image/");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, IMAGE_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK) {
+            imageUri = data.getData();
+            imagePreview.setVisibility(View.VISIBLE);
+            imagePreview.setImageURI(imageUri);
+            uploadImage();
+        }
+    }
+
+    private void uploadImage() {
+        final ProgressDialog pd = new ProgressDialog(this);
+        pd.setMessage("Upload");
+        pd.show();
+
+        if (imageUri != null){
+            imageID = String.valueOf(System.currentTimeMillis());
+            ///the ra will be picked from here using sql lite and inserted in a string to be put inside the projectinformation object
+
+            ///storage the image
+//            StorageReference fileRef = FirebaseStorage.getInstance().getReference().child("uploads").child(imageName + "." + getFileExtension(imageUri));
+            StorageReference fileRef = FirebaseStorage.getInstance().getReference().child("postImage").child(imageID);
+            fileRef.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                    ///store the name of the file on the database to after retrieving
+                    String projectid = "id" + imageID;
+                    ///storage the project id to exclude after #implement
+                    fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            String url = uri.toString();
+                            Log.d("DownloadUrl", url);
+                            pd.dismiss();
+                        }
+                    });
+                }
+            });
+        }
     }
 }

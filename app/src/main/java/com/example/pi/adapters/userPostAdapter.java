@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -61,9 +62,9 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
         String postDate = userPost.getPosteDate().replace("T", " ");
         holder.currentdate.setText(userPost.getPosteDate());
 
-        if (passedName.equals(userPost.getUserName()) && passedRa.equals(userPost.getUserRa())){
+        if (passedName.equals(userPost.getUserName()) && passedRa.equals(userPost.getUserRa())) {
             holder.deletePost.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             holder.deletePost.setVisibility(View.INVISIBLE);
         }
         holder.deletePost.setOnClickListener(new View.OnClickListener() {
@@ -71,12 +72,47 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
             public void onClick(View view) {
                 if (passedName.equals(userPost.getUserName()) && passedRa.equals(userPost.getUserRa())) {
                     FirebaseDatabase.getInstance().getReference("usersposts/").child(userPost.getPostID()).removeValue();
+                    FirebaseStorage.getInstance().getReference("postImage/" + userPost.getImageID()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(context, "post excluído", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
             }
 
         });
 
         String imageID = userPost.getUserProfilePicture();
+        String postImageID = userPost.getImageID();
+
+        if (userPost.getImageID().equals("None")) {
+            holder.postImage.setVisibility(View.GONE);
+        }else {
+
+        storageReference = FirebaseStorage.getInstance().getReference("postImage/" +postImageID);
+        try {
+            File localfile = File.createTempFile("tempfile", ".png");
+            storageReference.getFile(localfile)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                            Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
+                            holder.postImage.setImageBitmap(bitmap);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+//                            Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                holder.postImage.setImageResource(R.drawable.loadingicon);
+                                Toast.makeText(context, "erro", Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 //        storageReference = FirebaseStorage.getInstance().getReference("uploads/" +imageID + ".png");
         storageReference = FirebaseStorage.getInstance().getReference("userspictures/" + userPost.getUserRa() + userPost.getUserID() + "/" +imageID);
@@ -111,7 +147,7 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView userName, userCourses, content, currentdate;
-        ImageView imageView;
+        ImageView imageView, postImage;
         Button deletePost;
         public MyViewHolder(@NonNull View itemView, PostsRecyclerViewInterface postsRecyclerViewInterface) {
             super(itemView);
@@ -121,6 +157,7 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
             currentdate = itemView.findViewById(R.id.currentdateitem);
             imageView = itemView.findViewById(R.id.userpictureitem);
             deletePost = itemView.findViewById(R.id.deletepostbt);
+            postImage = itemView.findViewById(R.id.postuploadedimage);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

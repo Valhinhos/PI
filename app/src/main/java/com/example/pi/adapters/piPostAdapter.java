@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -77,7 +78,12 @@ public class piPostAdapter extends RecyclerView.Adapter<piPostAdapter.MyViewHold
             public void onClick(View view) {
                 if (passedName.equals(projectInformation.getUserUploader()) && passedRa.equals(projectInformation.getRaMatching())) {
                     FirebaseDatabase.getInstance().getReference("projects").child("id" +projectInformation.getImageName()).removeValue();
-                    FirebaseStorage.getInstance().getReference("uploads/").child(projectInformation.getImageName()).delete();
+                    FirebaseStorage.getInstance().getReference("uploads/" + projectInformation.getImageName()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(context, "Publicação excluída", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
             }
 

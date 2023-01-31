@@ -53,13 +53,24 @@
     <EditText
         android:id="@+id/edit_senhacadastro"
         style="@style/Edit_Text_senha"
-        android:drawableRight="@drawable/ic_eye"
         android:layout_marginTop="20dp"
         android:textColorHint="@color/black"
         android:hint="Digite sua senha:"
         android:textColor="@color/black"
         android:inputType="textPassword"
         android:layout_below="@id/edit_racadastro" />
+
+    <CheckBox
+        android:id="@+id/ver_senhareg"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:button="@drawable/showpassword"
+        android:text="@string/vazio"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignTop="@id/edit_senhacadastro"
+        android:layout_alignRight="@id/edit_senhacadastro" />
 
     <Button
         android:id="@+id/cadastrarbt"

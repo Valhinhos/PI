@@ -6,8 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -23,6 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText email, password, name;
     private Button register;
     private FirebaseAuth auth;
+    CheckBox verSenha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +38,20 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.edit_senhacadastro);
         register = findViewById(R.id.cadastrarbt);
         name = findViewById(R.id.edit_nomecadastro);
+        verSenha = findViewById(R.id.ver_senhareg);
 
         auth = FirebaseAuth.getInstance();
+
+        verSenha.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                } else {
+                    password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

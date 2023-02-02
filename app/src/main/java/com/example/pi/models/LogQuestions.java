@@ -4,7 +4,7 @@ public class LogQuestions {
 
     public static String question[] = {
             ///Perguntas
-            "O que é um mapa mental?",
+            "Qual o ciclo da cadeia de suprimentos?",
             "Oque é um organograma?",
             "São tipos de recrutamento e seleção:",
             "Qual a jornada de trabalho de um Jovem Aprendiz?",
@@ -14,6 +14,7 @@ public class LogQuestions {
 
     public static String choices[][] = {
             ///escolhas
+            {"Fabricante-Distribuidor-Produtor-supermercadista-Consumidor", "Produtor-Fabricante-Distribuidor-supermercadista-Consumidor", "Produtor-Distribuidor-Fabricante-Consumidor-supermercadista", "Fabricante-Distribuidor-supermercadista-Consumidor-Produtor"},
             {"Um tipo de mapeamento para recrutar pessoas", "É um teste mental usado pelas organizações com seus colaboradores", "São diagramas que relacionam diferentes informações a uma fonte central", "Uma técnica de vendas"},
             {"Ilustra as etapas, sequências e decisões de um processo ou fluxo de trabalho", "Uma ilustração estratégica com o intuito de auxiliar clientes", "É uma representação gráfica da divisão hierárquica e da relação superior-subordinado", "Um gráfico com todos colaboradores de determinada organização"},
             {"Externo, interno e misto", "Interno, simulado, não estruturado", "Externo, coletivo, estruturado", "Interno, teórico, misto"},
@@ -23,7 +24,7 @@ public class LogQuestions {
 
     public static String correctAnswers[] = {
             ///respotas certas
-            "São diagramas que relacionam diferentes informações a uma fonte central",
+            "Produtor-Fabricante-Distribuidor-supermercadista-Consumidor",
             "É uma representação gráfica da divisão hierárquica e da relação superior-subordinado",
             "Externo, interno e misto",
             "Para os aprendizes que estão cursando o ensino fundamental será seis horas diárias.Já para os que completaram o ensino médio será até 8 horas diárias",

@@ -97,7 +97,7 @@ public class QuestionsRH {
             {"Trata-se de normas legais com o objetivo de orientar os condutores garantindo a segurança dos veículos", "Trata-se do empregador ter mais poder sobre o empregado", "É o documento legal que da subsidios ao empregado para sobrepor-se ao empregador", "A legislação trata sobre os direitos para com a proteção da saúde do colaborador"},
             {"Surgiu em 1833", "Surgiu em 1943", "Surgiu em 1832", "Surgiu em 2000"},
             {"Inglaterra", "Portugal", "Suiça", "Alemanha"},
-            {" Igualar os direitos de ambos lados", "Combater o desemprego gerado pela crise econômica", "Dar mais voz ao empregador sobre o colaborador", "Ajudar os trabalhadores"},
+            {"Igualar os direitos de ambos os lados", "Combater o desemprego gerado pela crise econômica", "Dar mais voz ao empregador sobre o colaborador", "Ajudar os trabalhadores"},
             {"Remunerada", "Remunerada ou obrigatoria", "Remunerada ou então voluntária", "Obrigatória "},
             {"São leis e regras que regem a relação entre colaboradores e empregadores", "São leis e regras que não regem a relação entre colaboradores e empregadores", "São leis que cabe ao colaborador seguir ou não", "São leis dirigidas apenas para os empregadores"},
             {"Salário mínimo", "Carteira de trabalho assinada", "Repouso semanal remunerado", "Folga em todos os feriados"},
@@ -105,7 +105,7 @@ public class QuestionsRH {
             {"Sim, independente de quantas horas ele trabalhou", "Sim, para os trabalhadores com jornada superior à 6 horas diária é obrigatório o intervalo mínimo de 1hora de almoço", "Não, ele pode trabalhar as 8 horas somente com 15 minutos de café", "É de sua escolha"},
             {"Após 8 meses trabalhados", "Após 12 meses trabalhados", "Após 2 anos trabalhados", "Após 5 meses trabalhados"},
             {"1 semana antes do início das férias", "30 dias depois das férias ", "8 dias antes do início das férias", "2 dias antes do início das férias"},
-            {"o empregador é quem define ", "recursos humanos ", "o colaborador", "o colega de serviço"},
+            {"o empregador é quem define", "recursos humanos ", "o colaborador", "o colega de serviço"},
             {"sistema social de trabalho", "serviço de segurança do trabalho", "Segurança e saúde do trabalho", "saúde da sociedade no trabalho"},
             {"Documento que comprova o vínculo legal entre um empregador e um colaborador", "Documento que comprova  acidente de trabalho", "Documento necessário para assinar carteira de motorista", "Documento para receber rescisão"},
             {"Até no máximo 12 meses", "Até no máximo 1 ano", "Até no máximo 2 anos", "Até no máximo 1 ano e 6 meses"},
@@ -146,14 +146,23 @@ public class QuestionsRH {
             {"É um treinamento feito em prol do  desenvolvimento do corpo", "É o conjunto de práticas que as empresas adotam para capacitar seus colaboradores a curto e longo prazo", "São treinamentos feitos para um autodesenvolvimento", "São práticas feitas para o desenvolvimento pessoal e econômico"},
             {"Aprender a praticar esportes", "Capacitar seu cérebro", "Integrar e qualificar a equipe de modo que as entregas tenham um alto padrão de qualidade", "Ensinar exclusivamente como praticar exercícios físicos"},
             {"Treinamento de integração ou onboarding.\n" +
-                    "Treinamento comportamental ou soft skill.\n" +
-                    "Treinamento técnico ou hard skill.\n", "Treinamento Acadêmico \n" +
+                            "Treinamento comportamental ou soft skill.\n" +
+                            "Treinamento técnico ou hard skill\n",
+
+
+                    "Treinamento Acadêmico \n" +
                     "Treinamento Natalino\n" +
-                    "Treinamento Festival.\n", "Treinamento Formatura\n" +
+                    "Treinamento Festival.\n",
+
+                    "Treinamento Formatura\n" +
                     "Treinamento coreografia\n" +
-                    "Treinamento Comercial.\n", "Treinamento Musical\n" +
+                    "Treinamento Comercial.\n",
+
+                    "Treinamento Musical\n" +
                     "Treinamento Pessoal\n" +
-                    "Treinamento Passarela.\n"},
+                    "Treinamento Passarela.\n"
+            },
+
             {"Totalidade e Dinheiro", "Trauma e Dor", "Temática e Densidade", "Treinamento e desenvolvimento"},
             {"Departamento Pessoal", "Administração", "Recursos Humanos", "Logística"},
             {"Ajuda as pessoas no treino da academia", "Criar processos para melhorar o clima", "Preparar manuais e materias para treinamento interno e divulgar cursos e palestras", "Busca aperfeiçoar o desempenho pessoal dos colaboradores"},
@@ -190,8 +199,8 @@ public class QuestionsRH {
             "A legislação trata sobre os direitos para com a proteção da saúde do colaborador",
             "Surgiu em 1833",
             "Alemanha",
-//            pergunta abaixo não está acertada
-            "alinhar com a 110",
+//
+            "Igualar os direitos de ambos os lados",
             "Remunerada ou então voluntária",
             "São leis e regras que regem a relação entre colaboradores e empregadores",
             "Folga em todos os feriados",
@@ -242,6 +251,7 @@ public class QuestionsRH {
             "Treinamento de integração ou onboarding.\n" +
                     "Treinamento comportamental ou soft skill.\n" +
                     "Treinamento técnico ou hard skill\n",
+
             "Treinamento e desenvolvimento",
             "Recursos Humanos",
             "Preparar manuais e materias para treinamento interno e divulgar cursos e palestras",
@@ -262,7 +272,7 @@ public class QuestionsRH {
             "Aparelho eletrônico, ambiente adequado e vestimentas corretas",
             "Dar mais espaços para os candidatos contarem com um pouco mais de detalhes suas competências e experiências no mercado de trabalho",
             "Uma apresentação curta e direta sobre uma empresa ou/e projeto",
-            "Hollywood "
+            "Hollywood"
     };
 
     public QuestionsRH(){}

@@ -46,6 +46,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         }else if (passedQuiz.equals("quizrh")){
             totalquestions = QuestionsRH.question.length;
         }
+
         question = findViewById(R.id.perguntatv);
         answer1 = findViewById(R.id.resposta1);
         answer2 = findViewById(R.id.resposta2);
@@ -82,8 +83,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private void loadNewQuestion() {
         prog();
         numberQuestions.setText((currentQuestionIndex + 1) + "/" + totalquestions);
+        Toast.makeText(this, String.valueOf(currentQuestionIndex), Toast.LENGTH_SHORT).show();
 
-        if((currentQuestionIndex + 1) == totalquestions){
+        if((currentQuestionIndex) == totalquestions){
             finishQuiz();
             return;
         }
@@ -201,6 +203,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         }else if (passedQuiz.equals("quizrh")){
             if(selectedAnswer.equals(QuestionsRH.correctAnswers[currentQuestionIndex])){
                 score++;
+
             }
         }
         currentQuestionIndex++;

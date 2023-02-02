@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pi.models.DatabaseRA;
 import com.example.pi.models.QuestionsLog;
@@ -45,6 +46,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         }else {
             totalquestions = QuestionsRH.question.length;
         }
+
         question = findViewById(R.id.perguntatv);
         answer1 = findViewById(R.id.resposta1);
         answer2 = findViewById(R.id.resposta2);
@@ -80,8 +82,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private void loadNewQuestion() {
         prog();
         numberQuestions.setText((currentQuestionIndex + 1) + "/" + totalquestions);
+        Toast.makeText(this, String.valueOf(currentQuestionIndex), Toast.LENGTH_SHORT).show();
 
-        if((currentQuestionIndex + 1) == totalquestions){
+        if((currentQuestionIndex) == totalquestions){
             finishQuiz();
             return;
         }
@@ -199,6 +202,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         }else {
             if(selectedAnswer.equals(QuestionsRH.correctAnswers[currentQuestionIndex])){
                 score++;
+
             }
         }
         currentQuestionIndex++;

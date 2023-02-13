@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pi.models.DatabaseRA;
+import com.example.pi.models.LogQuestions;
 import com.example.pi.models.QuestionsLog;
 import com.example.pi.models.QuestionsRH;
 import com.example.pi.models.StudentScore;

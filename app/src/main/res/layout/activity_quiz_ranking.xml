@@ -9,8 +9,6 @@
     android:background="@drawable/lightbluebackgorund"
     tools:context=".QuizRankingActivity">
 
-
-
     <TextView
         android:id="@+id/ranking"
         android:layout_width="wrap_content"

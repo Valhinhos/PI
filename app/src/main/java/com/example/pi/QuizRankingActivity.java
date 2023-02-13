@@ -51,14 +51,8 @@ public class QuizRankingActivity extends AppCompatActivity {
             rankingMode = getIntent().getStringExtra("rankingmode");
         }
 
-        if (rankingMode.equals("rankinglog")){
-            display.setBackgroundColor(Color.rgb(139,195,74));
-            databaseReference = FirebaseDatabase.getInstance().getReference("rankinglogquiz");
-            rankingTittle.setText("Ranking Logística");
-        }else if (rankingMode.equals("rankingrh")){
-            databaseReference = FirebaseDatabase.getInstance().getReference("rankingrhquiz");
-            rankingTittle.setText("Ranking RH");
-        }
+        checkRankingMode();
+
         myDB = new DatabaseRA(this);
         studentsScoreListView = findViewById(R.id.rankinglist);
         studentScoresSortList = new ArrayList<>();
@@ -112,6 +106,17 @@ public class QuizRankingActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void checkRankingMode(){
+        if (rankingMode.equals("rankinglog")){
+            display.setBackgroundColor(Color.rgb(139,195,74));
+            databaseReference = FirebaseDatabase.getInstance().getReference("rankinglogquiz");
+            rankingTittle.setText("Ranking Logística");
+        }else if (rankingMode.equals("rankingrh")){
+            databaseReference = FirebaseDatabase.getInstance().getReference("rankingrhquiz");
+            rankingTittle.setText("Ranking RH");
+        }
     }
 
     public String getRaFromDB(){

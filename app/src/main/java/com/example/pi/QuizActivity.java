@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener{
     ///declaracao das variaveis
-    TextView question, actualuc, numberQuestions, userNameTV;
+    TextView question, numberQuestions, userNameTV;
     Button answer1,answer2,answer3,answer4;
     LinearLayout linearLayout;
     ProgressBar progressBar;
@@ -31,13 +31,12 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     int score = 0;
     int totalquestions;
     int currentQuestionIndex = 0;
-    int unidadeCurricular = 1;
     String selectedAnswer = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_rh);
+        setContentView(R.layout.activity_quiz);
         ///atribui as views as variaveis
         myDB = new DatabaseRA(this);
         passedQuiz = getIntent().getStringExtra("keyquiz");
@@ -52,7 +51,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         answer2 = findViewById(R.id.resposta2);
         answer3 = findViewById(R.id.resposta3);
         answer4 = findViewById(R.id.resposta4);
-        actualuc = findViewById(R.id.ucatual);
+
         numberQuestions = findViewById(R.id.nperguntasdetperguntas);
         linearLayout = findViewById(R.id.layoutdasrespostas);
         userNameTV = findViewById(R.id.usernamequiz);
@@ -67,12 +66,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         answer4.setOnClickListener(this);
     ///coloca o numero de perguntas do quiz
     numberQuestions.setText(currentQuestionIndex + "/" + totalquestions);
-    actualuc.setText("UC " + unidadeCurricular);
         prog();
     ///carrega as perguntas
     loadNewQuestion();
-        Toast.makeText(this, passedQuiz, Toast.LENGTH_SHORT).show();
-
     }
 
     private void prog() {
@@ -173,7 +169,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private void restartQuiz() {
         ///da restart no quiz
         score = 0;
-        unidadeCurricular = 1;
         currentQuestionIndex = 0;
         loadNewQuestion();
     }

@@ -77,49 +77,51 @@ public class MainIconsActivity extends AppCompatActivity {
         return true;
     }
 
-    public void frequencia(View v){
+    public void openFrequency(View v){
         frequency.setImageResource(R.drawable.frequenciapressed);
         abrirLink("https://www.mg.senac.br/ambienteacademico/detalheCurso");
     }
 
-    public void mapeamento(View v){
+    public void openMap(View v){
 //        mapeamento.setImageResource(R.drawable.mapeamento);
-        Toast.makeText(MainIconsActivity.this, "Recurso ainda não implementado", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(MainIconsActivity.this, "Recurso ainda não implementado", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainIconsActivity.this, MapActivity.class);
+        startActivity(intent);
     }
 
-    public void ava(View v){
+    public void openAva(View v){
         ava.setImageResource(R.drawable.ambientevirtualpressed);
         abrirLink("https://ava.mg.senac.br/edu/");
     }
 
-    public void biblioteca(View v){
+    public void openBiblio(View v){
         biblio.setImageResource(R.drawable.bibliotecapressed);
         abrirLink("https://pergamum.mg.senac.br/pergamum/biblioteca_s/php/login_usu.php");
     }
 
-    public void cursossenac(View v){
+    public void openSenacCourses(View v){
         Intent intent = new Intent(MainIconsActivity.this, CoursesInfoActivity.class);
         startActivity(intent);
         cursosSenac.setImageResource(R.drawable.cursossenacpressed);
     }
 
 
-    public void cursosdisponiveis(View v){
+    public void openCourses(View v){
         cursosDisponiveis.setImageResource(R.drawable.cursosdisponiveispressed);
         abrirLink("https://www.mg.senac.br/programasenacdegratuidade/vagas.aspx");
     }
 
-    public void aprendizagemcomercial(View v){
+    public void openAC(View v){
         aprendizagem.setImageResource(R.drawable.aprendizagemcomercailpressed);
         abrirLink("https://www.mg.senac.br/Paginas/aprendizagem-comercial.aspx");
     }
 
-    public void redecarreiras(View v){
+    public void openRedeC(View v){
         redeCarreiras.setImageResource(R.drawable.redecarreiraspressed);
         abrirLink("https://www.mg.senac.br/Paginas/rededecarreiras.aspx");
     }
 
-    public void projetoint(View v){
+    public void openPI(View v){
         if (logged){
             pi.setImageResource(R.drawable.projetointegradorpressed);
             Intent projint = new Intent(this, PiPostsActivity.class);
@@ -131,7 +133,7 @@ public class MainIconsActivity extends AppCompatActivity {
         }
     }
 
-    public void openCreditsActivity(View v){
+    public void openCredits(View v){
         credits.setImageResource(R.drawable.creditospressed);
         Intent cred = new Intent(this, CreditsActivity.class);
         startActivity(cred);

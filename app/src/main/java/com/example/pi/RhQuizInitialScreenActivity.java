@@ -9,6 +9,7 @@ import android.view.View;
 public class RhQuizInitialScreenActivity extends AppCompatActivity {
 
     String passedRa, passedUserName, passedQuiz;
+    int x = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +21,6 @@ public class RhQuizInitialScreenActivity extends AppCompatActivity {
 
     }
 
-    public void exitRhInitialScreen(View v){
-        finish();
-        Intent intent = new Intent(RhQuizInitialScreenActivity.this, MainIconsActivity.class);
-        startActivity(intent);
-    }
     public void startQuizRh(View v) {
         Intent intent = new Intent(RhQuizInitialScreenActivity.this, QuizActivity.class);
         intent.putExtra("keyra", passedRa);

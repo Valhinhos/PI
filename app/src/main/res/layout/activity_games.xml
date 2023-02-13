@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/orangebackground"
+    android:background="@drawable/orangedetailedbg"
     tools:context=".GamesActivity">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"
             android:onClick="OpenQuizRH"
-            app:srcCompat="@drawable/rhgameicon" />
+            app:srcCompat="@drawable/rhgameicon"/>
 
         <ImageView
             android:layout_width="150dp"

@@ -11,26 +11,12 @@
         android:id="@+id/pontuçãobt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/sairbt"
+        android:layout_alignParentRight="true"
         android:onClick="openRankingScreen"
         android:fontFamily="@font/icekingdom"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
         android:text="Pontuação"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/sairbt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:fontFamily="@font/icekingdom"
-        android:onClick="exitRhInitialScreen"
-        android:paddingTop="10dp"
-        android:paddingRight="20dp"
-        android:text="Sair"
         android:textColor="@color/white"
         android:textSize="30dp"
         android:textStyle="bold" />

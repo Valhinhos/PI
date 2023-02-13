@@ -4,7 +4,7 @@ public class QuestionsLog {
 
     public static String question[] = {
             ///Perguntas
-            "teste",
+            "teste 2",
             "Oque é um organograma?",
             "São tipos de recrutamento e seleção:",
             "Qual a jornada de trabalho de um Jovem Aprendiz?",

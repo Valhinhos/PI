@@ -21,7 +21,6 @@ import android.widget.Toast;
 
 import com.example.pi.adapters.userPostAdapter;
 import com.example.pi.models.PostsRecyclerViewInterface;
-import com.example.pi.models.ProjectInformation;
 import com.example.pi.models.UserInformation;
 import com.example.pi.models.userPost;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -83,11 +82,21 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
         postContent = findViewById(R.id.postcontentet);
         userProfilePictureIv = findViewById(R.id.userpictureiv);
         imagePreview = findViewById(R.id.imagePreview);
-        
-
 
         imagePreview.setVisibility(View.GONE);
 
+        checkPassedValues();
+
+        adapter = new userPostAdapter(this, list, passedUserName, passedRa, this);
+        recyclerView.setAdapter(adapter);
+
+        usernameTv.setText(passedUserName);
+
+        getTheUsers();
+        DisplayPosts();
+    }
+
+    public void checkPassedValues(){
         if (getIntent().getBooleanExtra("keyusername", false) == true) {
             passedUserName = "None";
         } else {
@@ -111,34 +120,6 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
         } else {
             passedUsersStats = getIntent().getStringExtra("keyuserstats");
         }
-
-        adapter = new userPostAdapter(this, list, passedUserName, passedRa, this);
-        recyclerView.setAdapter(adapter);
-
-        usernameTv.setText(passedUserName);
-
-        getTheUsers();
-        DisplayPosts();
-
-    }
-
-    private void deletePostAfterSevenDays(userPost userPost) {
-        String postDate = userPost.getPosteDate();
-        dateFormat = new SimpleDateFormat("dd/MM/yyy HH:mm");
-        date = dateFormat.format(calendar.getTime());
-
-        char[] charsPostDate = new char[2];
-        char[] charsCurrentDate = new char[2];
-
-        postDate.getChars(3, 5, charsPostDate, 0);
-        date.getChars(3, 5, charsCurrentDate, 0);
-
-        String currentDateS = new String(charsCurrentDate);
-        String postDateS = new String(charsPostDate);
-        if (Integer.parseInt(currentDateS) - Integer.parseInt(postDateS) == 1){
-//            excluir o post
-            FirebaseDatabase.getInstance().getReference("usersposts/").child(userPost.getPostID()).removeValue();
-        }
     }
 
     private void DisplayPosts() {
@@ -148,7 +129,6 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
                 list.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     userPost userPost = dataSnapshot.getValue(userPost.class);
-                    deletePostAfterSevenDays(userPost);
                     updateUserCourse(userPost.getUserID(), userPost.getPostID());
                     list.add(userPost);
                     for (userPost up : list) {
@@ -167,7 +147,6 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
     }
 
     public void createPost(View v) {
-
         if (postContent.getText().toString().matches("")) {
             Toast.makeText(this, "Você não pode fazer um post vazio", Toast.LENGTH_SHORT).show();
         } else {

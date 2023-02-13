@@ -51,17 +51,7 @@ public class PiPostsActivity extends AppCompatActivity implements PostsRecyclerV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pi_posts);
 
-        if (getIntent().getBooleanExtra("keyusername", false) == true){
-            passedUserName = "None";
-        }else{
-            passedUserName = getIntent().getStringExtra("keyusername");
-        }
-
-        if (getIntent().getBooleanExtra("keyra", false) == true){
-            passedRa = "None";
-        }else{
-            passedRa = getIntent().getStringExtra("keyra");
-        }
+        checkPassedValues();
 
         recyclerView = findViewById(R.id.recyclerviewpi);
         databaseReference = FirebaseDatabase.getInstance().getReference("projects");
@@ -77,6 +67,11 @@ public class PiPostsActivity extends AppCompatActivity implements PostsRecyclerV
             Toast.makeText(this, passedUserName, Toast.LENGTH_SHORT).show();
         }
 
+        getPIPosts();
+
+    }
+
+    public void getPIPosts(){
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -92,6 +87,20 @@ public class PiPostsActivity extends AppCompatActivity implements PostsRecyclerV
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+    }
+
+    public void checkPassedValues() {
+        if (getIntent().getBooleanExtra("keyusername", false) == true){
+            passedUserName = "None";
+        }else{
+            passedUserName = getIntent().getStringExtra("keyusername");
+        }
+
+        if (getIntent().getBooleanExtra("keyra", false) == true){
+            passedRa = "None";
+        }else{
+            passedRa = getIntent().getStringExtra("keyra");
+        }
     }
     public void postarProjeto(View v){
         Intent intent = new Intent(PiPostsActivity.this, ProjectsUploadActivity.class);

@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/blueicon"
+    android:background="@color/blueupdated"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="8dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:background="@color/blueicon">
+        android:background="@color/blueupdated">
 
         <LinearLayout
             android:layout_width="match_parent"

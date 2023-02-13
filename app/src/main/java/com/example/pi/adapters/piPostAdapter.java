@@ -63,7 +63,7 @@ public class piPostAdapter extends RecyclerView.Adapter<piPostAdapter.MyViewHold
         holder.professorName.setText("Professor: " + projectInformation.getProfessorName());
         holder.projectResume.setText(projectInformation.getProjectResume());
         holder.projectContact.setText(projectInformation.getProjectContact());
-        holder.projectClass.setText("Truma: " + projectInformation.getProjectClass());
+        holder.projectClass.setText("Turma: " + projectInformation.getProjectClass());
         holder.uploaderUser.setText(projectInformation.getUserUploader() );
         String imageID = projectInformation.getImageName();
 

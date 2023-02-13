@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@color/blueupdated"
     android:onClick="openImage"
     tools:context=".UsersPostsActivity">
 
@@ -12,7 +12,7 @@
         android:id="@+id/postlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/blue"
+        android:background="@color/blueupdatedstrong"
         android:orientation="vertical">
 
         <LinearLayout

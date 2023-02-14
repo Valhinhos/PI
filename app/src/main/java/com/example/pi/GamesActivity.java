@@ -9,13 +9,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.example.pi.models.MessageDialog;
 
 public class GamesActivity extends AppCompatActivity {
 
     String passedRa, passedUserName;
+    ImageView rhButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,21 @@ public class GamesActivity extends AppCompatActivity {
 
         passedRa = getIntent().getStringExtra("keyra");
         passedUserName = getIntent().getStringExtra("keyusername");
+        rhButton = findViewById(R.id.rhquizbutton);
+        checkPassedValues();
+    }
+
+    public void checkPassedValues() {
+        if (getIntent().getBooleanExtra("keyusername", false) == true) {
+            passedUserName = "None";
+        } else {
+            passedUserName = getIntent().getStringExtra("keyusername");
+        }
+        if (getIntent().getBooleanExtra("keyra", false) == true) {
+            passedRa = "None";
+        } else {
+            passedRa = getIntent().getStringExtra("keyra");
+        }
     }
 
     public void OpenQuizRH(View v) {
@@ -31,6 +50,7 @@ public class GamesActivity extends AppCompatActivity {
         intent.putExtra("keyra", passedRa);
         intent.putExtra("keyusername", passedUserName);
         intent.putExtra("keyquiz", "quizrh");
+//        animateButton();
         startActivity(intent);
     }
 
@@ -64,4 +84,12 @@ public class GamesActivity extends AppCompatActivity {
         MessageDialog messageDialog = new MessageDialog(txt, title);
         messageDialog.show(getSupportFragmentManager(), "mensagem");
     }
+
+//    public void animateButton (){
+//        YoYo.with(Techniques.Bounce)
+//                .duration(1000)
+//                .repeat(1)
+//                .playOn(findViewById(R.id.rhquizbutton));
+//
+//    }
 }

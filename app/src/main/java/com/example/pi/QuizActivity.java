@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener{
     ///declaracao das variaveis
-    TextView question, actualuc, numberQuestions, userNameTV;
+    TextView question, numberQuestions, userNameTV;
     Button answer1,answer2,answer3,answer4;
     LinearLayout linearLayout;
     ProgressBar progressBar;
@@ -32,19 +32,18 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     int score = 0;
     int totalquestions;
     int currentQuestionIndex = 0;
-    int unidadeCurricular = 1;
     String selectedAnswer = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_rh);
+        setContentView(R.layout.activity_quiz);
         ///atribui as views as variaveis
         myDB = new DatabaseRA(this);
         passedQuiz = getIntent().getStringExtra("keyquiz");
         if (passedQuiz.equals("quizlog")){
             totalquestions = QuestionsLog.question.length;
-        }else {
+        }else if (passedQuiz.equals("quizrh")){
             totalquestions = QuestionsRH.question.length;
         }
 
@@ -53,7 +52,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         answer2 = findViewById(R.id.resposta2);
         answer3 = findViewById(R.id.resposta3);
         answer4 = findViewById(R.id.resposta4);
-        actualuc = findViewById(R.id.ucatual);
+
         numberQuestions = findViewById(R.id.nperguntasdetperguntas);
         linearLayout = findViewById(R.id.layoutdasrespostas);
         userNameTV = findViewById(R.id.usernamequiz);
@@ -68,11 +67,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         answer4.setOnClickListener(this);
     ///coloca o numero de perguntas do quiz
     numberQuestions.setText(currentQuestionIndex + "/" + totalquestions);
-    actualuc.setText("UC " + unidadeCurricular);
         prog();
     ///carrega as perguntas
     loadNewQuestion();
-
     }
 
     private void prog() {
@@ -98,7 +95,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             answer2.setText(QuestionsLog.choices[currentQuestionIndex][1]);
             answer3.setText(QuestionsLog.choices[currentQuestionIndex][2]);
             answer4.setText(QuestionsLog.choices[currentQuestionIndex][3]);
-        }else {
+        }else if (passedQuiz.equals("quizrh")){
 
             question.setText(" '" + QuestionsRH.question[currentQuestionIndex] + "'");
             answer1.setText(QuestionsRH.choices[currentQuestionIndex][0]);
@@ -149,7 +146,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         if (passedQuiz.equals("quizlog")){
             FirebaseDatabase.getInstance().getReference().child("rankinglogquiz").child(id).setValue(studentScore);
-        }else {
+        }else if (passedQuiz.equals("quizrh")){
             FirebaseDatabase.getInstance().getReference().child("rankingrhquiz").child(id).setValue(studentScore);
         }
 
@@ -173,7 +170,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private void restartQuiz() {
         ///da restart no quiz
         score = 0;
-        unidadeCurricular = 1;
         currentQuestionIndex = 0;
         loadNewQuestion();
     }
@@ -200,7 +196,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             if(selectedAnswer.equals(QuestionsLog.correctAnswers[currentQuestionIndex])){
                 score++;
             }
-        }else {
+        }else if (passedQuiz.equals("quizrh")){
             if(selectedAnswer.equals(QuestionsRH.correctAnswers[currentQuestionIndex])){
                 score++;
 

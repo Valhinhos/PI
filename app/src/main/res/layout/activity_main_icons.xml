@@ -10,7 +10,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bluebackground"
+            android:background="@drawable/bluedetailedbg"
             tools:context=".MainIconsActivity">
 
                 <TextView
@@ -37,7 +37,7 @@
                     android:layout_below="@id/nameapp"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="2dp"
-                    android:onClick="ava"
+                    android:onClick="openAva"
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"
                     app:srcCompat="@drawable/ambientevirtual" />
@@ -48,7 +48,7 @@
                     android:layout_height="113dp"
                     android:layout_below="@id/nameapp"
                     android:layout_centerHorizontal="true"
-                    android:onClick="mapeamento"
+                    android:onClick="openMap"
                     android:paddingTop="20dp"
                     app:srcCompat="@drawable/mapeamento" />
 
@@ -58,7 +58,7 @@
                     android:layout_height="112dp"
                     android:layout_below="@id/nameapp"
                     android:layout_alignParentLeft="true"
-                    android:onClick="frequencia"
+                    android:onClick="openFrequency"
                     android:paddingLeft="20dp"
                     android:paddingTop="20dp"
                     app:srcCompat="@drawable/frequencia" />
@@ -69,7 +69,7 @@
                     android:layout_height="116dp"
                     android:layout_below="@id/iconfrequencia"
                     android:layout_alignParentLeft="true"
-                    android:onClick="biblioteca"
+                    android:onClick="openBiblio"
                     android:paddingLeft="20dp"
                     android:paddingTop="20dp"
                     app:srcCompat="@drawable/biblioteca" />
@@ -80,7 +80,7 @@
                     android:layout_height="118dp"
                     android:layout_below="@id/iconmapeamento"
                     android:layout_centerHorizontal="true"
-                    android:onClick="cursossenac"
+                    android:onClick="openSenacCourses"
                     android:paddingTop="20dp"
                     app:srcCompat="@drawable/cursossenac" />
 
@@ -92,7 +92,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="0dp"
                     android:layout_marginRight="3dp"
-                    android:onClick="cursosdisponiveis"
+                    android:onClick="openCourses"
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"
                     app:srcCompat="@drawable/cursosdisponiveis" />
@@ -103,7 +103,7 @@
                     android:layout_height="122dp"
                     android:layout_below="@id/iconbiblioteca"
                     android:layout_alignParentLeft="true"
-                    android:onClick="aprendizagemcomercial"
+                    android:onClick="openAC"
                     android:paddingLeft="20dp"
                     android:paddingTop="20dp"
                     app:srcCompat="@drawable/aprendizagemcomercial" />
@@ -114,7 +114,7 @@
                     android:layout_height="121dp"
                     android:layout_below="@id/iconcursosenac"
                     android:layout_centerHorizontal="true"
-                    android:onClick="redecarreiras"
+                    android:onClick="openRedeC"
                     android:paddingTop="20dp"
                     app:srcCompat="@drawable/rededecarreiras"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -125,7 +125,7 @@
                     android:layout_height="122dp"
                     android:layout_below="@id/iconcursosdisponiveis"
                     android:layout_alignParentRight="true"
-                    android:onClick="projetoint"
+                    android:onClick="openPI"
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"
                     app:srcCompat="@drawable/projetointegrador" />
@@ -134,9 +134,9 @@
                     android:id="@+id/iconcreditos"
                     android:layout_width="126dp"
                     android:layout_height="125dp"
-                    android:layout_below="@id/iconredecarreiras"
                     android:layout_centerHorizontal="true"
-                    android:onClick="openCreditsActivity"
+                    android:layout_below="@id/profileicon"
+                    android:onClick="openCredits"
                     android:paddingTop="20dp"
                     app:srcCompat="@drawable/creditos" />
 
@@ -147,19 +147,20 @@
                     android:layout_below="@id/senacsimbolo"
                     android:gravity="center"
                     android:text="Sistema de Suporte ao Aluno"
-
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"/>
 
                 <ImageView
                     android:id="@+id/icongame"
-                    android:layout_width="124dp"
+                    android:layout_width="120dp"
                     android:layout_height="106dp"
                     android:layout_below="@+id/iconaprendizagemcoemrcial"
                     android:layout_alignParentLeft="true"
                     android:onClick="openGames"
                     android:paddingLeft="20dp"
-                    android:paddingTop="20dp"
+                    android:paddingTop="15dp"
+                    android:backgroundTint="@color/blueicon"
+                    android:layout_marginTop="10dp"
                     app:srcCompat="@drawable/jogos" />
 
                 <ImageView
@@ -167,25 +168,25 @@
                     android:layout_width="103dp"
                     android:layout_height="106dp"
                     android:layout_below="@id/iconpi"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="11dp"
-                    android:layout_toRightOf="@id/iconcreditos"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="7dp"
                     android:onClick="openStudentProfile"
+                    android:paddingRight="25dp"
                     android:text="Perfil"
                     app:srcCompat="@drawable/perfil" />
 
                 <ImageView
                     android:id="@+id/postsicon"
-                    android:layout_width="100dp"
+                    android:layout_width="80dp"
                     android:layout_height="106dp"
                     android:text="posts"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@id/profileicon"
-                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/iconredecarreiras"
+                    android:layout_marginTop="19dp"
                     android:onClick="openUsersPost"
                     app:srcCompat="@drawable/posts"/>
-
-
 
         </RelativeLayout>
 

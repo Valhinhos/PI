@@ -23,7 +23,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-    CheckBox ver_senha;
+    CheckBox verSenha;
     private EditText emailet;
     private EditText password;
     private Button login, entrar;
@@ -36,14 +36,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        ver_senha = findViewById(R.id.ver_senha);
+        verSenha = findViewById(R.id.ver_senha);
         dataBaseHelper = new DatabaseRA(LoginActivity.this);
         emailet = findViewById(R.id.edit_ra);
         password = findViewById(R.id.edit_senha);
         login = findViewById(R.id.bt_entrar);
         auth = FirebaseAuth.getInstance();
 
-        ver_senha.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        verSenha.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b){
@@ -54,16 +54,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        ver_senha.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b){
-                    password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                } else {
-                    password.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                }
-            }
-        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

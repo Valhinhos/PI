@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bluedetailedbg"
+    tools:context=".InfoAgroActivity">
+
+    <ScrollView
+        android:id="@+id/Tela1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="ExtraText">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/tecagrologo" />
+
+            <TextView
+                android:id="@+id/logt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" Técnico em Agronomia:"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carga Horária:"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1200 horas\n
+As aulas são de segunda a sexta das 19:00 às 22:00."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nosso curso tem uma duração média de 1 ano e 8 meses aproximadamente."
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Competências que compõem o perfil do Técnico em Agronegócio: "
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="•Promover o agronegócio como sistema.\n
+• Promover a gestão das principais cadeias produtivas do setor agrícola e florestal.\n
+• Promover a gestão das principais cadeias produtivas do setor da pecuária. \n
+• Promover o uso de soluções tecnológicas para o agronegócio.\n
+• Executar ações para promoção e gerenciamento da agricultura familiar.\n
+• Executar ações para promoção e gerenciamento das associações e cooperativas rurais.\n
+• Executar a gestão econômica e financeira para o agronegócio de forma sustentável. \n
+• Auxiliar na comercialização do agronegócio. \n
+• Participar na elaboração e execução do plano de marketing do agronegócio da organização. \n
+• Auxiliar todos os processos logísticos do agronegócio. \n
+• Auxiliar a execução de ações aos processos de gestão de pessoas no agronegócio.\n
+• Promover a redução de impactos ambientais no agronegócio. \n
+• Administrar e gerenciar propriedades rurais e agroindustriais.\n
+ "
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+            <TextView
+                android:id="@+id/Tela22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Como é o Mercado de Trabalho?"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="O agronegócio é um dos principais setores da economia brasileira,  correspondendo a mais de 21% do Produto Interno Bruto (PIB), segundo o  governo federal.
+Isso faz com que as profissões ligadas ao agronegócio  sempre estejam aquecidas no mercado de trabalho.
+No entanto, a  expansão do setor não tem encontrado profissionais devidamente  qualificados para atuarem na produção, gestão, distribuição e  processamento dos produtos do campo.
+A área oferece vários campos de  atuação.
+Entre essas, o Técnico em Agronegócio, que atua na gestão e  administração das empresas agrícolas, podendo trabalhar em empresas  comerciais,
+estabelecimentos agroindustriais, serviços de assistência  técnica, extensão rural e pesquisa, revendas, consultorias, como tutor e  técnico."
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+
+            <Button
+                android:id="@+id/voltaragro"
+                android:layout_width="122dp"
+                android:layout_height="wrap_content"
+                android:text="VOLTAR"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/orange_strong"
+                app:cornerRadius="20dp"
+                android:layout_gravity="center"
+                android:onClick="goBack"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

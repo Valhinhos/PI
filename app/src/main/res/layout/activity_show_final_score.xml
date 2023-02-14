@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bluegradbackground"
+    android:background="@color/blueupdated"
     tools:context=".ShowFinalScoreActivity">
 
     <TextView
@@ -25,14 +32,14 @@
         android:id="@+id/pontuationtv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/pontuationbox"
         android:layout_marginBottom="20dp"
         android:layout_centerHorizontal="true"
         android:text="Sua pontuação"
         android:textColor="@color/yellow"
         android:textSize="50dp"
         android:textStyle="bold"
-        android:fontFamily="@font/berlinerwand"/>
+        android:fontFamily="@font/berlinerwand"
+        android:layout_below="@id/scorelottie"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/scorelottie"
@@ -44,17 +51,18 @@
         app:lottie_autoPlay="true"
         app:lottie_rawRes="@raw/champion"/>
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAIR"
-        android:textColor="@color/yellow"
-        android:textSize="40dp"
+        android:backgroundTint="@color/orange_strong"
+        android:textColor="@color/white"
+        android:textSize="25dp"
         android:layout_marginTop="5dp"
-        android:fontFamily="@font/berlinerwand"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
+        app:cornerRadius="20dp"
         android:onClick="goToMainMenu"/>
 
     <LinearLayout
@@ -65,7 +73,7 @@
         android:background="@drawable/customwhiteborder"
         android:backgroundTint="@color/green"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true">
+        android:layout_below="@+id/pontuationtv">
 
         <TextView
             android:id="@+id/observationtv"
@@ -99,7 +107,7 @@
                 android:gravity="center"
                 android:text="100"/>
         </LinearLayout>
-
     </LinearLayout>
 
 </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

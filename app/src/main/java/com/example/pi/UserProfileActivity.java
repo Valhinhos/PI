@@ -200,9 +200,10 @@ public class UserProfileActivity extends AppCompatActivity {
                         if (userInformation.getOldProfilePicture().equals(userInformation.getProfilePicture())){
 
                         }else{
-                            FirebaseStorage.getInstance().getReference().child("userspictures").child(userInformation.getProfilePicture()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            FirebaseStorage.getInstance().getReference().child("userspictures/").child(userInformation.getUserRa() + userInformation.getUserId()).child(userInformation.getOldProfilePicture()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
+                                    Toast.makeText(UserProfileActivity.this, "Foto do perfil alterada com sucesso", Toast.LENGTH_SHORT).show();
 
                                 }
                             });

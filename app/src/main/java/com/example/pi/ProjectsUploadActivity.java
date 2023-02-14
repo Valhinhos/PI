@@ -63,17 +63,7 @@ public class ProjectsUploadActivity extends AppCompatActivity {
         pickedImage = findViewById(R.id.pickedimage);
         projectClass = findViewById(R.id.turmaprojetoet);
 
-        if (getIntent().getBooleanExtra("keyusername", false) == true){
-            passedUserName = "None";
-        }else{
-            passedUserName = getIntent().getStringExtra("keyusername");
-        }
-
-        if (getIntent().getBooleanExtra("keyra", false) == true){
-            passedRa = "None";
-        }else{
-            passedRa = getIntent().getStringExtra("keyra");
-        }
+        checkPassedValues();
 
         getUserInfos();
 
@@ -85,18 +75,22 @@ public class ProjectsUploadActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(ProjectsUploadActivity.this, "Você não completou uma das etapas", Toast.LENGTH_SHORT).show();
                 }
-//                Boolean projectNameCheck = projectName.getText().toString().matches("");
-//                Boolean professorNameCheck = professorName.getText().toString().matches("");
-//                Boolean projectResumeCheck = projectResume.getText().toString().matches("");
-//                Boolean projectContactCheck = projectContact.getText().toString().matches("");
-//                if (projectNameCheck == true || professorNameCheck == true || projectResumeCheck == true || projectContactCheck == true){
-//                    Toast.makeText(ProjectsUploadActivity.this, "Um ou mais campos estao vazios", Toast.LENGTH_SHORT).show();
-//                }else{
-////                    openImage();
-//                    canUpload = true;
-//                }
             }
         });
+    }
+
+    public void checkPassedValues(){
+        if (getIntent().getBooleanExtra("keyusername", false) == true){
+            passedUserName = "None";
+        }else{
+            passedUserName = getIntent().getStringExtra("keyusername");
+        }
+
+        if (getIntent().getBooleanExtra("keyra", false) == true){
+            passedRa = "None";
+        }else{
+            passedRa = getIntent().getStringExtra("keyra");
+        }
     }
 
     private void openImage() {

@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/strongbluebackground"
+    android:background="@color/blueupdated"
     tools:context=".PiPostsActivity">
-
 
     <LinearLayout
         android:id="@+id/mainlayout"
@@ -21,6 +20,7 @@
             android:gravity="center"
             android:text="Projetos em andamento"
             android:textColor="@color/white"
+            android:fontFamily="@font/zrnic"
             android:textSize="30dp" />
 
         <LinearLayout

@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/blueicon"
+    android:background="@color/blueupdated"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="8dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@color/blueicon">
+        android:layout_height="350dp"
+        android:background="@color/blueupdated">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -91,6 +91,14 @@
                     android:textColor="@color/white"
                     android:textSize="30dp"/>
 
+                <ImageView
+                    android:id="@+id/postuploadedimage"
+                    android:layout_width="250dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/loadingicon"/>
+
                 <TextView
                     android:id="@+id/currentdateitem"
                     android:layout_width="wrap_content"
@@ -100,6 +108,7 @@
                     android:textSize="15dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="end"/>
+
             </LinearLayout>
 
 

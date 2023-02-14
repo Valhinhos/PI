@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bluedetailedbg"
+    tools:context=".InfoSegActivity">
+
+    <ScrollView
+        android:id="@+id/Tela1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="ExtraText">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/tecsegtralogo"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" Técnico em Segurança do Traballho:"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nObjetivo:"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n Formar profissionais com competências para atuar e intervir em seu campo de trabalho, capazes de auxiliar na elaboração,
+            \n implantação e implementação da Política e de Programas de Saúde e Segurança do Trabalho, além de auxiliar e executar medidas de controle de riscos ocupacionais por meio de ações,
+            \n programas de saúde e segurança do trabalho,realizar avaliação e medidas de controle de riscos físicos, químicos e biológicos, realizar avaliação e medidas de controle de riscos ergonômicos e de acidentes,
+           \n monitorar riscos ocupacionais, executar ações de investigação, registro e controle de incidentes, acidentes de trabalho e doenças ocupacionais, prestar assistência de primeiros socorros, auxiliar a elaboração,
+           \n implantação e implementação de planos de emergência/urgência, planejar e executar ações educativas em saúde e segurança do trabalho e auxiliar a gestão integrada da organização, bem como ser responsável pela análise
+           \n e avaliação do ambiente de trabalho, das instalações e dos processos laborais, visando à prevenção de incidentes, acidentes e doenças ocupacionais.\n"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Requisitos:\n"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Apresentar CPF ou documento com número de registro de
+CPF(Frente e Verso)\n
+Apresentar comprovante de endereço residencial (expedido em no máximo 3 meses)
+• Ser maior de 15 anos\n
+• Ter concluído o Ensino Médio ou estar cursando este nível de ensino\n"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carga Horária\n"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1200 Horas"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="normal"/>
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="O que o aluno vai aprender?\n"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n•Auxiliar a elaboração, implantação e implementação da Política de Saúde e Segurança do Trabalho;
+\n• Realizar avaliação e medidas de controle de riscos físicos, químicos e biológicos;
+\n• Realizar avaliação e medidas de controle de riscos ergonômicos e de acidentes;
+\n• Monitorar riscos ocupacionais;
+\n• Executar ações de investigação, registro e controle de incidentes, acidentes de trabalho e doenças ocupacionais;
+\n• Auxiliar e executar ações de elaboração dos programas de saúde e segurança do trabalho;
+\n• Auxiliar na implantação e implementação dos programas de saúde e segurança do trabalho;
+\n• Prestar assistência de primeiros socorros;
+\n. Auxiliar a elaboração, implantação e implementação de planos de emergência/urgencia;
+\n• Planejar ações educativas em saúde e segurança do trabalho;
+\n• Executar ações educativas em saúde e segurança do trabalho;
+\n• Auxiliar a gestão integrada da organização."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nComo é o mercado de trabalho?"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nO segmento de Saúde e Segurança do Trabalho tem sofrido grandes mudanças nos tempos atuais e está em constante evolução.
+A atualização das
+Normas Regulamentadoras/Jurídicas que norteiam o setor vem no sentido de uma gestão de documentos e ações segurança de forma constante e presente no dia a dia das entidades/instituições.
+O propósito das atualizações é um setor mais efetivo visando proteger os trabalhadores e as entidades/instituições e diminuir a sobrecarga no Instituto Nacional de Seguridade Social (INSS).
+Nesse sentido o curso de Técnico em Segurança do Trabalho se justifica pelo potencial crescimento do seguimento no Brasil
+e também pela permanente necessidade de profissionais habilitado para atender as complexas necessidades de Saúde e Segurança no Trabalho"
+                android:textColor="@color/white"
+                android:textStyle="normal"
+                android:textSize="16sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="\nQuem é esse profissional?"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n O profissional Técnico em Segurança do Trabalho executa atividades preventivas, relacionadas à segurança, saúde e ao bem estar dos trabalhadores de uma instituição.
+ Este profissional pode tanto em instituições públicas quanto privadas de diversos seguimentos tais como as áreas de comercio de bens serviços, turismo, industrias e organizações públicas relacionando-se com equipes de diversos setores
+. O Técnico em Segurança do Trabalho assume especial relevância por ser um dos profissionais responsáveis por assegurar que os ambientes de trabalho estejam seguros, de modo a preservar a vida e o bem estar das pessoas.
+ Este profissional desempenha suas atividades de forma pró ativa, com a capacidade de solucionar problemas e com bom relacionamento interpessoal interagindo com diferentes equipes de trabalho no decorrer do processos organizacionais.
+"                           android:textColor="@color/white"
+                android:textStyle="normal"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="\nQuais são as marcas formativas do aluno senac?"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n Domínio técnico-científico, visão crítica, atitude empreendedora, sustentável e colaborativa, com foco em resultados.
+ Essas marcas reforçam o compromisso da Instituição com a formação integral do ser humano, considerando aspectos relacionados ao mundo do trabalho e ao exercício da cidadania.
+ Essa perspectiva propicia o comprometimento do aluno com a qualidade do trabalho, o desenvolvimento de uma visão ampla e consciente sobre sua atuação profissional e sobre sua capacidade de transformação da sociedade.
+"               android:textColor="@color/white"
+                android:textStyle="normal"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" \nQuais são os diferenciais do curso?"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n Instituição de renome para a Educação Profissional; Conhecimento de práticas acordadas nas competições Internacionais; Atendimento Consultivo para construção de um Itinerário Formativo para além do curso."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"/>
+            <Button
+                android:id="@+id/voltarseg"
+                android:layout_width="122dp"
+                android:layout_height="wrap_content"
+                android:text="VOLTAR"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/orange_strong"
+                app:cornerRadius="20dp"
+                android:layout_gravity="center"
+                android:onClick="goBack"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

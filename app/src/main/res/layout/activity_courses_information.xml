@@ -1,10 +1,256 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bluebackground"
-    tools:context=".CoursesInfoActivity">
+    android:background="@color/blueupdated"
+    tools:context=".CoursesInfoActivity" >
 
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/logosenac"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            app:srcCompat="@drawable/logo_senac_png" />
+
+        <ImageView
+            android:id="@+id/image_ti"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="70dp"
+            app:srcCompat="@drawable/tectilogo"
+            android:layout_below="@id/logosenac"/>
+
+
+        <TextView
+            android:id="@+id/cursos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="100dp"
+            android:text="CURSOS"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logosenac"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="104dp"
+            android:layout_marginRight="55dp"
+            android:onClick="tecnicoTI"
+            android:text="Técnico em Informática "
+            android:textColor="@color/white"
+            android:textSize="19sp" />
+
+        <ImageView
+            android:id="@+id/image_en"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/image_ti"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/tecenflogo" />
+        <TextView
+            android:id="@+id/en"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="45dp"
+            android:text="Técnico em Enfermagem"
+            android:textSize="19sp"
+            android:layout_below="@id/image_ti"
+            android:textColor="@color/white"
+            android:onClick="tecnicoEN"/>
+        <ImageView
+            android:id="@+id/image_agro"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/image_en"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/tecagrologo" />
+        <TextView
+            android:id="@+id/agro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="45dp"
+            android:text="Técnico em Agronegócio"
+            android:textSize="19sp"
+            android:layout_below="@id/image_en"
+            android:textColor="@color/white"
+            android:onClick="tecnicoagro"/>
+        <ImageView
+            android:id="@+id/image_rh"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/image_agro"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/tecrhlogo" />
+        <TextView
+            android:id="@+id/rh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="110dp"
+            android:text="Técnico em"
+            android:textSize="19sp"
+            android:layout_below="@id/image_agro"
+            android:textColor="@color/white"
+            android:onClick="tecnicorh"/>
+
+
+        <TextView
+            android:id="@+id/rh2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_agro"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="72dp"
+            android:layout_marginRight="74dp"
+            android:onClick="tecnicorh"
+            android:text="Recursos Humanos"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            />
+
+        <ImageView
+            android:id="@+id/image_est"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/image_rh"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/tecestlogo"/>
+        <TextView
+            android:id="@+id/est"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="70dp"
+            android:text="Técnico em Estética"
+            android:textSize="19sp"
+            android:layout_below="@id/image_rh"
+            android:textColor="@color/white"
+            android:onClick="tecnicoest"/>
+        <ImageView
+            android:id="@+id/image_adm"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/image_est"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/tecadmlogo" />
+        <TextView
+            android:id="@+id/adm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="40dp"
+            android:text="Técnico em Administração"
+            android:textSize="19sp"
+            android:layout_below="@id/image_est"
+            android:textColor="@color/white"
+            android:onClick="tecnicoadm" />
+
+        <ImageView
+            android:id="@+id/image_marketing"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/image_adm"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/tecmarketinglogo" />
+
+        <TextView
+            android:id="@+id/marketing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp"
+            android:text="Técnico em Marketing"
+            android:textSize="19sp"
+            android:layout_below="@id/image_adm"
+            android:textColor="@color/white"
+            android:onClick="tecnicomarketing" />
+
+        <ImageView
+            android:id="@+id/image_segtrabalho"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/image_marketing"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/tecsegtralogo" />
+
+        <TextView
+            android:id="@+id/segtrabalho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_marketing"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="91dp"
+            android:onClick="tecnicosegtrabalho"
+            android:text="Técnico em"
+            android:textColor="@color/white"
+            android:textSize="19sp" />
+
+        <TextView
+            android:id="@+id/segtrabalho2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_marketing"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="73dp"
+            android:layout_marginRight="42dp"
+            android:onClick="tecnicosegtrabalho"
+            android:text="Segurança do Trabalho"
+            android:textColor="@color/white"
+            android:textSize="19sp" />
+
+        <ImageView
+            android:id="@+id/image_log"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/image_segtrabalho"
+            app:srcCompat="@drawable/tecloglogo" />
+
+        <TextView
+            android:id="@+id/log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp"
+            android:text="Técnico em Logística"
+            android:textSize="19sp"
+            android:layout_below="@id/image_segtrabalho"
+            android:textColor="@color/white"
+            android:onClick="tecnicolog" />
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

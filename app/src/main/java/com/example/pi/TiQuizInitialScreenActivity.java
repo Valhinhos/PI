@@ -6,22 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class LogQuizInitialScreenActivity extends AppCompatActivity {
+public class TiQuizInitialScreenActivity extends AppCompatActivity {
 
-    String passedquiz, passedRa, passedUserName;
+    String passedquiz = "quizti", passedRa, passedUserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_quiz_initial_screen);
+        setContentView(R.layout.activity_ti_quiz_initial_screen);
 
-        passedquiz = getIntent().getStringExtra("keyquiz");
         passedRa = getIntent().getStringExtra("keyra");
         passedUserName = getIntent().getStringExtra("keyusername");
     }
 
-    public void startQuizLog(View v) {
-        Intent intent = new Intent(LogQuizInitialScreenActivity.this, QuizActivity.class);
+    public void startQuizTi(View v) {
+        Intent intent = new Intent(TiQuizInitialScreenActivity.this, QuizActivity.class);
         intent.putExtra("keyra", passedRa);
         intent.putExtra("keyusername", passedUserName);
         intent.putExtra("keyquiz", passedquiz);
@@ -29,9 +28,8 @@ public class LogQuizInitialScreenActivity extends AppCompatActivity {
     }
 
     public void openRankingScreen(View v){
-        Intent intent = new Intent(LogQuizInitialScreenActivity.this, QuizRankingActivity.class);
-        intent.putExtra("rankingmode", "rankinglog");
+        Intent intent = new Intent(TiQuizInitialScreenActivity.this, QuizRankingActivity.class);
+        intent.putExtra("rankingmode", "rankingti");
         startActivity(intent);
     }
-
 }

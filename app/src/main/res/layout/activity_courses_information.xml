@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="160dp"
+            android:layout_marginStart="160dp"
             android:layout_marginTop="40dp"
             android:layout_marginRight="100dp"
             android:text="CURSOS"
@@ -77,17 +77,17 @@
                 android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textSize="30dp"
-                android:textStyle="bold" />
+                android:textSize="30sp"
+                android:textStyle="bold"/>
             <TextView
                 android:id="@+id/obj_curso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="200dp"
+                android:layout_marginEnd="200dp"
                 android:text="Objetivo do Curso:"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <TextView

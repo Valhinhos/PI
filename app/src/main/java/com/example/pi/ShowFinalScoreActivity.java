@@ -18,8 +18,9 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
 
     TextView name, score, observation;
     LinearLayout pontuationBox;
-    String passedName, passedScore;
+    String passedName, passedScore, totalQuestions;
     LottieAnimationView scoreLottie;
+    int calcTQ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,9 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
 
         passedName = getIntent().getStringExtra("keyname");
         passedScore = getIntent().getStringExtra("keyscore");
+//        totalQuestions = getIntent().getStringExtra("keytotalquestions");
+        totalQuestions = "10";
+        calcTQ = Integer.parseInt(totalQuestions) / 100 *  60;
 
         score.setText(passedScore);
 
@@ -55,13 +59,13 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
 
     public void setObservationText(){
         int intPassedScore = Integer.parseInt(passedScore);
-        if (intPassedScore >= 60){
+        if (intPassedScore >= calcTQ){
             observation.setText("Pefeito!");
             score.setTextColor(Color.rgb(146,208,80));
-        }else if (intPassedScore >= 30){
+        }else if (intPassedScore >= calcTQ){
             observation.setText("Estude mais!");
             score.setTextColor(Color.rgb(243,226,186));
-        }else if (intPassedScore <= 29){
+        }else if (intPassedScore <= calcTQ){
             observation.setText("Que pena!!!");
             score.setTextColor(Color.rgb(186,78,78));
         }
@@ -69,11 +73,11 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
 
     public void setBoxColor(){
         int intPassedScore = Integer.parseInt(passedScore);
-        if (intPassedScore >= 60){
+        if (intPassedScore >= calcTQ){
            pontuationBox.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(146,208,80)));
-        }else if (intPassedScore >= 30){
+        }else if (intPassedScore >= calcTQ){
             pontuationBox.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,217,102)));
-        }else if (intPassedScore <= 29){
+        }else if (intPassedScore <= calcTQ){
             pontuationBox.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,107,107)));
         }
     }

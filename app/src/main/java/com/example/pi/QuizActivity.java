@@ -13,9 +13,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pi.models.DatabaseRA;
+//import com.example.pi.models.DatabaseRA;
 import com.example.pi.models.QuestionsLog;
 import com.example.pi.models.QuestionsRH;
+import com.example.pi.models.QuestionsTI;
 import com.example.pi.models.StudentScore;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -25,8 +26,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     Button answer1,answer2,answer3,answer4;
     LinearLayout linearLayout;
     ProgressBar progressBar;
-    DatabaseRA myDB;
-    String passedUserName = "", passedQuiz;
+    String passedUserName = "", passedQuiz, passedRa, totalQuestionsString;
 
     int score = 0;
     int totalquestions;
@@ -38,13 +38,19 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         ///atribui as views as variaveis
-        myDB = new DatabaseRA(this);
+//        myDB = new DatabaseRA(this);
         passedQuiz = getIntent().getStringExtra("keyquiz");
+        passedRa = getIntent().getStringExtra("keyra");
+
         if (passedQuiz.equals("quizlog")){
             totalquestions = QuestionsLog.question.length;
         }else if (passedQuiz.equals("quizrh")){
             totalquestions = QuestionsRH.question.length;
+        }else if (passedQuiz.equals("quizti")){
+            totalquestions = QuestionsTI.question.length;
         }
+
+        totalQuestionsString = String.valueOf(totalquestions);
 
         question = findViewById(R.id.perguntatv);
         answer1 = findViewById(R.id.resposta1);
@@ -79,7 +85,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private void loadNewQuestion() {
         prog();
         numberQuestions.setText((currentQuestionIndex + 1) + "/" + totalquestions);
-        Toast.makeText(this, String.valueOf(currentQuestionIndex), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, String.valueOf(currentQuestionIndex), Toast.LENGTH_SHORT).show();
 
         if((currentQuestionIndex) == totalquestions){
             finishQuiz();
@@ -139,7 +145,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             getName = "Anônimo";
         String passStatus = "";
 
-        StudentScore studentScore = new StudentScore(getName, score, getRaFromDB());
+        StudentScore studentScore = new StudentScore(getName, score, passedRa);
 
         String id = "id" + System.currentTimeMillis();
 
@@ -147,6 +153,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             FirebaseDatabase.getInstance().getReference().child("rankinglogquiz").child(id).setValue(studentScore);
         }else if (passedQuiz.equals("quizrh")){
             FirebaseDatabase.getInstance().getReference().child("rankingrhquiz").child(id).setValue(studentScore);
+        }else if (passedQuiz.equals("quizti")){
+            FirebaseDatabase.getInstance().getReference().child("rankingtiquiz").child(id).setValue(studentScore);
         }
 
         if(score > totalquestions*0.60){
@@ -154,16 +162,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         }else{
             passStatus = "Failed";
         }
-
         passScore(score);
-
-
-//        new AlertDialog.Builder(this)
-//                .setTitle(passStatus)
-//                .setMessage("Score is " + score + "out of" + totalquestions)
-//                .setPositiveButton("restart", ((dialogInterface, i) -> restartQuiz()))
-//                .setCancelable(false)
-//                .show();
     }
 
     private void restartQuiz() {
@@ -198,27 +197,31 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         }else if (passedQuiz.equals("quizrh")){
             if(selectedAnswer.equals(QuestionsRH.correctAnswers[currentQuestionIndex])){
                 score++;
-
+            }
+        }else if (passedQuiz.equals("quizti")) {
+            if (selectedAnswer.equals(QuestionsTI.correctAnswers[currentQuestionIndex])) {
+                score++;
             }
         }
         currentQuestionIndex++;
         loadNewQuestion();
     }
 
-    public String getRaFromDB(){
-        Cursor res = myDB.getAllData();
-        if (res.getCount() == 0){
-        }
-        StringBuffer buffer = new StringBuffer();
-//        while (res.moveToNext()){
-//            buffer.append(res.getString(0));
+//    public String getRaFromDB(){
+//        Cursor res = myDB.getAllData();
+//        if (res.getCount() == 0){
 //        }
-        res.moveToNext();
-        buffer.append(res.getString(0));
-
-        String ra_text = buffer.toString();
-        return ra_text;
-    }
+//        StringBuffer buffer = new StringBuffer();
+////        while (res.moveToNext()){
+////            buffer.append(res.getString(0));
+////        }
+//        res.moveToNext();
+//        buffer.append(res.getString(0));
+//
+//        String ra_text = buffer.toString();
+//        return ra_text;
+//    }
+//concertar erro no nome usuário apos acabar o quiz
 
     public void passScore(int score){
         String getName = passedUserName;
@@ -228,6 +231,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(QuizActivity.this, ShowFinalScoreActivity.class);
         intent.putExtra("keyscore", scoreString);
         intent.putExtra("keyname", getName);
+        intent.putExtra("keytotalquestions", totalQuestionsString);
         restartQuiz();
         startActivity(intent);
     }

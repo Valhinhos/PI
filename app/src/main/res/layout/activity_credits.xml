@@ -85,6 +85,14 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="10dp"
-        app:srcCompat="@drawable/logo_senac_png" />
+        app:srcCompat="@drawable/logo_senac_png"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="versão beta: 0.8.5.6"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"/>
 
 </RelativeLayout>

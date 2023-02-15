@@ -231,13 +231,14 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     public void passScore(int score){
         String getName = passedUserName;
+        String passedQuizS = passedQuiz;
         String scoreString = String.valueOf(score);
         if (getName.equals(""))
             getName = "Anônimo";
         Intent intent = new Intent(QuizActivity.this, ShowFinalScoreActivity.class);
         intent.putExtra("keyscore", scoreString);
         intent.putExtra("keyname", getName);
-        intent.putExtra("keytotalquestions", totalQuestionsString);
+        intent.putExtra("keyquiz", passedQuizS);
         restartQuiz();
         startActivity(intent);
     }

@@ -70,11 +70,11 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         answer2.setOnClickListener(this);
         answer3.setOnClickListener(this);
         answer4.setOnClickListener(this);
-    ///coloca o numero de perguntas do quiz
-    numberQuestions.setText(currentQuestionIndex + "/" + totalquestions);
+        ///coloca o numero de perguntas do quiz
+        numberQuestions.setText(currentQuestionIndex + "/" + totalquestions);
         prog();
-    ///carrega as perguntas
-    loadNewQuestion();
+        ///carrega as perguntas
+        loadNewQuestion();
     }
 
     private void prog() {
@@ -101,12 +101,17 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             answer3.setText(QuestionsLog.choices[currentQuestionIndex][2]);
             answer4.setText(QuestionsLog.choices[currentQuestionIndex][3]);
         }else if (passedQuiz.equals("quizrh")){
-
             question.setText(" '" + QuestionsRH.question[currentQuestionIndex] + "'");
             answer1.setText(QuestionsRH.choices[currentQuestionIndex][0]);
             answer2.setText(QuestionsRH.choices[currentQuestionIndex][1]);
             answer3.setText(QuestionsRH.choices[currentQuestionIndex][2]);
             answer4.setText(QuestionsRH.choices[currentQuestionIndex][3]);
+        }else if (passedQuiz.equals("quizti")){
+            question.setText(" '" + QuestionsRH.question[currentQuestionIndex] + "'");
+            answer1.setText(QuestionsTI.choices[currentQuestionIndex][0]);
+            answer2.setText(QuestionsTI.choices[currentQuestionIndex][1]);
+            answer3.setText(QuestionsTI.choices[currentQuestionIndex][2]);
+            answer4.setText(QuestionsTI.choices[currentQuestionIndex][3]);
         }
 
         answer1.setBackgroundColor(Color.rgb(255,230,153));

@@ -4,12 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blueupdated"
+    android:background="@drawable/bluedetailedbg"
     tools:context=".CoursesInfoActivity" >
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/cursos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="100dp"
+            android:text="CURSOS"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/logosenac"
@@ -28,20 +41,6 @@
             app:srcCompat="@drawable/tectilogo"
             android:layout_below="@id/logosenac"/>
 
-
-        <TextView
-            android:id="@+id/cursos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="160dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="100dp"
-            android:text="CURSOS"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-
         <TextView
             android:id="@+id/ti"
             android:layout_width="wrap_content"
@@ -50,135 +49,1993 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="104dp"
             android:layout_marginRight="55dp"
+            android:minHeight="48dp"
             android:onClick="tecnicoTI"
             android:text="Técnico em Informática "
             android:textColor="@color/white"
             android:textSize="19sp" />
+
+        <LinearLayout
+            android:id="@+id/tilayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/ti"
+            android:layout_marginTop="50dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/tectilogo" />
+
+            <TextView
+                android:id="@+id/logt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" Técnico em Técnologia da informação:"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/obj_curso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="200dp"
+                android:text="Objetivo do Curso:"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Formar profissionais com competências para atuar e intervir em seu campo de trabalho, capazes de planejar e executar processos de manutenção de computadores, responsáveis pela operação de redes locais de computadores, e desenvolver aplicativos computacionais para desktops, dispositivos móveis e internet."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Requisitos:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Apresentar comprovante de endereço residencial (expedido em no máximo 3 meses) "
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Ser maior de 14 anos "
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Apresentar registro de Certidão Civil"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Ter concluído ou estar cursando o Ensino Médio"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Carga Horária: 1200 horas"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="O que o aluno vai aprender?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Planejar e executar a montagem de computadores."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Planejar e executar a instalação de computadores."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Planejar e executar a manutenção de computadores."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Planejar e executar a instalação de redes locais de computadores."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Planejar e executar a manutenção de redes locais de computadores."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Planejar e executar a instalação, a configuração e o monitoramento de sistemas operacionais de redes locais (servidores)."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Conceber, analisar e planejar o desenvolvimento de software."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Executar os processos de codificação, manutenção e documentação de aplicativos computacionais para desktops."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Executar os processos de codificação, manutenção e documentação de aplicativos computacionais para dispositivos móveis."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Executar os processos de codificação, manutenção e documentação de aplicativos computacionais para internet."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Executar teste e implantação de aplicativos computacionais."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Desenvolver e organizar elementos estruturais de sites."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Manipular e otimizar imagens vetoriais, bitmaps gráficos e elementos visuais de navegação para web."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Como é o Mercado de trabalho?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Com o avanço da tecnologia da informação nos dias atuais, se faz necessário o profissional em informática."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Hoje, praticamente tudo está conectado e interligado utilizando recursos ou ferramentas da tecnologia da informação. O uso da tecnologia cresceu muito entre os brasileiros, principalmente nos jogos, redes sociais e aplicações usadas em dispositivos móveis. O profissional de TI atua em organizações públicas e privadas de qualquer segmento, tais como da área do comércio, de serviços, da indústria, de consultoria, de ensino e pesquisa, por meio da prestação de serviços autônomos, temporários ou contrato efetivo. "
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Quem é esse Profissional?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="O Técnico em Informática é responsável pelo planejamento e execução dos processos de manutenção de computadores e pela operação de redes locais de computadores. Desenvolve aplicativos computacionais, adotando normas técnicas, de qualidade, de saúde, de segurança do trabalho e preservação ambiental no desempenho de sua função. Trabalha em equipe, estabelece relações interpessoais construtivas e compreende o contexto em que está inserido, demonstrando capacidade propositiva e criativa."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Quais são as marcas formativas do Aluno Senac?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Dominio técnico-cientifico, visão crítica, atitude empreendedora, sustentável e colaborativa, atuando com foco em resultados."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Quais são os diferenciais do curso?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="1 aluno por computador, o que possibilita um maior entendimento do conteúdo."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Disciplinas atualizadas de acordo com o mercado de trabalho."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Prática em montagem e manutenção de computadores."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Prática em criação de sites."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Prática em criação de aplicativos para celular."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Prática em redes de computadores (criação e manutenção)."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Senac como instituição de renome para a Educação Profissional, há 74 anos no mercado."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Conhecimento de práticas abordadas nas competições internacionais."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Atendimento Consultivo para construção de um Itinerário Formativo para além do curso."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Plano de Curso desenvolvido por profissionais sintonizados com as tendências do segmento."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Docentes com experiência profissional na área."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Desenvolvimento de competências que envolvem a participação dos alunos na resolução de problemas."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Certificado com validade nacional e reconhecimento de mercado."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Mínimo de 60% da CH do curso em atividades práticas que simulam a atividade profissional."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
 
         <ImageView
             android:id="@+id/image_en"
             android:layout_width="140dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/image_ti"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/tilayout"
+            android:layout_marginTop="50dp"
             app:srcCompat="@drawable/tecenflogo" />
+
         <TextView
             android:id="@+id/en"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tilayout"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="90dp"
             android:layout_marginRight="45dp"
+            android:minHeight="48dp"
+            android:onClick="tecnicoEN"
             android:text="Técnico em Enfermagem"
-            android:textSize="19sp"
-            android:layout_below="@id/image_ti"
             android:textColor="@color/white"
-            android:onClick="tecnicoEN"/>
+            android:textSize="19sp" />
+
+        <LinearLayout
+            android:id="@+id/enlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/en"
+            android:layout_marginTop="50dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/tecenflogo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" Técnico em Enfermagem:"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Objetivo do curso:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Formar profissionais com competências para atuar e intervir em seu campo de trabalho, com foco em resultados."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Promover o desenvolvimento do aluno por meio de ações que articulem e mobilizem conhecimentos e habilidades, valores e atitudes de forma potencialmente criativa e que estimule o aprimoramento contínuo."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Estimular, por meio de situações de aprendizagens, atitudes empreendedoras, sustentáveis e colaborativas nos alunos. Articular as competências do perfil profissional com projetos integradores e outras atividades laborais que estimulem a visão crítica e a tomada de decisão para resolução de problemas."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Promover uma avaliação processual e formativa com base em indicadores das competências, que possibilitem a todos os envolvidos no processo educativo a verificação da aprendizagem. Incentivar a pesquisa como principio pedagógico e para consolidação do domínio técnico-científico, utilizando recursos didáticos e bibliográficos."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Requisitos:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Apresentar CPF ou documento com número de registro (Frente e Verso);"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Apresentar comprovante de endereço residencial (emitido em no máximo 3 meses);"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Ser maior de 16 anos;"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Apresentar registro de Certidão Civil;"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Apresentar documento de conclusão do Ensino Médio ou de estar cursando este nível de ensino (qualquer ano) ou pela Educação de Jovens e Adultos = EJA (cursos presenciais, semipresenciais ou a
+distância ou exames supletivos)."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Carga Horária: 1600 horas"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="O que o aluno vai aprender?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="0dp"
+                android:text="Executar ações de prevenção, promoção, proteção, reabilitação e recuperação da saúde.
+Participar da implementação da sistematização da assistência de enfermagem.
+Administrar medicamentos, soluções e imunobiológicos.
+Prestar cuidados de enfermagem de higiene, conforto e monitoramento das condições clínicas.
+Prestar assistência de enfermagem em saúde mental.
+Prestar assistância de enfermagem no período gestacional, parto, puerpério e ao recém-nascido.
+Prestar assistência de enfermagem no período perioperatório.
+Atuar em programas de qualidade e certificação hospitalar.
+Administrar medicamentos de alta vigilância e hemocomponentes.
+Prestar assistência de enfermagem em urgência e emergência.
+Prestar assistência de enfermagem em cuidados críticos.
+Prestar assistência de enfermagem em cuidados paliativos."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Quem é esse profissional?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="0dp"
+                android:text="O Técnico em Enfermagem exerce atividade de nível médio, envolvendo orientação e acompanhamento do trabalho de Enfermagem em grau auxiliar, e participacão no planejamento da assistência de Enfermagem, prestando assistência tanto no ambiente intra hospitalar quanto no ambiente extra hospitalar. A sua atuação é grandiosa e permite trabalhar na educação, promoção, prevenção e reabilitação dos processos saúde, doença em todos os ciclos da vida."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="0dp"
+                android:text="O mercado de trabalho para este profissional é vasto e poderá atuar em Clinicas, Hospitais (Centro Cirúrgicos, Pronto Atendimento, Berçário,
+ UTI CME, dentre outros) Spas, Home Care, Laboratórios de Análises Clinicas, Ambulatório de empresas, Unidades Básicas de Saúde, SAMU, Escolas,
+Instituições de Longa permanência, nos diferentes graus de complexidade do ambiente e gravidade dos clientes nos diversos serviços de saúde."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="0dp"
+                android:text="Quais são as marcas formativas do aluno senac?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:text="Domínio técnico-científico, visão crítica, atitude empreendedora, sustentável e colaborativa, com foco em resultados. Essas marcas reforçam o compromisso da Instituição com a formação integral do ser humano,
+ considerando aspectos relacionados ao mundo do trabalho e ao exercício da cidadania. Essa perspectiva propicia o comprometimento do aluno com a qualidade do trabalho, o desenvolvimento de uma visão ampla e consciente sobre sua atuação profissional e sobre sua capacidade de transformação da sociedade."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="0dp"
+                android:text="Quais são os diferenciais do curso?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:text="O Senac é uma instituição de renome para a educação profissional, que tem conhecimento das práticas abordadas nas competições internacionais e ainda o atendimento consultivo para construção de um itinerário formativo para jornada profissional."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:text="O modelo pedagógico do SENAC se baseia no desenvolvimento de atividades práticas, que alinhadas ao embasamento teórico, permitem que as atividades desenvolvidas pelos alunos sejam direcionadas ao mercado de trabalho,
+ de forma a encaminhá-lo para o sucesso profissional."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="0dp"
+                android:text="Sendo assim, o aluno é estimulado a pensar, agir e aprender com autonomia diante de situações reais do mercado de trabalho.A educação profissional do SENAC, além de desenvolver os alunos do ponto de vista profissional, oferta uma educação transformadora, de forma a trazer impacto positivo em suas vidas, na comunidade em que vivem e para a sociedade como um todo."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Plano de Curso atualizado por profissionais sintonizados com as tendências do segmento."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Docentes com experiência profissional na área."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Aulas dinâmicas e interativas, com simulações reais de trabalho que privilegiam a formação de um profissional crítico e criativo."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Desenvolvimento de competências que envolvem a participação dos alunos em projetos e resolução de problemas."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Mínimo de 60% da CH do curso em atividades práticas que simulam a atividade profissional."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Atividades em Laboratório especializado para as práticas."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Construção de um Itinerário Formativo para além do curso."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Diploma válido em todo o território nacional."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
         <ImageView
             android:id="@+id/image_agro"
             android:layout_width="140dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/image_en"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/enlayout"
+            android:layout_marginTop="50dp"
             app:srcCompat="@drawable/tecagrologo" />
+
         <TextView
             android:id="@+id/agro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/enlayout"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="90dp"
             android:layout_marginRight="45dp"
+            android:minHeight="48dp"
+            android:onClick="tecnicoagro"
             android:text="Técnico em Agronegócio"
-            android:textSize="19sp"
-            android:layout_below="@id/image_en"
             android:textColor="@color/white"
-            android:onClick="tecnicoagro"/>
+            android:textSize="19sp" />
+
+        <LinearLayout
+            android:id="@+id/agrolayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/agro"
+            android:layout_marginTop="50dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/tecagrologo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" Técnico em Agronomia:"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carga Horária:"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1200 horas\n
+As aulas são de segunda a sexta das 19:00 às 22:00."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nosso curso tem uma duração média de 1 ano e 8 meses aproximadamente."
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Competências que compõem o perfil do Técnico em Agronegócio: "
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="•Promover o agronegócio como sistema.\n
+• Promover a gestão das principais cadeias produtivas do setor agrícola e florestal.\n
+• Promover a gestão das principais cadeias produtivas do setor da pecuária. \n
+• Promover o uso de soluções tecnológicas para o agronegócio.\n
+• Executar ações para promoção e gerenciamento da agricultura familiar.\n
+• Executar ações para promoção e gerenciamento das associações e cooperativas rurais.\n
+• Executar a gestão econômica e financeira para o agronegócio de forma sustentável. \n
+• Auxiliar na comercialização do agronegócio. \n
+• Participar na elaboração e execução do plano de marketing do agronegócio da organização. \n
+• Auxiliar todos os processos logísticos do agronegócio. \n
+• Auxiliar a execução de ações aos processos de gestão de pessoas no agronegócio.\n
+• Promover a redução de impactos ambientais no agronegócio. \n
+• Administrar e gerenciar propriedades rurais e agroindustriais.\n
+ "
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+            <TextView
+                android:id="@+id/Tela22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Como é o Mercado de Trabalho?"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="O agronegócio é um dos principais setores da economia brasileira,  correspondendo a mais de 21% do Produto Interno Bruto (PIB), segundo o  governo federal.
+Isso faz com que as profissões ligadas ao agronegócio  sempre estejam aquecidas no mercado de trabalho.
+No entanto, a  expansão do setor não tem encontrado profissionais devidamente  qualificados para atuarem na produção, gestão, distribuição e  processamento dos produtos do campo.
+A área oferece vários campos de  atuação.
+Entre essas, o Técnico em Agronegócio, que atua na gestão e  administração das empresas agrícolas, podendo trabalhar em empresas  comerciais,
+estabelecimentos agroindustriais, serviços de assistência  técnica, extensão rural e pesquisa, revendas, consultorias, como tutor e  técnico."
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+        </LinearLayout>
+
         <ImageView
             android:id="@+id/image_rh"
             android:layout_width="140dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/image_agro"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/agrolayout"
+            android:layout_marginTop="50dp"
             app:srcCompat="@drawable/tecrhlogo" />
+
         <TextView
             android:id="@+id/rh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="110dp"
-            android:text="Técnico em"
+            android:layout_marginTop="90dp"
+            android:layout_marginRight="80dp"
+            android:textAlignment="center"
+            android:text="Técnico em \n Recursos Humanos"
             android:textSize="19sp"
-            android:layout_below="@id/image_agro"
+            android:layout_below="@id/agrolayout"
             android:textColor="@color/white"
             android:onClick="tecnicorh"/>
 
-
-        <TextView
-            android:id="@+id/rh2"
+        <LinearLayout
+            android:id="@+id/rhlayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/image_agro"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="72dp"
-            android:layout_marginRight="74dp"
-            android:onClick="tecnicorh"
-            android:text="Recursos Humanos"
-            android:textColor="@color/white"
-            android:textSize="19sp"
-            />
+            android:orientation="vertical"
+            android:layout_below="@+id/rh"
+            android:layout_marginTop="50dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/tecrhlogo"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" Técnico em Recursos Humanos:"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Objetivo do curso:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Objetivo geral formar profissionais com competência para atuar e intervir no setor de Recursos Humanos, com atividades inerentes aos processos de recrutamento e seleção, treinamento e desenvolvimento, cargos e salários, avaliação de desempenho, além de atividades pertinentes às relações de trabalho e aos processos de admissão, folha de pagamento e demissão de colaboradores."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Promover o desenvolvimento do aluno por por meio de ações que articulam e mobilizem conhecimentos, habilidades, valores e atitudes de forma potencialmente criativa e estimulam o aprimoramento contínuo."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Estimular, por meio de situações de aprendizagens, atitudes empreendedoras, sustentáveis e colaborativas nos alunos."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Articular as competências do perfil profissional com projetos integradores e outras atividades laborais que estimulam visão crítica e tomada de decisão para resolução de problemas."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Promover avaliação processual e formativa com base em indicadores das competências que possibilitem, a todos os envolvidos no processo educativo, a verificação da aprendizagem."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Incentivar a pesquisa como princípio pedagógico e para consolidão do domínio técnico-científico, utilizando recursos didáticos e bibliográficos."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Requisitos:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apresentar CPF (frente e verso) ou* documento com número de registro."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apresentar comprovante de endereço residencial (expedido em no máximo 3 meses)."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Ser maior de 16 anos."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Ter concluído ou estar cursando o Ensino Médio."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Carga Horária: 800 horas"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="O que o aluno vai aprender?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Organizar e executar atividades administrativas nos processos de recursos humanos da organização."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Acompanhar e executar atividades nos processos de recrutamento, seleção e ambientação."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Representar o empregador em situações referentes as relações de trabalho."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apoiar e executar ações referentes às rotinas de admissão de colaboradores."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Acompanhar e controlar a entrega de benefícios legais e espontâneos concedidos pela organização."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Auxiliar na elaboração da folha de pagamento."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Realizar atividades no processo de elaboração, implantação e manutenção da política salarial e do plano de cargos e salários da organização."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Acompanhar e executar atividades nos processos de treinamento e desenvolvimento."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Auxiliar no planejamento e na realização de ações relacionadas ao ambiente organizacional."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Auxiliar na organização e realização de ações relacionadas ao ambiente organizacional."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Projeto Integrador Técnico em Recursos Humanos."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Como é o mercado de trabalho?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="A área de Recursos Humanos, apesar de recente, tem se desenvolvido rapidamente, ganhando força e espaço nas organizações. as relações de trabalho na atualidade denotam a necessidade de profissionais mais dinâmicos, atualizados e polivalentes, capazes de satisfazer as necessidades do mundo produtivo, buscando, além da remuneração, o reconhecimento de sua atuação profissional."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Quem é esse profissional?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="O Técnico em Recursos Humanos é o profissional que atua em organizações de pequeno, médio ou grande porte, públicas, privadas ou do terceiro setor, nas áreas responsáveis pela administração de pessoal e gestão de recursos humanos."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="É contratado como prestador de serviços ou empregado e trabalha com equipes multidisciplinares, interagindo com profissionais de diversos setores da organização."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Esse profissional executa atividades de apoio a processos de recrutamento e seleção, treinamento e desenvolvimento, cargos e salários, avalição de desempenho e ambiente organizacional. Realiza, ainda, atividades referentes ao sistema de informações de pessoal, auxiliando no cálculo de folha de pagamento, no controle de benefícios e procedimentos para admissão, movimetação e demissão de empregados, atuando em conformidade coma legislação vigente."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Quais são as marcas formativas do aluno senac?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Domínio técnico-científico, atitude empreendedora, sustentável e colaborativa, com foco em resultados."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Essas marcas reforçam o compromisso da Instituição com a formação integral do ser humano, considerando aspectos relacionados ao mundo do trabalho e ao exercício da cidadania. Essa perspectiva propicia o comprometimento do aluno com a qualidade do trabalho, o desenvolvimento de uma visão ampla e consciente sobre sua atuação profissional e sobre sua capacidade de transformação da sociedade. "
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Quais são os diferencias do curso?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Plano de Curso desenvolvido por profissionais sintonizados com as tendências do segmento."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Docentes com experiência profissional na área."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Aulas dinâmicas e interativas, com simulações reais de trabalho que privilegiam a formação de um profissional crítico e criativo."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Participação dos alunos em resolução de problemas."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Certificado com validade nacional e reconhecimento de mercado."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Mínimo de 60% da CH do curso em atividades práticas que simulam a atividade profissional."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/image_est"
             android:layout_width="140dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/image_rh"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/rhlayout"
+            android:layout_marginTop="50dp"
             app:srcCompat="@drawable/tecestlogo"/>
+
         <TextView
             android:id="@+id/est"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/rhlayout"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="90dp"
             android:layout_marginRight="70dp"
+            android:minHeight="48dp"
+            android:onClick="tecnicoest"
             android:text="Técnico em Estética"
-            android:textSize="19sp"
-            android:layout_below="@id/image_rh"
             android:textColor="@color/white"
-            android:onClick="tecnicoest"/>
+            android:textSize="19sp" />
+
+        <LinearLayout
+            android:id="@+id/estlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/est"
+            android:layout_marginTop="50dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/tecestlogo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" Técnico em Estética:"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Objetivo:"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="O curso Técnico em Estética habilita o profissional a realizar a avaliação, indicação e aplicação de procedimentos de estética, com o apoio de cosméticos e equipamentos específicos.\n
+O profissional pode atuar na promoção, prevenção, recuperação e manutenção da saúde da pele, executando suas atividades em conformidade com as normas da Vigilância Sanitária, com respeito às necessidades do cliente.
+:"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carga horária:"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1200 horas"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tenha uma formação ampla sobre procedimentos, visagismo e terapias, utilizando uma estrutura completa e incomparável.
+Aqui, você aprenderá como gerenciar equipes e executar procedimentos estéticos faciais, corporais e capilares mais complexos e, ainda,
+se preparará para atuar de forma empreendedora e criativa fazendo a diferença na sua trajetória profissional.
+ \n "              android:textColor="@color/white"
+                android:textStyle="normal"
+                android:textSize="16dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" • Plano de curso atualizado por profissionais sintonizados com as
+ tendências do mercado estético e dos cosméticos.\n
+ • Docentes com formação e experiência profissional na área.\n
+ • 60% da carga horária voltada para aulas práticas, dinâmicas e
+ interativas com atendimento a clientes, privilegiando uma formação
+ profissional crítica e criativa.\n
+ • Laboratórios equipados para vivência prática nos segmentos de estética
+ corporal, facial e capilar.
+ • Conhecimento de procedimentos e técnicas baseadas em competições
+ internacionais. \n
+ • Atendimento consultivo para construção de um itinerário formativo para
+além do curso.\n"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
         <ImageView
             android:id="@+id/image_adm"
             android:layout_width="140dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/image_est"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/estlayout"
+            android:layout_marginTop="50dp"
             app:srcCompat="@drawable/tecadmlogo" />
         <TextView
             android:id="@+id/adm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="90dp"
             android:layout_marginRight="40dp"
             android:text="Técnico em Administração"
             android:textSize="19sp"
-            android:layout_below="@id/image_est"
+            android:layout_below="@id/estlayout"
             android:textColor="@color/white"
             android:onClick="tecnicoadm" />
+
+        <LinearLayout
+            android:id="@+id/admlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/adm"
+            android:layout_marginTop="50dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/tecadmlogo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" Técnico em Administração:"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Objetivo do curso:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Formar profissionais com competências para atuarem e intervirem em seu campo de trabalho, capazes de controlar, organizar, executar, mapear, apoiar, realizar e atuar nos procedimentos relacionados a suprimentos, produção, recebimento, armazenagem, distribuição de produtos, entre outros processos que envolvem o fluxo logístico, com experiência na utilização de ferramentas de gestão, apoiando e fundamentando os processos decisórios de seus superiores, a fim de obter resultados para as organizações."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Requisitos:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apresentar CPF ou documento com número de registro de CPF."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apresentar comprovante de endereço residencial (expedido em no máximo 3 meses)."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Ser maior de 16 anos."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apresentar registro de certidão civil."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Ter concluído ou estar cursando o ensino médio."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Carga Horária: 800 horas"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="O que o aluno vai aprender?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Realizar procedimentos de conferência de equipamentos, materiais e produtos no processo logístico."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apoiar as atividades de compra de equipamentos, materiais, produtos e serviços."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Controlar e organizar sistemas de armazenagem."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Organizar estoques de equipamentos, materiais e produtos."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Organizar a distribuição de equipamentos, materiais, produtos e serviços."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Executar e controlar o transporte e a movimentação de equipamentos, materiais e produtos."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Mapear e estimar custos logísticos."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apoiar as atividades relacionadas aos processos logísticos."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Realizar atividades no Planejamento e Controle da Operação (PCO)."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Atuar na logística do Planejamento e Controle da Produção (PCP)."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Executar e monitorar processos de logística reversa e logística sustentável."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Projeto Integrador em Logística."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Como é o mercado de trabalho?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="A intensificação do movimento de globalização e integração dos mercados mundiais amplificou a necessidade de aperfeiçoamento dos processos empresariais, tornando-os inevitáveis para as organizações que atuam em um mercado de alta competitividade. "
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Tais processos são, inclusive, um importante fator à perenidade dessas organizações. Sob essa lógica, os processos empresariais relacionados à logística e distribuição tornam-se cada vez mais relevantes, pois a busca por alternativas sistematicamente mais eficientes e com menores custos é um dos objetivos centrais de empresas que se deparam com métodos de produção e ofertas de produtos cada vez mais similares."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Ou seja, o fator determinante do sucesso de boa parte de novos empreendimentos passa por uma distribuição mais eficaz e menos dispendiosa. Esse desafio exige um profissional qualificado que possua capacidade de exercer liderança, uma forte inclinação para resultados e visão sistêmica tanto de sua organização quanto do mercado no qual ela está inserida, entre outras habilidades."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="O profissional que atuará com logística deverá, portanto, propor e implantar soluções que contribuam para a otimização dos processos e tragam melhores resultados empresariais. Este profissional exerce uma importante função social ao contribuir para a oferta de bens e serviços a preços mais baixos e disponíveis em novos locais, com prazos cada vez menores."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Além disso, a utilização racional dos recursos, intimamente ligada a menores custos operacionais, atende diretamente a um dos grandes desafios da contemporaneidade, relacionado à sustentabilidade."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Quem é esse profissional?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="O técnico em logística atua no planejamento, operacionalização, segurança e controle da cadeia produtiva e seu fluxo logístico. Para isso, executa procedimentos relacionados a suprimentos, produção, recebimento, armazenagem e distribuição  de produtos, de modo a manter a qualidade e a viabilidade das operações logísticas, fazendo uso das tecnologias de informação e comunicação."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Exerce suas atividades em organizações de comércio de bens, serviços, turismo e demais setores da economia, tais como, transportadoras, centros de distribuição, hospitais e órgãos públicos, entre outras."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="O técnico em logística tem visão sistêmica e estratégica do processo, executando um trabalho integrado aos outros setores da organização, de modo a suprir os gestores com informações relevantes ao processo decisório, sobre a otimização, custos e a entrega de produtos e mercadorias, dentro dos padrões especificados."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Quais são as marcas formativas do aluno senac?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Domínio técnico-científico, visão crítica, atitude empreendedora, sustentável e colaborativa, com foco em resultados. Essas marcas reforçam o compromisso da Instituição com a formação integral ao ser humano, considerando aspectos relacionados ao mundo do trabalho e ao exercício da cidadania."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Essa perspectiva propicia o comprometimento do aluno com a qualidade do trabalho, o desenvolvimento de uma visão ampla e consciente sobre sua atuação profissional e sobre sua capacidade de transformação da sociedade."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Quais são os diferenciais do curso?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Plano de Curso desenvolvido por profissionais sintonizados com as tendências do segmento."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Docentes com experiência profissional na área."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Aulas dinâmicas e interativas, com simulações reais de trabalho que privilegiam a formação de um profissional crítico e criativo."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Participação dos alunos em resolução de problemas."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Certificado com validade nacional e reconhecimento de mercado."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Mínimo de 60% da CH do curso em atividades práticas que simulam a atividade profissional."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/image_marketing"
             android:layout_width="140dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/image_adm"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/admlayout"
+            android:layout_marginTop="50dp"
             app:srcCompat="@drawable/tecmarketinglogo" />
 
         <TextView
@@ -186,56 +2043,421 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="90dp"
             android:layout_marginRight="50dp"
             android:text="Técnico em Marketing"
             android:textSize="19sp"
-            android:layout_below="@id/image_adm"
+            android:layout_below="@id/admlayout"
             android:textColor="@color/white"
             android:onClick="tecnicomarketing" />
+
+        <LinearLayout
+            android:id="@+id/marklayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/marketing"
+            android:layout_marginTop="50dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/tecmarketinglogo" />
+
+            <TextView
+                android:id="@+id/markt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" Técnico em Marketing:"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Objetivo do Curso:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Formar profissionais com competências para atuar e intervir em seu campo de trabalho com foco em resultados."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Objetivos específicos:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Promover o desenvolvimento do aluno por meio de ações que articulam e mobilizem conhecimentos, habilidades, valores e atitudes de forma potencialmente criativa e que estimula o aprimoramento contínuo."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Estimular, por meio de situações de aprendizagens, atitudes empreendedoras, sustentáveis e colaborativas nos alunos."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Articular as competências do perfil profissional com projetos integradores e outras atividades laborais que estimulam a visão crítica e a tomada de decisão para resolução de problemas."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Promover uma avaliação processual e formativa com base em indicadores das competências, que possibilitem a todos os envolvidos no processo educativo a verificação da aprendizagem."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Incentivar a pesquisa como princípio pedagógico e para consolidação do domínio técnico-científico, utilizando recursos didádicos e bibliográficos."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Organização Curricular"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Auxiliar na definição das estratégias e controle dos canais de distribuição."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Auxiliar na definição do preço dos produtos e serviços."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Auxiliar na elaboração e execução das estratégias de comercialização da organização."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Auxiliar na elaboração e execução de políticas de atendimento, acompanhamento e fidelização de clientes."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Auxiliar na elaboração e execução do plano de comunicação de markenting da organização."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Auxiliar na elaboração e realização de pesquisa de mercado e de marketing."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Auxiliar na operacionalização da política de gestão de produtos e serviços da organização."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Criar e desenvolver imagens vetoriais e layouts de páginas para meios impressos ou digitais de diferentes mídias."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Participar na elaboração e execução do plano de marketing da organização."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:text="Projeto Integrador Técnico em Marketing."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/image_segtrabalho"
             android:layout_width="140dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/image_marketing"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/marklayout"
+            android:layout_marginTop="50dp"
             app:srcCompat="@drawable/tecsegtralogo" />
 
         <TextView
             android:id="@+id/segtrabalho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/image_marketing"
+            android:layout_below="@id/marklayout"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="91dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginRight="51dp"
             android:onClick="tecnicosegtrabalho"
-            android:text="Técnico em"
+            android:textAlignment="center"
+            android:text="Técnico em \n Segurança do Trabalho"
             android:textColor="@color/white"
             android:textSize="19sp" />
 
-        <TextView
-            android:id="@+id/segtrabalho2"
+        <LinearLayout
+            android:id="@+id/seglayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/image_marketing"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="73dp"
-            android:layout_marginRight="42dp"
-            android:onClick="tecnicosegtrabalho"
-            android:text="Segurança do Trabalho"
-            android:textColor="@color/white"
-            android:textSize="19sp" />
+            android:orientation="vertical"
+            android:layout_below="@+id/segtrabalho"
+            android:layout_marginTop="50dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/tecsegtralogo"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" Técnico em Segurança do Traballho:"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nObjetivo:"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n Formar profissionais com competências para atuar e intervir em seu campo de trabalho, capazes de auxiliar na elaboração,
+            \n implantação e implementação da Política e de Programas de Saúde e Segurança do Trabalho, além de auxiliar e executar medidas de controle de riscos ocupacionais por meio de ações,
+            \n programas de saúde e segurança do trabalho,realizar avaliação e medidas de controle de riscos físicos, químicos e biológicos, realizar avaliação e medidas de controle de riscos ergonômicos e de acidentes,
+           \n monitorar riscos ocupacionais, executar ações de investigação, registro e controle de incidentes, acidentes de trabalho e doenças ocupacionais, prestar assistência de primeiros socorros, auxiliar a elaboração,
+           \n implantação e implementação de planos de emergência/urgência, planejar e executar ações educativas em saúde e segurança do trabalho e auxiliar a gestão integrada da organização, bem como ser responsável pela análise
+           \n e avaliação do ambiente de trabalho, das instalações e dos processos laborais, visando à prevenção de incidentes, acidentes e doenças ocupacionais.\n"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Requisitos:\n"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Apresentar CPF ou documento com número de registro de
+CPF(Frente e Verso)\n
+Apresentar comprovante de endereço residencial (expedido em no máximo 3 meses)
+• Ser maior de 15 anos\n
+• Ter concluído o Ensino Médio ou estar cursando este nível de ensino\n"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carga Horária\n"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1200 Horas"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="normal"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="O que o aluno vai aprender?\n"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n•Auxiliar a elaboração, implantação e implementação da Política de Saúde e Segurança do Trabalho;
+\n• Realizar avaliação e medidas de controle de riscos físicos, químicos e biológicos;
+\n• Realizar avaliação e medidas de controle de riscos ergonômicos e de acidentes;
+\n• Monitorar riscos ocupacionais;
+\n• Executar ações de investigação, registro e controle de incidentes, acidentes de trabalho e doenças ocupacionais;
+\n• Auxiliar e executar ações de elaboração dos programas de saúde e segurança do trabalho;
+\n• Auxiliar na implantação e implementação dos programas de saúde e segurança do trabalho;
+\n• Prestar assistência de primeiros socorros;
+\n. Auxiliar a elaboração, implantação e implementação de planos de emergência/urgencia;
+\n• Planejar ações educativas em saúde e segurança do trabalho;
+\n• Executar ações educativas em saúde e segurança do trabalho;
+\n• Auxiliar a gestão integrada da organização."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nComo é o mercado de trabalho?"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nO segmento de Saúde e Segurança do Trabalho tem sofrido grandes mudanças nos tempos atuais e está em constante evolução.
+A atualização das
+Normas Regulamentadoras/Jurídicas que norteiam o setor vem no sentido de uma gestão de documentos e ações segurança de forma constante e presente no dia a dia das entidades/instituições.
+O propósito das atualizações é um setor mais efetivo visando proteger os trabalhadores e as entidades/instituições e diminuir a sobrecarga no Instituto Nacional de Seguridade Social (INSS).
+Nesse sentido o curso de Técnico em Segurança do Trabalho se justifica pelo potencial crescimento do seguimento no Brasil
+e também pela permanente necessidade de profissionais habilitado para atender as complexas necessidades de Saúde e Segurança no Trabalho"
+                android:textColor="@color/white"
+                android:textStyle="normal"
+                android:textSize="16sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="\nQuem é esse profissional?"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n O profissional Técnico em Segurança do Trabalho executa atividades preventivas, relacionadas à segurança, saúde e ao bem estar dos trabalhadores de uma instituição.
+ Este profissional pode tanto em instituições públicas quanto privadas de diversos seguimentos tais como as áreas de comercio de bens serviços, turismo, industrias e organizações públicas relacionando-se com equipes de diversos setores
+. O Técnico em Segurança do Trabalho assume especial relevância por ser um dos profissionais responsáveis por assegurar que os ambientes de trabalho estejam seguros, de modo a preservar a vida e o bem estar das pessoas.
+ Este profissional desempenha suas atividades de forma pró ativa, com a capacidade de solucionar problemas e com bom relacionamento interpessoal interagindo com diferentes equipes de trabalho no decorrer do processos organizacionais.
+"                           android:textColor="@color/white"
+                android:textStyle="normal"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="\nQuais são as marcas formativas do aluno senac?"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n Domínio técnico-científico, visão crítica, atitude empreendedora, sustentável e colaborativa, com foco em resultados.
+ Essas marcas reforçam o compromisso da Instituição com a formação integral do ser humano, considerando aspectos relacionados ao mundo do trabalho e ao exercício da cidadania.
+ Essa perspectiva propicia o comprometimento do aluno com a qualidade do trabalho, o desenvolvimento de uma visão ampla e consciente sobre sua atuação profissional e sobre sua capacidade de transformação da sociedade.
+"               android:textColor="@color/white"
+                android:textStyle="normal"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" \nQuais são os diferenciais do curso?"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n Instituição de renome para a Educação Profissional; Conhecimento de práticas acordadas nas competições Internacionais; Atendimento Consultivo para construção de um Itinerário Formativo para além do curso."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"/>
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/image_log"
             android:layout_width="140dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/image_segtrabalho"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/seglayout"
             app:srcCompat="@drawable/tecloglogo" />
 
         <TextView
@@ -243,13 +2465,468 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="90dp"
             android:layout_marginRight="50dp"
             android:text="Técnico em Logística"
             android:textSize="19sp"
-            android:layout_below="@id/image_segtrabalho"
+            android:layout_below="@id/seglayout"
             android:textColor="@color/white"
             android:onClick="tecnicolog" />
+
+        <LinearLayout
+            android:id="@+id/loglayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/log"
+            android:layout_marginTop="50dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/tecloglogo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" Técnico em Logística:"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Objetivo do curso:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Formar profissionais com competências para atuarem e intervirem em seu campo de trabalho, capazes de controlar, organizar, executar, mapear, apoiar, realizar e atuar nos procedimentos relacionados a suprimentos, produção, recebimento, armazenagem, distribuição de produtos, entre outros processos que envolvem o fluxo logístico, com experiência na utilização de ferramentas de gestão, apoiando e fundamentando os processos decisórios de seus superiores, a fim de obter resultados para as organizações."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Requisitos:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apresentar CPF ou documento com número de registro de CPF."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apresentar comprovante de endereço residencial (expedido em no máximo 3 meses)."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Ser maior de 16 anos."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apresentar registro de certidão civil."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Ter concluído ou estar cursando o ensino médio."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Carga Horária: 800 horas"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="O que o aluno vai aprender?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Realizar procedimentos de conferência de equipamentos, materiais e produtos no processo logístico."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apoiar as atividades de compra de equipamentos, materiais, produtos e serviços."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Controlar e organizar sistemas de armazenagem."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Organizar estoques de equipamentos, materiais e produtos."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Organizar a distribuição de equipamentos, materiais, produtos e serviços."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Executar e controlar o transporte e a movimentação de equipamentos, materiais e produtos."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Mapear e estimar custos logísticos."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Apoiar as atividades relacionadas aos processos logísticos."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Realizar atividades no Planejamento e Controle da Operação (PCO)."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Atuar na logística do Planejamento e Controle da Produção (PCP)."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Executar e monitorar processos de logística reversa e logística sustentável."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Projeto Integrador em Logística."
+                android:drawableLeft="@drawable/ic_bolinhac"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Como é o mercado de trabalho?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="A intensificação do movimento de globalização e integração dos mercados mundiais amplificou a necessidade de aperfeiçoamento dos processos empresariais, tornando-os inevitáveis para as organizações que atuam em um mercado de alta competitividade. "
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Tais processos são, inclusive, um importante fator à perenidade dessas organizações. Sob essa lógica, os processos empresariais relacionados à logística e distribuição tornam-se cada vez mais relevantes, pois a busca por alternativas sistematicamente mais eficientes e com menores custos é um dos objetivos centrais de empresas que se deparam com métodos de produção e ofertas de produtos cada vez mais similares."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Ou seja, o fator determinante do sucesso de boa parte de novos empreendimentos passa por uma distribuição mais eficaz e menos dispendiosa. Esse desafio exige um profissional qualificado que possua capacidade de exercer liderança, uma forte inclinação para resultados e visão sistêmica tanto de sua organização quanto do mercado no qual ela está inserida, entre outras habilidades."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="O profissional que atuará com logística deverá, portanto, propor e implantar soluções que contribuam para a otimização dos processos e tragam melhores resultados empresariais. Este profissional exerce uma importante função social ao contribuir para a oferta de bens e serviços a preços mais baixos e disponíveis em novos locais, com prazos cada vez menores."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Além disso, a utilização racional dos recursos, intimamente ligada a menores custos operacionais, atende diretamente a um dos grandes desafios da contemporaneidade, relacionado à sustentabilidade."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Quem é esse profissional?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="O técnico em logística atua no planejamento, operacionalização, segurança e controle da cadeia produtiva e seu fluxo logístico. Para isso, executa procedimentos relacionados a suprimentos, produção, recebimento, armazenagem e distribuição  de produtos, de modo a manter a qualidade e a viabilidade das operações logísticas, fazendo uso das tecnologias de informação e comunicação."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Exerce suas atividades em organizações de comércio de bens, serviços, turismo e demais setores da economia, tais como, transportadoras, centros de distribuição, hospitais e órgãos públicos, entre outras."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="O técnico em logística tem visão sistêmica e estratégica do processo, executando um trabalho integrado aos outros setores da organização, de modo a suprir os gestores com informações relevantes ao processo decisório, sobre a otimização, custos e a entrega de produtos e mercadorias, dentro dos padrões especificados."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Quais são as marcas formativas do aluno senac?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Domínio técnico-científico, visão crítica, atitude empreendedora, sustentável e colaborativa, com foco em resultados. Essas marcas reforçam o compromisso da Instituição com a formação integral ao ser humano, considerando aspectos relacionados ao mundo do trabalho e ao exercício da cidadania."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Essa perspectiva propicia o comprometimento do aluno com a qualidade do trabalho, o desenvolvimento de uma visão ampla e consciente sobre sua atuação profissional e sobre sua capacidade de transformação da sociedade."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="200dp"
+                android:text="Quais são os diferenciais do curso?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Plano de Curso desenvolvido por profissionais sintonizados com as tendências do segmento."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Docentes com experiência profissional na área."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Aulas dinâmicas e interativas, com simulações reais de trabalho que privilegiam a formação de um profissional crítico e criativo."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Participação dos alunos em resolução de problemas."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Certificado com validade nacional e reconhecimento de mercado."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:text="Mínimo de 60% da CH do curso em atividades práticas que simulam a atividade profissional."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 

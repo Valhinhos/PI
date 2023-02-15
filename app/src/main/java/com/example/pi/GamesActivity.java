@@ -62,6 +62,15 @@ public class GamesActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void OpenQuizTI(View v){
+        Intent intent = new Intent(GamesActivity.this, TiQuizInitialScreenActivity.class);
+        intent.putExtra("keyra", passedRa);
+        intent.putExtra("keyusername", passedUserName);
+        intent.putExtra("keyquiz", "quizlog");
+        startActivity(intent);
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

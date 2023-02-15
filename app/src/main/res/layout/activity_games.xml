@@ -26,6 +26,14 @@
             android:layout_height="130dp"
             android:layout_marginTop="12dp"
             android:onClick="OpenQuizLog"
-            app:srcCompat="@drawable/loggameicon" />
+            app:srcCompat="@drawable/loggameicon"/>
+
+        <ImageView
+            android:id="@+id/tiquizbutton"
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="12dp"
+            android:onClick="OpenQuizTI"
+            app:srcCompat="@drawable/tigameicon"/>
     </LinearLayout>
 </RelativeLayout>

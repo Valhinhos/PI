@@ -116,6 +116,9 @@ public class QuizRankingActivity extends AppCompatActivity {
         }else if (rankingMode.equals("rankingrh")){
             databaseReference = FirebaseDatabase.getInstance().getReference("rankingrhquiz");
             rankingTittle.setText("Ranking RH");
+        }else if (rankingMode.equals("rankingti")){
+            databaseReference = FirebaseDatabase.getInstance().getReference("rankingtiquiz");
+            rankingTittle.setText("Ranking TI");
         }
     }
 

@@ -5,49 +5,119 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 public class CoursesInfoActivity extends AppCompatActivity {
-    //String text="Cursos do Senac";
+
+    LinearLayout tiLayout, enLayout, agroLayout, admLayout, rhLayout, segLayout, markLayout, estLayout, logLayout;
+    Boolean displayVisibilityTI = false, displayVisibilityEN = false, displayVisibilityAgro = false, displayVisibilityAdm = false;
+    Boolean displayVisibilityRH = false, displayVisibilitySeg = false, displayVisibilityMark = false, displayVisibilityEst = false, displayVisibilityLog = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_courses_information);
+
+        findView();
     }
+
+    public void findView(){
+        tiLayout = findViewById(R.id.tilayout);
+        enLayout = findViewById(R.id.enlayout);
+        agroLayout = findViewById(R.id.agrolayout);
+        admLayout = findViewById(R.id.admlayout);
+        rhLayout = findViewById(R.id.rhlayout);
+        segLayout = findViewById(R.id.seglayout);
+        markLayout = findViewById(R.id.marklayout);
+        estLayout = findViewById(R.id.estlayout);
+        logLayout = findViewById(R.id.loglayout);
+    }
+
     public void tecnicoTI (View v) {
-        Intent tecnico_TI = new Intent(this, InfoTiActivity.class);
-        startActivity(tecnico_TI);
+        if (displayVisibilityTI){
+            displayVisibilityTI = false;
+            tiLayout.setVisibility(View.GONE);
+        }else {
+            displayVisibilityTI = true;
+            tiLayout.setVisibility(View.VISIBLE);
+        }
     }
+
     public void tecnicoEN (View v) {
-        Intent tecnico_EN = new Intent(this, InfoEnfActivity.class);
-        startActivity(tecnico_EN);
+        if (displayVisibilityEN){
+            displayVisibilityEN = false;
+            enLayout.setVisibility(View.GONE);
+        }else {
+            displayVisibilityEN = true;
+            enLayout.setVisibility(View.VISIBLE);
+        }
     }
+
     public void tecnicoagro (View v) {
-        Intent tecnico_agro = new Intent(this, InfoAgroActivity.class);
-        startActivity(tecnico_agro);
+        if (displayVisibilityAgro){
+            displayVisibilityAgro = false;
+            agroLayout.setVisibility(View.GONE);
+        }else {
+            displayVisibilityAgro = true;
+            agroLayout.setVisibility(View.VISIBLE);
+        }
     }
+
     public void tecnicoadm (View v) {
-        Intent tecnico_adm = new Intent(this,InfoAdmActivity.class);
-        startActivity(tecnico_adm);
+        if (displayVisibilityAdm){
+            displayVisibilityAdm = false;
+            admLayout.setVisibility(View.GONE);
+        }else {
+            displayVisibilityAdm = true;
+            admLayout.setVisibility(View.VISIBLE);
+        }
     }
 
     public void tecnicorh (View v) {
-        Intent tecnico_rh = new Intent(this,InfoRhActivity.class);
-        startActivity(tecnico_rh);
+        if (displayVisibilityRH){
+            displayVisibilityRH = false;
+            rhLayout.setVisibility(View.GONE);
+        }else {
+            displayVisibilityRH = true;
+            rhLayout.setVisibility(View.VISIBLE);
+        }
     }
+
     public void tecnicosegtrabalho (View v) {
-        Intent tecnico_segtrabalho = new Intent(this, InfoSegActivity.class);
-        startActivity(tecnico_segtrabalho);
+        if (displayVisibilitySeg){
+            displayVisibilitySeg = false;
+            segLayout.setVisibility(View.GONE);
+        }else {
+            displayVisibilitySeg = true;
+            segLayout.setVisibility(View.VISIBLE);
+        }
     }
+
     public void tecnicomarketing (View v) {
-        Intent tecnico_marketing = new Intent(this, InfoMarkActivity.class);
-        startActivity(tecnico_marketing);
+        if (displayVisibilityMark){
+            displayVisibilityMark = false;
+            markLayout.setVisibility(View.GONE);
+        }else {
+            displayVisibilityMark = true;
+            markLayout.setVisibility(View.VISIBLE);
+        }
     }
     public void tecnicoest (View v) {
-        Intent tecnico_est = new Intent(this, InfoEstActivity.class);
-        startActivity(tecnico_est);
+        if (displayVisibilityEst){
+            displayVisibilityEst = false;
+            estLayout.setVisibility(View.GONE);
+        }else {
+            displayVisibilityEst = true;
+            estLayout.setVisibility(View.VISIBLE);
+        }
     }
     public void tecnicolog (View v) {
-        Intent tecnico_log = new Intent(this, InfoLogActivity.class);
-        startActivity(tecnico_log);
+        if (displayVisibilityLog){
+            displayVisibilityLog = false;
+            logLayout.setVisibility(View.GONE);
+        }else {
+            displayVisibilityLog = true;
+            logLayout.setVisibility(View.VISIBLE);
+        }
     }
 }

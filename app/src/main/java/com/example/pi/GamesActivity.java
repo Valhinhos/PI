@@ -19,7 +19,6 @@ import com.example.pi.models.MessageDialog;
 public class GamesActivity extends AppCompatActivity {
 
     String passedRa, passedUserName;
-    ImageView rhButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +27,6 @@ public class GamesActivity extends AppCompatActivity {
 
         passedRa = getIntent().getStringExtra("keyra");
         passedUserName = getIntent().getStringExtra("keyusername");
-        rhButton = findViewById(R.id.rhquizbutton);
         checkPassedValues();
     }
 

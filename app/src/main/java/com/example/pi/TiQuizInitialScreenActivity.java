@@ -30,6 +30,7 @@ public class TiQuizInitialScreenActivity extends AppCompatActivity {
     public void openRankingScreen(View v){
         Intent intent = new Intent(TiQuizInitialScreenActivity.this, QuizRankingActivity.class);
         intent.putExtra("rankingmode", "rankingti");
+        intent.putExtra("keyra", passedRa);
         startActivity(intent);
     }
 }

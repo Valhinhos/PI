@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 
@@ -20,7 +21,7 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
     LinearLayout pontuationBox;
     String passedName, passedScore, totalQuestions;
     LottieAnimationView scoreLottie;
-    int calcTQ;
+    int calcTQH, calcTQA,calcTQL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,38 +35,40 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
 
         passedName = getIntent().getStringExtra("keyname");
         passedScore = getIntent().getStringExtra("keyscore");
-//        totalQuestions = getIntent().getStringExtra("keytotalquestions");
-        totalQuestions = "10";
-        calcTQ = Integer.parseInt(totalQuestions) / 100 *  60;
+        totalQuestions = getIntent().getStringExtra("keytotalquestions");
+        calcTQH = Integer.parseInt(totalQuestions) / 100 *  60;
+        calcTQA = Integer.parseInt(totalQuestions) / 100 *  60;
+        calcTQL = Integer.parseInt(totalQuestions) / 100 *  60;
 
         score.setText(passedScore);
 
         addLottieAnimation();
         setObservationText();
         setBoxColor();
+        Toast.makeText(this, "score: " + passedScore + "total q: " + totalQuestions, Toast.LENGTH_SHORT).show();
 
     }
 
     public void addLottieAnimation(){
         int intPassedScore = Integer.parseInt(passedScore);
-        if (intPassedScore >= 60){
+        if (intPassedScore >= calcTQH){
             scoreLottie.setAnimation(R.raw.champion);
-        }else if (intPassedScore >= 30){
+        }else if (intPassedScore >= calcTQA){
             scoreLottie.setAnimation(R.raw.confusedface);
-        }else if (intPassedScore <= 29){
+        }else if (intPassedScore <= calcTQL){
             scoreLottie.setAnimation(R.raw.angrycloud);
         }
     }
 
     public void setObservationText(){
         int intPassedScore = Integer.parseInt(passedScore);
-        if (intPassedScore >= calcTQ){
+        if (intPassedScore >= calcTQH){
             observation.setText("Pefeito!");
             score.setTextColor(Color.rgb(146,208,80));
-        }else if (intPassedScore >= calcTQ){
+        }else if (intPassedScore >= calcTQA){
             observation.setText("Estude mais!");
             score.setTextColor(Color.rgb(243,226,186));
-        }else if (intPassedScore <= calcTQ){
+        }else if (intPassedScore <= 3){
             observation.setText("Que pena!!!");
             score.setTextColor(Color.rgb(186,78,78));
         }
@@ -73,17 +76,17 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
 
     public void setBoxColor(){
         int intPassedScore = Integer.parseInt(passedScore);
-        if (intPassedScore >= calcTQ){
+        if (intPassedScore >= calcTQH){
            pontuationBox.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(146,208,80)));
-        }else if (intPassedScore >= calcTQ){
+        }else if (intPassedScore >= calcTQA){
             pontuationBox.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,217,102)));
-        }else if (intPassedScore <= calcTQ){
+        }else if (intPassedScore <= calcTQL){
             pontuationBox.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,107,107)));
         }
     }
 
     public void goToMainMenu(View v){
-        Intent intent = new Intent(ShowFinalScoreActivity.this, GamesActivity.class);
+        Intent intent = new Intent(ShowFinalScoreActivity.this, MainIconsActivity.class);
         startActivity(intent);
         finish();
     }

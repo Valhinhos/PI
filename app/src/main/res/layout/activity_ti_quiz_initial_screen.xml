@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:fontFamily="@font/adventure"
-        android:paddingBottom="30dp"
+        android:paddingBottom="20dp"
         android:text="QuizRH"
         android:textColor="@color/white"
         android:textSize="50dp" />
@@ -50,7 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/startbutton"
         android:layout_centerHorizontal="true"
-        app:lottie_rawRes="@raw/startupmeeting"
-        app:lottie_autoPlay="true"/>
+        app:lottie_rawRes="@raw/happyhacker"
+        app:lottie_autoPlay="true"
+        android:layout_marginBottom="10dp"/>
 
 </RelativeLayout>

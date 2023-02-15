@@ -7,33 +7,46 @@
     android:background="@drawable/orangedetailedbg"
     tools:context=".GamesActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+    <Button
+        android:id="@+id/rhquizbutton"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/white"
+        android:text="QUIZ RH"
+        android:textSize="30dp"
+        android:textColor="@color/blue"
+        android:fontFamily="@font/farceb"
+        app:cornerRadius="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:onClick="OpenQuizRH"/>
 
-        <ImageView
-            android:id="@+id/rhquizbutton"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="10dp"
-            android:onClick="OpenQuizRH"
-            app:srcCompat="@drawable/rhgameicon"/>
+    <Button
+        android:id="@+id/logquizbutton"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/white"
+        android:text="QUIZ LOGÍSTICA"
+        android:textSize="30dp"
+        android:textColor="@color/blue"
+        android:fontFamily="@font/farceb"
+        app:cornerRadius="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rhquizbutton"
+        android:onClick="OpenQuizLog"/>
 
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="130dp"
-            android:layout_marginTop="12dp"
-            android:onClick="OpenQuizLog"
-            app:srcCompat="@drawable/loggameicon"/>
+    <Button
+        android:id="@+id/tiquizbutton"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/white"
+        android:text="QUIZ INFORMÁTICA"
+        android:textSize="30dp"
+        android:textColor="@color/blue"
+        android:fontFamily="@font/farceb"
+        app:cornerRadius="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/logquizbutton"
+        android:onClick="OpenQuizTI"/>
 
-        <ImageView
-            android:id="@+id/tiquizbutton"
-            android:layout_width="150dp"
-            android:layout_height="130dp"
-            android:layout_marginTop="12dp"
-            android:onClick="OpenQuizTI"
-            app:srcCompat="@drawable/tigameicon"/>
-    </LinearLayout>
 </RelativeLayout>

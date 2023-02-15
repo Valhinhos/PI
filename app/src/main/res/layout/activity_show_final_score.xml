@@ -68,7 +68,7 @@
     <LinearLayout
         android:id="@+id/pontuationbox"
         android:layout_width="wrap_content"
-        android:layout_height="400px"
+        android:layout_height="500px"
         android:orientation="vertical"
         android:background="@drawable/customwhiteborder"
         android:backgroundTint="@color/green"

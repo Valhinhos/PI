@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pi.models.DatabaseRA;
 import com.example.pi.models.StudentScore;
@@ -33,7 +34,7 @@ public class QuizRankingActivity extends AppCompatActivity {
     TextView myRecord, rankingTittle;
     RelativeLayout display;
     int cont;
-    String rankingMode;
+    String rankingMode, passedRA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +43,12 @@ public class QuizRankingActivity extends AppCompatActivity {
 
         display = findViewById(R.id.rankingdisplay);
         rankingTittle = findViewById(R.id.ranking);
+        Boolean rankingModeCheck = getIntent().getBooleanExtra("rankingmode", false) == true;
 
-        rankingMode = getIntent().getStringExtra("rankingmode");
+//        rankingMode = getIntent().getStringExtra("rankingmode");
+//        passedRA = getIntent().getStringExtra("keyra");
 
-        if (getIntent().getBooleanExtra("rankingmode", false) == true){
+        if (rankingModeCheck){
             rankingMode = "None";
         }else{
             rankingMode = getIntent().getStringExtra("rankingmode");
@@ -117,6 +120,8 @@ public class QuizRankingActivity extends AppCompatActivity {
             databaseReference = FirebaseDatabase.getInstance().getReference("rankingrhquiz");
             rankingTittle.setText("Ranking RH");
         }else if (rankingMode.equals("rankingti")){
+            display.setBackgroundColor(Color.rgb(51,102,204));
+//            Toast.makeText(this, rankingMode, Toast.LENGTH_SHORT).show();
             databaseReference = FirebaseDatabase.getInstance().getReference("rankingtiquiz");
             rankingTittle.setText("Ranking TI");
         }

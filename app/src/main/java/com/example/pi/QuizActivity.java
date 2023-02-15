@@ -41,6 +41,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 //        myDB = new DatabaseRA(this);
         passedQuiz = getIntent().getStringExtra("keyquiz");
         passedRa = getIntent().getStringExtra("keyra");
+        passedUserName = getIntent().getStringExtra("keyusername");
 
         if (passedQuiz.equals("quizlog")){
             totalquestions = QuestionsLog.question.length;
@@ -61,7 +62,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         numberQuestions = findViewById(R.id.nperguntasdetperguntas);
         linearLayout = findViewById(R.id.layoutdasrespostas);
         userNameTV = findViewById(R.id.usernamequiz);
-        passedUserName = getIntent().getStringExtra("keyusername");
+
 
         userNameTV.setText(passedUserName);
 
@@ -84,7 +85,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     private void loadNewQuestion() {
         prog();
-        numberQuestions.setText((currentQuestionIndex + 1) + "/" + totalquestions);
+        numberQuestions.setText((currentQuestionIndex +1) + "/" + totalquestions);
 //        Toast.makeText(this, String.valueOf(currentQuestionIndex), Toast.LENGTH_SHORT).show();
 
         if((currentQuestionIndex) == totalquestions){

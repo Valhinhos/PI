@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.example.pi.models.DatabaseRA;
 import com.example.pi.models.MessageDialog;
 import com.example.pi.models.UserInformation;
@@ -26,8 +28,8 @@ import com.google.firebase.database.ValueEventListener;
 public class MainIconsActivity extends AppCompatActivity {
     DatabaseRA myDB;
     DatabaseReference databaseReference;
-    Boolean logged = true;
-    ImageView credits, ava, aprendizagem, biblio, cursosDisponiveis, cursosSenac, games, mapeamento, pi, frequency, redeCarreiras, perfil, posts;
+    Boolean logged = true, canOpenNetworkScreens = false;
+//    ImageView credits, ava, aprendizagem, biblio, cursosDisponiveis, cursosSenac, games, mapeamento, pi, frequency, redeCarreiras, perfil, posts;
     String passedRa = "empty", passedUserName = "None", passedUserID = "None", passedOldProfilePicture = "None", passedStats = "None";
     TextView userName;
 
@@ -36,19 +38,6 @@ public class MainIconsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_icons);
 
-        credits = findViewById(R.id.iconcreditos);
-        ava = findViewById(R.id.iconava);
-        frequency = findViewById(R.id.iconfrequencia);
-        mapeamento = findViewById(R.id.iconmapeamento);
-        games = findViewById(R.id.icongame);
-        aprendizagem = findViewById(R.id.iconaprendizagemcoemrcial);
-        biblio = findViewById(R.id.iconbiblioteca);
-        cursosDisponiveis = findViewById(R.id.iconcursosdisponiveis);
-        cursosSenac  = findViewById(R.id.iconcursosenac);
-        pi  = findViewById(R.id.iconpi);
-        redeCarreiras  = findViewById(R.id.iconredecarreiras);
-        posts = findViewById(R.id.postsicon);
-        perfil = findViewById(R.id.profileicon);
         passedRa = getIntent().getStringExtra("keyra");
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
         userName = findViewById(R.id.username);
@@ -78,66 +67,76 @@ public class MainIconsActivity extends AppCompatActivity {
     }
 
     public void openFrequency(View v){
-        frequency.setImageResource(R.drawable.frequenciapressed);
+        int id = R.id.iconfrequencia;
+        animate(id);
         abrirLink("https://www.mg.senac.br/ambienteacademico/detalheCurso");
     }
 
     public void openMap(View v){
-//        mapeamento.setImageResource(R.drawable.mapeamento);
-//        Toast.makeText(MainIconsActivity.this, "Recurso ainda não implementado", Toast.LENGTH_SHORT).show();
+        int id = R.id.iconmapeamento;
+        animate(id);
         Intent intent = new Intent(MainIconsActivity.this, MapActivity.class);
         startActivity(intent);
     }
 
     public void openAva(View v){
-        ava.setImageResource(R.drawable.ambientevirtualpressed);
+        int id = R.id.iconava;
+        animate(id);
         abrirLink("https://ava.mg.senac.br/edu/");
     }
 
     public void openBiblio(View v){
-        biblio.setImageResource(R.drawable.bibliotecapressed);
+        int id = R.id.iconbiblioteca;
+        animate(id);
         abrirLink("https://pergamum.mg.senac.br/pergamum/biblioteca_s/php/login_usu.php");
     }
 
     public void openSenacCourses(View v){
+        int id = R.id.iconcursosenac;
+        animate(id);
         Intent intent = new Intent(MainIconsActivity.this, CoursesInfoActivity.class);
         startActivity(intent);
-        cursosSenac.setImageResource(R.drawable.cursossenacpressed);
     }
 
 
     public void openCourses(View v){
-        cursosDisponiveis.setImageResource(R.drawable.cursosdisponiveispressed);
+        int id = R.id.iconcursosdisponiveis;
+        animate(id);
         abrirLink("https://www.mg.senac.br/programasenacdegratuidade/vagas.aspx");
     }
 
     public void openAC(View v){
-        aprendizagem.setImageResource(R.drawable.aprendizagemcomercailpressed);
+        int id = R.id.iconaprendizagemcoemrcial;
+        animate(id);
         abrirLink("https://www.mg.senac.br/Paginas/aprendizagem-comercial.aspx");
     }
 
     public void openRedeC(View v){
-        redeCarreiras.setImageResource(R.drawable.redecarreiraspressed);
+        int id = R.id.iconredecarreiras;
+        animate(id);
         abrirLink("https://www.mg.senac.br/Paginas/rededecarreiras.aspx");
     }
 
     public void openPI(View v){
-        if (logged){
-            pi.setImageResource(R.drawable.projetointegradorpressed);
-            Intent projint = new Intent(this, PiPostsActivity.class);
-            projint.putExtra("keyusername", passedUserName);
-            projint.putExtra("keyra", passedRa);
-            startActivity(projint);
-        }else{
-            Toast.makeText(this, "Você deve estar logado para usar esta ferramenta", Toast.LENGTH_SHORT).show();
-        }
+        int id = R.id.iconpi;
+        animate(id);
+            if (logged) {
+                if (canOpenNetworkScreens) {
+                Intent projint = new Intent(this, PiPostsActivity.class);
+                projint.putExtra("keyusername", passedUserName);
+                projint.putExtra("keyra", passedRa);
+                startActivity(projint);
+            }
+        }else {
+                Toast.makeText(this, "Você deve estar logado para usar esta ferramenta", Toast.LENGTH_SHORT).show();
+            }
     }
 
     public void openCredits(View v){
-        credits.setImageResource(R.drawable.creditospressed);
+        int id = R.id.iconcreditos;
+        animate(id);
         Intent cred = new Intent(this, CreditsActivity.class);
         startActivity(cred);
-//        credits.setImageResource(R.drawable.creditos);
 
     }
 
@@ -147,48 +146,53 @@ public class MainIconsActivity extends AppCompatActivity {
     }
 
     public void openGames(View v){
-        if (logged){
-            games.setImageResource(R.drawable.jogospressed);
-            Intent intent = new Intent(MainIconsActivity.this, GamesActivity.class);
-            intent.putExtra("keyra", passedRa);
-            intent.putExtra("keyusername", passedUserName);
-            intent.putExtra("keyuseroldprofilepic", passedOldProfilePicture);
-            startActivity(intent);
-        }else{
-            Toast.makeText(this, "Você deve estar logado para usar esta ferramenta", Toast.LENGTH_SHORT).show();
-        }
+        int id = R.id.icongame;
+        animate(id);
+            if (logged) {
+                if (canOpenNetworkScreens) {
+                Intent intent = new Intent(MainIconsActivity.this, GamesActivity.class);
+                intent.putExtra("keyra", passedRa);
+                intent.putExtra("keyusername", passedUserName);
+                intent.putExtra("keyuseroldprofilepic", passedOldProfilePicture);
+                startActivity(intent);
+            }
+        }else {
+                Toast.makeText(this, "Você deve estar logado para usar esta ferramenta", Toast.LENGTH_SHORT).show();
+            }
     }
 
-    public void openStudentProfile(View v){
-        perfil.setImageResource(R.drawable.perfilpressed);
-        if (logged){
-            Intent intent = new Intent(MainIconsActivity.this, UserProfileActivity.class);
+    public void openStudentProfile(View v) {
+        int id = R.id.iconprofile;
+        animate(id);
+        if (logged) {
+            if (canOpenNetworkScreens) {
+                Intent intent = new Intent(MainIconsActivity.this, UserProfileActivity.class);
             intent.putExtra("keyra", passedRa);
             intent.putExtra("keyusername", passedUserName);
             intent.putExtra("keyuserid", passedUserID);
             intent.putExtra("keyuseroldprofilepic", passedOldProfilePicture);
             startActivity(intent);
-        }else{
+        }
+        }else {
             Toast.makeText(this, "Você deve estar logado para usar esta ferramenta", Toast.LENGTH_SHORT).show();
         }
     }
 
     public void openUsersPost(View v){
-        posts.setImageResource(R.drawable.postspressed);
-        if (logged){
-            Intent intent = new Intent(MainIconsActivity.this, UsersPostsActivity.class);
-            intent.putExtra("keyra", passedRa);
-            intent.putExtra("keyusername", passedUserName);
-            intent.putExtra("keyuserid", passedUserID);
-            intent.putExtra("keyuserstats", passedStats);
-            startActivity(intent);
-        }else{
-            Toast.makeText(this, "Você deve estar logado para usar esta ferramenta", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void about(View v){
-        showUpDialogMessage("aqui vai ficar o texto sobre o app ", "Sobre o aplicativo");
+        int id = R.id.iconposts;
+        animate(id);
+            if (logged) {
+                if (canOpenNetworkScreens) {
+                    Intent intent = new Intent(MainIconsActivity.this, UsersPostsActivity.class);
+                intent.putExtra("keyra", passedRa);
+                intent.putExtra("keyusername", passedUserName);
+                intent.putExtra("keyuserid", passedUserID);
+                intent.putExtra("keyuserstats", passedStats);
+                startActivity(intent);
+            }
+        } else {
+                Toast.makeText(this, "Você deve estar logado para usar esta ferramenta", Toast.LENGTH_SHORT).show();
+            }
     }
 
     public void showUpDialogMessage(String txt, String title){
@@ -210,23 +214,23 @@ public class MainIconsActivity extends AppCompatActivity {
         String ra_text = buffer.toString();
         return ra_text;
     }
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-        credits.setImageResource(R.drawable.creditos);
-        ava.setImageResource(R.drawable.ambientevirtual);
-        aprendizagem.setImageResource(R.drawable.aprendizagemcomercial);
-        biblio.setImageResource(R.drawable.biblioteca);
-        cursosDisponiveis.setImageResource(R.drawable.cursosdisponiveis);
-        cursosSenac.setImageResource(R.drawable.cursossenac);
-        games.setImageResource(R.drawable.jogos);
-        mapeamento.setImageResource(R.drawable.mapeamento);
-        pi.setImageResource(R.drawable.projetointegrador);
-        frequency.setImageResource(R.drawable.frequencia);
-        redeCarreiras.setImageResource(R.drawable.rededecarreiras);
-        posts.setImageResource(R.drawable.posts);
-        perfil.setImageResource(R.drawable.perfil);
-    }
+//    @Override
+//    protected void onPostResume() {
+//        super.onPostResume();
+//        credits.setImageResource(R.drawable.creditos);
+//        ava.setImageResource(R.drawable.ambientevirtual);
+//        aprendizagem.setImageResource(R.drawable.aprendizagemcomercial);
+//        biblio.setImageResource(R.drawable.biblioteca);
+//        cursosDisponiveis.setImageResource(R.drawable.cursosdisponiveis);
+//        cursosSenac.setImageResource(R.drawable.cursossenac);
+//        games.setImageResource(R.drawable.jogos);
+//        mapeamento.setImageResource(R.drawable.mapeamento);
+//        pi.setImageResource(R.drawable.projetointegrador);
+//        frequency.setImageResource(R.drawable.frequencia);
+//        redeCarreiras.setImageResource(R.drawable.rededecarreiras);
+//        posts.setImageResource(R.drawable.posts);
+//        perfil.setImageResource(R.drawable.perfil);
+//    }
 
     public void getUserFromFB(){
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -240,6 +244,7 @@ public class MainIconsActivity extends AppCompatActivity {
                         passedUserID = userInformation.getUserId();
                         passedOldProfilePicture = userInformation.getOldProfilePicture();
                         passedStats = userInformation.getStatus();
+                        canOpenNetworkScreens = true;
                     }
                 }
             }
@@ -247,5 +252,12 @@ public class MainIconsActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+    }
+    public void animate(int id){
+        YoYo.with(Techniques.Flash)
+                .duration(300)
+                .repeat(0)
+                .playOn(findViewById(id));
+
     }
 }

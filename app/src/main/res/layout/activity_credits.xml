@@ -90,7 +90,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="versão beta: 0.8.5.6"
+        android:text="versão beta: 0.8.6"
         android:textColor="@color/white"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="10dp"/>

@@ -61,11 +61,12 @@ public class GamesActivity extends AppCompatActivity {
     }
 
     public void OpenQuizTI(View v){
-        Intent intent = new Intent(GamesActivity.this, TiQuizInitialScreenActivity.class);
-        intent.putExtra("keyra", passedRa);
-        intent.putExtra("keyusername", passedUserName);
-        intent.putExtra("keyquiz", "quizlog");
-        startActivity(intent);
+        Toast.makeText(this, "Função ainda não implementada", Toast.LENGTH_SHORT).show();
+//        Intent intent = new Intent(GamesActivity.this, TiQuizInitialScreenActivity.class);
+//        intent.putExtra("keyra", passedRa);
+//        intent.putExtra("keyusername", passedUserName);
+//        intent.putExtra("keyquiz", "quizlog");
+//        startActivity(intent);
 
     }
 

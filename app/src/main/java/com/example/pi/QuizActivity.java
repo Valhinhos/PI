@@ -120,27 +120,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         answer3.setBackgroundColor(Color.rgb(255,230,153));
         answer4.setBackgroundColor(Color.rgb(255,230,153));
 
-//        if (currentQuestionIndex >= 10){
-//            unidadeCurricular = 2;
-//        }else if (currentQuestionIndex >= 20){
-//            unidadeCurricular = 3;
-//        }else if (currentQuestionIndex >= 30) {
-//            unidadeCurricular = 4;
-//        }else if (currentQuestionIndex >= 40) {
-//            unidadeCurricular = 5;
-//        }else if (currentQuestionIndex >= 50) {
-//            unidadeCurricular = 6;
-//        }else if (currentQuestionIndex >= 60) {
-//            unidadeCurricular = 7;
-//        }else if (currentQuestionIndex >= 70) {
-//            unidadeCurricular = 8;
-//        }else if (currentQuestionIndex >= 80) {
-//            unidadeCurricular = 9;
-//        }else if (currentQuestionIndex >= 90) {
-//            unidadeCurricular = 10;
-//        }
-//        actualuc.setText("UC " + unidadeCurricular);
-
     }
 
     private void finishQuiz() {

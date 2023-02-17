@@ -29,7 +29,6 @@ public class MainIconsActivity extends AppCompatActivity {
     DatabaseRA myDB;
     DatabaseReference databaseReference;
     Boolean logged = true, canOpenNetworkScreens = false;
-//    ImageView credits, ava, aprendizagem, biblio, cursosDisponiveis, cursosSenac, games, mapeamento, pi, frequency, redeCarreiras, perfil, posts;
     String passedRa = "empty", passedUserName = "None", passedUserID = "None", passedOldProfilePicture = "None", passedStats = "None";
     TextView userName;
 
@@ -49,7 +48,6 @@ public class MainIconsActivity extends AppCompatActivity {
         }else{
             logged = true;
         }
-//        Toast.makeText(this, ra, Toast.LENGTH_SHORT).show();
         getUserFromFB();
     }
     @Override
@@ -97,7 +95,6 @@ public class MainIconsActivity extends AppCompatActivity {
         Intent intent = new Intent(MainIconsActivity.this, CoursesInfoActivity.class);
         startActivity(intent);
     }
-
 
     public void openCourses(View v){
         int id = R.id.iconcursosdisponiveis;
@@ -214,23 +211,6 @@ public class MainIconsActivity extends AppCompatActivity {
         String ra_text = buffer.toString();
         return ra_text;
     }
-//    @Override
-//    protected void onPostResume() {
-//        super.onPostResume();
-//        credits.setImageResource(R.drawable.creditos);
-//        ava.setImageResource(R.drawable.ambientevirtual);
-//        aprendizagem.setImageResource(R.drawable.aprendizagemcomercial);
-//        biblio.setImageResource(R.drawable.biblioteca);
-//        cursosDisponiveis.setImageResource(R.drawable.cursosdisponiveis);
-//        cursosSenac.setImageResource(R.drawable.cursossenac);
-//        games.setImageResource(R.drawable.jogos);
-//        mapeamento.setImageResource(R.drawable.mapeamento);
-//        pi.setImageResource(R.drawable.projetointegrador);
-//        frequency.setImageResource(R.drawable.frequencia);
-//        redeCarreiras.setImageResource(R.drawable.rededecarreiras);
-//        posts.setImageResource(R.drawable.posts);
-//        perfil.setImageResource(R.drawable.perfil);
-//    }
 
     public void getUserFromFB(){
         databaseReference.addValueEventListener(new ValueEventListener() {

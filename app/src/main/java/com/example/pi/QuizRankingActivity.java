@@ -105,10 +105,8 @@ public class QuizRankingActivity extends AppCompatActivity {
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
-
     }
 
     public void checkRankingMode(){

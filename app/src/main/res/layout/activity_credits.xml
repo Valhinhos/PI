@@ -33,7 +33,7 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" Allana Oliveira \n Davi Magno \n Erick Vinicius \n Felipe Cruz \n Gersin Fabiano \n Glerisson Costa \n Gustavo Borges \n Helen Oliveira \n Jennifer Reis"
+        android:text=" Allana Oliveira\nDavi Magno\nErick Vinicius\nFelipe Cruz\nGersin Fabiano\nGlerisson Costa\nGustavo Borges\nHelen Oliveira\nJennifer Reis"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -45,7 +45,7 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jennifer Silva \n Jhonn Stéfano \n Lavinia Firmino \n Livia Laylla \n Lucas Rodrigues \n Nathan Santana \nPedro Roberto \n William Alves"
+        android:text="Jennifer Silva\nJhonn Stéfano\nLavinia Firmino\nLivia Laylla\nLucas Rodrigues\nNathan Santana\nPedro Roberto\nWilliam Alves"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -90,7 +90,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="versão beta: 0.8.6"
+        android:text="versão beta: 0.8.7"
         android:textColor="@color/white"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="10dp"/>

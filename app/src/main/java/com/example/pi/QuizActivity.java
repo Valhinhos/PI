@@ -191,7 +191,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         currentQuestionIndex++;
         loadNewQuestion();
     }
-
 //    public String getRaFromDB(){
 //        Cursor res = myDB.getAllData();
 //        if (res.getCount() == 0){
@@ -221,5 +220,4 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         restartQuiz();
         startActivity(intent);
     }
-
 }

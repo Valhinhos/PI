@@ -49,7 +49,6 @@ public class UserProfileActivity extends AppCompatActivity {
     Boolean activeEditInfo = false;
     Boolean canChange = false;
 
-
     private static final int IMAGE_REQUEST = 2;
     private Uri imageUri;
 
@@ -64,7 +63,6 @@ public class UserProfileActivity extends AppCompatActivity {
         names = new ArrayList<>();
         getExtra();
         getUsers();
-
     }
 
     private void getUsers() {
@@ -74,14 +72,12 @@ public class UserProfileActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot1: snapshot.getChildren()){
                     UserInformation userInformation = snapshot1.getValue(UserInformation.class);
 
-
                     if (passedUserName.equals(userInformation.getUserName()) && passedRa.equals(userInformation.getUserRa())){
                         userName.setText(userInformation.getUserName());
                         userRa.setText("ra: " + userInformation.getUserRa());
                         userCourses.setText("cursos: " + userInformation.getCourses());
                         userStatus.setText("status: " + userInformation.getStatus());
                     }
-
                     storageReference = FirebaseStorage.getInstance().getReference("userspictures/" + passedRa + passedUserID + "/" +userInformation.getProfilePicture());
                     try {
                         File localfile = File.createTempFile("tempfile", ".png");
@@ -101,10 +97,8 @@ public class UserProfileActivity extends AppCompatActivity {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -158,7 +152,6 @@ public class UserProfileActivity extends AppCompatActivity {
                             Log.d("DownloadUrl", url);
                             pd.dismiss();
                             Toast.makeText(UserProfileActivity.this, "Foto do perfil alterada com sucesso", Toast.LENGTH_SHORT).show();
-
                         }
                     });
                 }
@@ -167,9 +160,7 @@ public class UserProfileActivity extends AppCompatActivity {
     }
 
     private void putImageNameInUserInfo(String ImageName) {
-
         FirebaseDatabase.getInstance().getReference().child("users").child(passedUserID).child("profilePicture").setValue(ImageName);
-
     }
 
     public void editUserInfo(View v){
@@ -283,8 +274,6 @@ public class UserProfileActivity extends AppCompatActivity {
         }
         getUsers();
 //        IdentifyPostsId(passedUserName, passedUserStatus, passedUserCourses);
-
-
     }
 
     public void IdentifyPostsId(String name, String status, String courses){

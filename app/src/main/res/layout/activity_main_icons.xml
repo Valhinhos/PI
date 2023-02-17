@@ -187,7 +187,5 @@
                     android:layout_marginTop="19dp"
                     android:onClick="openUsersPost"
                     app:srcCompat="@drawable/posts"/>
-
         </RelativeLayout>
-
 </androidx.core.widget.NestedScrollView>

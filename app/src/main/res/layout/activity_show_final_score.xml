@@ -108,6 +108,5 @@
                 android:text="100"/>
         </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

@@ -34,18 +34,22 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
         observation = findViewById(R.id.observationtv);
         pontuationBox = findViewById(R.id.pontuationbox);
 
-        if (getIntent().getBooleanExtra("keyscore", false) == true){
-            passedScore = "0";
-        }else{
-            passedScore = getIntent().getStringExtra("keyscore");
-        }
+        checkIntentValuess();
+        verifyQuiz();
 
-        if (getIntent().getBooleanExtra("keyquiz", false) == true){
-            passedQuiz = "none";
-        }else{
-            passedQuiz = getIntent().getStringExtra("keyquiz");
-        }
+//        passedName = getIntent().getStringExtra("keyname");
+//        passedScore = getIntent().getStringExtra("keyscore");
+        totalQuestions = getIntent().getIntExtra("keytotalquestions",0);
+        intPassedScore = Integer.parseInt(passedScore);
+        score.setText(passedScore);
 
+        addLottieAnimation();
+        setObservationText();
+        setBoxColor();
+//        Toast.makeText(this, "score: " + passedScore + "total q: " + totalQuestions, Toast.LENGTH_SHORT).show();
+    }
+
+    public void verifyQuiz(){
         if (passedQuiz.equals("quizti")){
             totalQuestions = 11;
             compareGood = 7;
@@ -59,19 +63,20 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
             compareGood = 18;
             compareAverageorBad = 9;
         }
+    }
 
-//        passedName = getIntent().getStringExtra("keyname");
-//        passedScore = getIntent().getStringExtra("keyscore");
-        totalQuestions = getIntent().getIntExtra("keytotalquestions",0);
+    public void checkIntentValuess(){
+        if (getIntent().getBooleanExtra("keyscore", false) == true){
+            passedScore = "0";
+        }else{
+            passedScore = getIntent().getStringExtra("keyscore");
+        }
 
-        intPassedScore = Integer.parseInt(passedScore);
-
-        score.setText(passedScore);
-
-        addLottieAnimation();
-        setObservationText();
-        setBoxColor();
-//        Toast.makeText(this, "score: " + passedScore + "total q: " + totalQuestions, Toast.LENGTH_SHORT).show();
+        if (getIntent().getBooleanExtra("keyquiz", false) == true){
+            passedQuiz = "none";
+        }else{
+            passedQuiz = getIntent().getStringExtra("keyquiz");
+        }
     }
 
     public void addLottieAnimation(){
@@ -112,9 +117,5 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
         Intent intent = new Intent(ShowFinalScoreActivity.this, MainIconsActivity.class);
         startActivity(intent);
         finish();
-    }
-
-    public void returnToQuizInitialScreen(View v){
-//        Intent intent = new Intent(ShowFinalScoreActivity.this, RhQuizInitialScreenActivity)
     }
 }

@@ -62,7 +62,5 @@ public class InitialSplashScreenActivity extends AppCompatActivity {
                 .duration(5000)
                 .repeat(0)
                 .playOn(findViewById(R.id.logoimage));
-
-
     }
 }

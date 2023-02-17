@@ -98,6 +98,5 @@
             android:onClick="enterWithoutUser"
             android:layout_below="@id/text_tela_cadastro"
             android:layout_centerHorizontal="true"/>
-
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

@@ -48,7 +48,6 @@ public class GamesActivity extends AppCompatActivity {
         intent.putExtra("keyra", passedRa);
         intent.putExtra("keyusername", passedUserName);
         intent.putExtra("keyquiz", "quizrh");
-//        animateButton();
         startActivity(intent);
     }
 
@@ -61,13 +60,12 @@ public class GamesActivity extends AppCompatActivity {
     }
 
     public void OpenQuizTI(View v){
-        Toast.makeText(this, "Função ainda não implementada", Toast.LENGTH_SHORT).show();
-//        Intent intent = new Intent(GamesActivity.this, TiQuizInitialScreenActivity.class);
-//        intent.putExtra("keyra", passedRa);
-//        intent.putExtra("keyusername", passedUserName);
-//        intent.putExtra("keyquiz", "quizlog");
-//        startActivity(intent);
-
+//        Toast.makeText(this, "Função ainda não implementada", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(GamesActivity.this, TiQuizInitialScreenActivity.class);
+        intent.putExtra("keyra", passedRa);
+        intent.putExtra("keyusername", passedUserName);
+        intent.putExtra("keyquiz", "quizlog");
+        startActivity(intent);
     }
 
     @Override
@@ -83,7 +81,6 @@ public class GamesActivity extends AppCompatActivity {
 
         if (id == R.id.action_sobre) {
             showUpDialogMessage("Aqui você pode encontrar jogos relacionados aos cursos do senac, caso esteja disponível", "informações sobre a aba jogos");
-
         }
         return super.onOptionsItemSelected(item);
     }
@@ -92,12 +89,4 @@ public class GamesActivity extends AppCompatActivity {
         MessageDialog messageDialog = new MessageDialog(txt, title);
         messageDialog.show(getSupportFragmentManager(), "mensagem");
     }
-
-//    public void animateButton (){
-//        YoYo.with(Techniques.Bounce)
-//                .duration(1000)
-//                .repeat(1)
-//                .playOn(findViewById(R.id.rhquizbutton));
-//
-//    }
 }

@@ -139,7 +139,6 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
                 }
                 adapter.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
@@ -177,7 +176,6 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
                         passedUsersStats = userInformation.getStatus();
 //                        studentStatus.setText("status: " + userInformation.getStatus());
                     }
-
                     storageReference = FirebaseStorage.getInstance().getReference("userspictures/" + passedRa + passedUserID + "/" + userInformation.getProfilePicture());
                     try {
                         File localfile = File.createTempFile("tempfile", ".png");
@@ -200,7 +198,6 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
 
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -245,15 +242,11 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
                         FirebaseDatabase.getInstance().getReference().child("usersposts/").child(postId).child("userStats").setValue(userInformation.getStatus());
                         break;
                     }
-
                 }
-
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
     }

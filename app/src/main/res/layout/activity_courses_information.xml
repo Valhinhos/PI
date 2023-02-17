@@ -387,7 +387,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Prática em criação de sites."
                 android:textColor="@color/white"
                 android:textSize="15sp" />

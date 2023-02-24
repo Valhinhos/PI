@@ -108,7 +108,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             answer3.setText(QuestionsRH.choices[currentQuestionIndex][2]);
             answer4.setText(QuestionsRH.choices[currentQuestionIndex][3]);
         }else if (passedQuiz.equals("quizti")){
-            question.setText(" '" + QuestionsRH.question[currentQuestionIndex] + "'");
+            question.setText(" '" + QuestionsTI.question[currentQuestionIndex] + "'");
             answer1.setText(QuestionsTI.choices[currentQuestionIndex][0]);
             answer2.setText(QuestionsTI.choices[currentQuestionIndex][1]);
             answer3.setText(QuestionsTI.choices[currentQuestionIndex][2]);

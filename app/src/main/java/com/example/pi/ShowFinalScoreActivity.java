@@ -51,7 +51,7 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
 
     public void verifyQuiz(){
         if (passedQuiz.equals("quizti")){
-            totalQuestions = 11;
+            totalQuestions = 40;
             compareGood = 7;
             compareAverageorBad = 3;
         }else if (passedQuiz.equals("quizrh")){
@@ -71,7 +71,6 @@ public class ShowFinalScoreActivity extends AppCompatActivity {
         }else{
             passedScore = getIntent().getStringExtra("keyscore");
         }
-
         if (getIntent().getBooleanExtra("keyquiz", false) == true){
             passedQuiz = "none";
         }else{

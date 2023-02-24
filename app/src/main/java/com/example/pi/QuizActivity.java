@@ -80,6 +80,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     private void prog() {
         progressBar = findViewById(R.id.progressbarrhquiz);
+        progressBar.setMax(totalquestions);
         progressBar.setProgress(currentQuestionIndex);
     }
 
@@ -113,6 +114,27 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             answer2.setText(QuestionsTI.choices[currentQuestionIndex][1]);
             answer3.setText(QuestionsTI.choices[currentQuestionIndex][2]);
             answer4.setText(QuestionsTI.choices[currentQuestionIndex][3]);
+
+            if (QuestionsTI.choices[currentQuestionIndex][0].equals("")){
+                answer1.setVisibility(View.GONE);
+            }else {
+                answer1.setVisibility(View.VISIBLE);
+            }
+            if (QuestionsTI.choices[currentQuestionIndex][1].equals("")){
+                answer2.setVisibility(View.GONE);
+            }else {
+                answer2.setVisibility(View.VISIBLE);
+            }
+            if (QuestionsTI.choices[currentQuestionIndex][2].equals("")){
+                answer3.setVisibility(View.GONE);
+            }else {
+                answer3.setVisibility(View.VISIBLE);
+            }
+            if (QuestionsTI.choices[currentQuestionIndex][3].equals("")){
+                answer4.setVisibility(View.GONE);
+            }else {
+                answer4.setVisibility(View.VISIBLE);
+            }
         }
 
         answer1.setBackgroundColor(Color.rgb(255,230,153));

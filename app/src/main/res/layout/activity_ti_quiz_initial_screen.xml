@@ -28,7 +28,7 @@
         android:layout_centerInParent="true"
         android:fontFamily="@font/adventure"
         android:paddingBottom="20dp"
-        android:text="QuizRH"
+        android:text="QuizTI"
         android:textColor="@color/white"
         android:textSize="50dp" />
 

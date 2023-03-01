@@ -33,7 +33,7 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" Allana Oliveira\nDavi Magno\nErick Vinicius\nFelipe Cruz\nGersin Fabiano\nGlerisson Costa\nGustavo Borges\nHelen Oliveira\nJennifer Reis"
+        android:text="Allana Oliveira\nDavi Magno\nErick Vinicius\nFelipe Cruz\nGersin Fabiano\nGlerisson Costa\nGustavo Borges\nHelen Oliveira\nJennifer Reis"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -90,7 +90,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="versão beta: 0.8.7"
+        android:text="versão beta: 0.8.9"
         android:textColor="@color/white"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="10dp"/>

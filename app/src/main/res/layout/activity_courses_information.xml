@@ -18,7 +18,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="160dp"
             android:layout_marginTop="40dp"
-            android:layout_marginRight="100dp"
+            android:layout_marginEnd="100dp"
             android:text="CURSOS"
             android:textColor="@color/white"
             android:textSize="30dp"
@@ -36,10 +36,11 @@
             android:id="@+id/image_ti"
             android:layout_width="140dp"
             android:layout_height="100dp"
+            android:layout_below="@id/logosenac"
             android:layout_alignParentLeft="true"
             android:layout_marginTop="70dp"
             app:srcCompat="@drawable/tectilogo"
-            android:layout_below="@id/logosenac"/>
+            tools:ignore="ImageContrastCheck" />
 
         <TextView
             android:id="@+id/ti"
@@ -114,10 +115,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Apresentar comprovante de endereço residencial (expedido em no máximo 3 meses) "
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -144,10 +145,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Ter concluído ou estar cursando o Ensino Médio"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -173,10 +174,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Planejar e executar a montagem de computadores."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
@@ -191,37 +192,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Planejar e executar a manutenção de computadores."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Planejar e executar a instalação de redes locais de computadores."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Planejar e executar a manutenção de redes locais de computadores."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Planejar e executar a instalação, a configuração e o monitoramento de sistemas operacionais de redes locais (servidores)."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
@@ -245,19 +246,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Executar os processos de codificação, manutenção e documentação de aplicativos computacionais para dispositivos móveis."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Executar os processos de codificação, manutenção e documentação de aplicativos computacionais para internet."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView19"
                 android:layout_width="wrap_content"
@@ -272,10 +273,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Desenvolver e organizar elementos estruturais de sites."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView21"
                 android:layout_width="wrap_content"
@@ -360,28 +361,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="1 aluno por computador, o que possibilita um maior entendimento do conteúdo."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Disciplinas atualizadas de acordo com o mercado de trabalho."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Prática em montagem e manutenção de computadores."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView33"
                 android:layout_width="wrap_content"
@@ -395,91 +396,91 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Prática em criação de aplicativos para celular."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView35"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Prática em redes de computadores (criação e manutenção)."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView36"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Senac como instituição de renome para a Educação Profissional, há 74 anos no mercado."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView37"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Conhecimento de práticas abordadas nas competições internacionais."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView38"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Atendimento Consultivo para construção de um Itinerário Formativo para além do curso."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView39"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Plano de Curso desenvolvido por profissionais sintonizados com as tendências do segmento."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView40"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Docentes com experiência profissional na área."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView41"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Desenvolvimento de competências que envolvem a participação dos alunos na resolução de problemas."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView42"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Certificado com validade nacional e reconhecimento de mercado."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:id="@+id/textView43"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Mínimo de 60% da CH do curso em atividades práticas que simulam a atividade profissional."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
         </LinearLayout>
 
@@ -524,7 +525,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text=" Técnico em Enfermagem:"
+                android:text="Técnico em Enfermagem:"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:gravity="center"
@@ -591,10 +592,10 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Apresentar CPF ou documento com número de registro (Frente e Verso);"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -624,10 +625,10 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Apresentar registro de Certidão Civil;"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -772,10 +773,10 @@ Instituições de Longa permanência, nos diferentes graus de complexidade do am
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="0dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Plano de Curso atualizado por profissionais sintonizados com as tendências do segmento."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -812,10 +813,10 @@ Instituições de Longa permanência, nos diferentes graus de complexidade do am
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="0dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Mínimo de 60% da CH do curso em atividades práticas que simulam a atividade profissional."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -842,10 +843,10 @@ Instituições de Longa permanência, nos diferentes graus de complexidade do am
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginLeft="0dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Diploma válido em todo o território nacional."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
         </LinearLayout>
         <ImageView
@@ -1061,10 +1062,10 @@ estabelecimentos agroindustriais, serviços de assistência  técnica, extensão
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Articular as competências do perfil profissional com projetos integradores e outras atividades laborais que estimulam visão crítica e tomada de decisão para resolução de problemas."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1083,10 +1084,10 @@ estabelecimentos agroindustriais, serviços de assistência  técnica, extensão
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:text="Incentivar a pesquisa como princípio pedagógico e para consolidão do domínio técnico-científico, utilizando recursos didáticos e bibliográficos."
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1164,9 +1165,9 @@ estabelecimentos agroindustriais, serviços de assistência  técnica, extensão
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
                 android:text="Organizar e executar atividades administrativas nos processos de recursos humanos da organização."
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1197,9 +1198,9 @@ estabelecimentos agroindustriais, serviços de assistência  técnica, extensão
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
                 android:text="Apoiar e executar ações referentes às rotinas de admissão de colaboradores."
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1219,9 +1220,9 @@ estabelecimentos agroindustriais, serviços de assistência  técnica, extensão
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
                 android:text="Auxiliar na elaboração da folha de pagamento."
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1230,9 +1231,9 @@ estabelecimentos agroindustriais, serviços de assistência  técnica, extensão
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
                 android:text="Realizar atividades no processo de elaboração, implantação e manutenção da política salarial e do plano de cargos e salários da organização."
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1241,9 +1242,9 @@ estabelecimentos agroindustriais, serviços de assistência  técnica, extensão
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
                 android:text="Acompanhar e executar atividades nos processos de treinamento e desenvolvimento."
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1252,9 +1253,9 @@ estabelecimentos agroindustriais, serviços de assistência  técnica, extensão
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
                 android:text="Auxiliar no planejamento e na realização de ações relacionadas ao ambiente organizacional."
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1263,9 +1264,9 @@ estabelecimentos agroindustriais, serviços de assistência  técnica, extensão
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
                 android:text="Auxiliar na organização e realização de ações relacionadas ao ambiente organizacional."
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1274,9 +1275,9 @@ estabelecimentos agroindustriais, serviços de assistência  técnica, extensão
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="0dp"
                 android:text="Projeto Integrador Técnico em Recursos Humanos."
-                android:drawableLeft="@drawable/ic_bolinhac"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/ic_bolinhac" />
 
             <TextView
                 android:layout_width="282dp"

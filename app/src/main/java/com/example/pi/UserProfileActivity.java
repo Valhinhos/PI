@@ -188,6 +188,11 @@ public class UserProfileActivity extends AppCompatActivity {
                     UserInformation userInformation = snapshot1.getValue(UserInformation.class);
 
                     if (userInformation.getUserId().equals(passedUserID)){
+
+                    if (userInformation.getOldProfilePicture().isEmpty() || userInformation.getProfilePicture().isEmpty()){
+
+                    }else {
+
                         if (userInformation.getOldProfilePicture().equals(userInformation.getProfilePicture())){
 
                         }else{
@@ -199,6 +204,8 @@ public class UserProfileActivity extends AppCompatActivity {
                                 }
                             });
                         }
+                    }
+
                     }
 
                 }

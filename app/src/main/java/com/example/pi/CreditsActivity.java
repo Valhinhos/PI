@@ -15,6 +15,8 @@ import com.example.pi.models.MessageDialog;
 
 public class CreditsActivity extends AppCompatActivity {
 
+    String updateChanges = "-Corrigido erro ao adicionar uma foto de perfil pela primeira vez \n";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +35,7 @@ public class CreditsActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_sobre) {
-            showUpDialogMessage("texto para implementar", "Sobre o app");
+            showUpDialogMessage("Mudanças da versão atual \n" + updateChanges, "Sobre o app");
 
         }
         return super.onOptionsItemSelected(item);

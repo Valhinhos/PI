@@ -101,12 +101,65 @@
         android:textColor="@color/white"
         app:cornerRadius="20dp" />
 
+    <LinearLayout
+        android:id="@+id/newslinearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/customwhiteborder"
+        android:orientation="vertical"
+        android:layout_below="@id/uploadpost"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/newstextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Novidades"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/updatelinktextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clique abaixo para fazer o download da atualização mais recente"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="baixar"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/orange_strong"
+            app:cornerRadius="20dp"
+            android:onClick="openDownloadUpdateLink"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/newspoststextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Novos posts"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:layout_below="@id/newslinearlayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewposts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/uploadpost">
+        android:layout_below="@id/newspoststextview">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+
 
 </RelativeLayout>

@@ -205,6 +205,15 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
         });
     }
 
+    public void openDownloadUpdateLink(View v){
+        opeLink("https://drive.google.com/drive/folders/1mveG74zzUfnEQTyKNvZ8ITUiVJpFjlaS?usp=sharing");
+    }
+
+    public void opeLink(String link){
+        Uri uri = Uri.parse(link);
+        startActivity(new Intent(Intent.ACTION_VIEW, uri));
+    }
+
     public void deletePost(View v) {
         for (userPost up : list) {
             if (up.getUserName().equals(passedUserName) && up.getUserRa().equals(passedRa)) {

@@ -15,7 +15,7 @@ import com.example.pi.models.MessageDialog;
 
 public class CreditsActivity extends AppCompatActivity {
 
-    String updateChanges = "-Corrigido erro ao adicionar uma foto de perfil pela primeira vez \n";
+    String updateChanges = "-Corrigido erro ao adicionar uma foto de perfil pela primeira vez \n -Adicionado função de modificação da senha \n -Adicionado ferramenta para download da atualização mais recente";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

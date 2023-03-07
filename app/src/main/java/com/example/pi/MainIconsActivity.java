@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -67,7 +66,7 @@ public class MainIconsActivity extends AppCompatActivity {
     public void openFrequency(View v){
         int id = R.id.iconfrequencia;
         animate(id);
-        abrirLink("https://www.mg.senac.br/ambienteacademico/detalheCurso");
+        opeLink("https://www.mg.senac.br/ambienteacademico/detalheCurso");
     }
 
     public void openMap(View v){
@@ -80,13 +79,13 @@ public class MainIconsActivity extends AppCompatActivity {
     public void openAva(View v){
         int id = R.id.iconava;
         animate(id);
-        abrirLink("https://ava.mg.senac.br/edu/");
+        opeLink("https://ava.mg.senac.br/edu/");
     }
 
     public void openBiblio(View v){
         int id = R.id.iconbiblioteca;
         animate(id);
-        abrirLink("https://pergamum.mg.senac.br/pergamum/biblioteca_s/php/login_usu.php");
+        opeLink("https://pergamum.mg.senac.br/pergamum/biblioteca_s/php/login_usu.php");
     }
 
     public void openSenacCourses(View v){
@@ -99,19 +98,19 @@ public class MainIconsActivity extends AppCompatActivity {
     public void openCourses(View v){
         int id = R.id.iconcursosdisponiveis;
         animate(id);
-        abrirLink("https://www.mg.senac.br/programasenacdegratuidade/vagas.aspx");
+        opeLink("https://www.mg.senac.br/programasenacdegratuidade/vagas.aspx");
     }
 
     public void openAC(View v){
         int id = R.id.iconaprendizagemcoemrcial;
         animate(id);
-        abrirLink("https://www.mg.senac.br/Paginas/aprendizagem-comercial.aspx");
+        opeLink("https://www.mg.senac.br/Paginas/aprendizagem-comercial.aspx");
     }
 
     public void openRedeC(View v){
         int id = R.id.iconredecarreiras;
         animate(id);
-        abrirLink("https://www.mg.senac.br/Paginas/rededecarreiras.aspx");
+        opeLink("https://www.mg.senac.br/Paginas/rededecarreiras.aspx");
     }
 
     public void openPI(View v){
@@ -137,7 +136,7 @@ public class MainIconsActivity extends AppCompatActivity {
 
     }
 
-    public void abrirLink(String link){
+    public void opeLink(String link){
         Uri uri = Uri.parse(link);
         startActivity(new Intent(Intent.ACTION_VIEW, uri));
     }

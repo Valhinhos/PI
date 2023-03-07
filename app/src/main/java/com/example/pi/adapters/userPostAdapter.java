@@ -3,7 +3,7 @@ package com.example.pi.adapters;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
+import android.graphics.Matrix;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,7 +98,15 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                             Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
-                            holder.postImage.setImageBitmap(bitmap);
+
+                            Matrix matrix = new Matrix();
+
+                            matrix.postRotate(90);
+
+                            Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), true);
+
+                            Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
+                            holder.postImage.setImageBitmap(rotatedBitmap);
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -123,14 +131,14 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                             Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
-                            holder.imageView.setImageBitmap(bitmap);
+                            holder.userProfilePicture.setImageBitmap(bitmap);
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
 //                            Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
                             if (userPost.getUserName().equals("None")){
-                                holder.imageView.setImageResource(R.drawable.unknownprofilepicture);
+                                holder.userProfilePicture.setImageResource(R.drawable.unknownprofilepicture);
                             }
                         }
                     });
@@ -147,7 +155,7 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView userName, userCourses, content, currentdate;
-        ImageView imageView, postImage;
+        ImageView userProfilePicture, postImage;
         Button deletePost;
         public MyViewHolder(@NonNull View itemView, PostsRecyclerViewInterface postsRecyclerViewInterface) {
             super(itemView);
@@ -155,7 +163,7 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
             userCourses = itemView.findViewById(R.id.usercoursesitem);
             content = itemView.findViewById(R.id.postcontentitem);
             currentdate = itemView.findViewById(R.id.currentdateitem);
-            imageView = itemView.findViewById(R.id.userpictureitem);
+            userProfilePicture = itemView.findViewById(R.id.userpictureitem);
             deletePost = itemView.findViewById(R.id.deletepostbt);
             postImage = itemView.findViewById(R.id.postuploadedimage);
 

@@ -87,6 +87,7 @@
             android:layout_centerHorizontal="true" />
 
         <TextView
+            android:id="@+id/entrarsemconta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -98,5 +99,19 @@
             android:onClick="enterWithoutUser"
             android:layout_below="@id/text_tela_cadastro"
             android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/forgotpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/entrarsemconta"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="Esqueci minha senha"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:onClick="forgotPassordScreen"/>
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

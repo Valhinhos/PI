@@ -111,4 +111,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onPostResume();
         login.setBackgroundColor(Color.rgb(68,114,195));
     }
+
+    public void forgotPassordScreen(View v){
+        Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+        startActivity(intent);
+    }
 }

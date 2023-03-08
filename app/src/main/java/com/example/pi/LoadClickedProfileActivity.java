@@ -8,7 +8,6 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -75,10 +74,10 @@ public class LoadClickedProfileActivity extends AppCompatActivity {
     }
 
     public void connectViews(){
-        userNametv = findViewById(R.id.studentnamecp);
-        userCousestv = findViewById(R.id.studentcoursescp);
-        userStatustv = findViewById(R.id.studentstatscp);
-        userProfilePictureiv = findViewById(R.id.studentpicturecp);
+        userNametv = findViewById(R.id.studentnametextviewloadclickedprofile);
+        userCousestv = findViewById(R.id.studentcoursestextviewloadclickedprofile);
+        userStatustv = findViewById(R.id.studentstatstextviewloadclickedprofile);
+        userProfilePictureiv = findViewById(R.id.studentpictureimageviewloadclickedprofile);
     }
 
     public void setValuesonViews(){

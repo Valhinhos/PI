@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -80,6 +81,20 @@ public class LoadClickedProfileActivity extends AppCompatActivity {
         userProfilePictureiv = findViewById(R.id.studentpictureimageviewloadclickedprofile);
     }
 
+    public Bitmap rotateBitMap(Bitmap bitmap){
+
+        Matrix matrix = new Matrix();
+
+        matrix.postRotate(90);
+
+        Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), true);
+
+        Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
+
+        return  rotatedBitmap;
+
+    }
+
     public void setValuesonViews(){
         userNametv.setText(userName);
         userCousestv.setText("cursos: " +userCourses);
@@ -93,7 +108,8 @@ public class LoadClickedProfileActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                             Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
-                            userProfilePictureiv.setImageBitmap(bitmap);
+                            Bitmap rotatedBitmap = rotateBitMap(bitmap);
+                            userProfilePictureiv.setImageBitmap(rotatedBitmap);
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override

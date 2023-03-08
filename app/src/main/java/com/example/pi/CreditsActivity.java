@@ -15,7 +15,10 @@ import com.example.pi.models.MessageDialog;
 
 public class CreditsActivity extends AppCompatActivity {
 
-    String updateChanges = "-Corrigido erro ao adicionar uma foto de perfil pela primeira vez \n -Adicionado função de modificação da senha !!!Ainda em manutenção!!!\n -Adicionado ferramenta para download da atualização mais recente";
+    String updateChanges = "-Corrigido erro ao adicionar uma foto de perfil pela primeira vez " +
+            "\n -Adicionado função de modificação da senha !!!Ainda em manutenção!!!" +
+            "\n -Adicionado ferramenta para download da atualização mais recente" +
+            "\n -Concertado glitch de imagens sendo rotacionadas";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,6 @@ public class CreditsActivity extends AppCompatActivity {
 
         if (id == R.id.action_sobre) {
             showUpDialogMessage("Mudanças da versão atual \n" + updateChanges, "Sobre o app");
-
         }
         return super.onOptionsItemSelected(item);
     }

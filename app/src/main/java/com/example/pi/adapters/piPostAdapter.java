@@ -3,6 +3,7 @@ package com.example.pi.adapters;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,7 +99,15 @@ public class piPostAdapter extends RecyclerView.Adapter<piPostAdapter.MyViewHold
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                             Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
-                            holder.imageView.setImageBitmap(bitmap);
+
+                            Matrix matrix = new Matrix();
+
+                            matrix.postRotate(90);
+
+                            Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), true);
+
+                            Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
+                            holder.imageView.setImageBitmap(rotatedBitmap);
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -119,7 +128,15 @@ public class piPostAdapter extends RecyclerView.Adapter<piPostAdapter.MyViewHold
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                             Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
-                            holder.profilePicture.setImageBitmap(bitmap);
+
+                            Matrix matrix = new Matrix();
+
+                            matrix.postRotate(90);
+
+                            Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), true);
+
+                            Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
+                            holder.profilePicture.setImageBitmap(rotatedBitmap);
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -129,7 +146,6 @@ public class piPostAdapter extends RecyclerView.Adapter<piPostAdapter.MyViewHold
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override

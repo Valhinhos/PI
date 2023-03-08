@@ -59,8 +59,8 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
         holder.userName.setText(userPost.getUserName());
         holder.userCourses.setText("cursos: " + userPost.getUserCourses());
         holder.content.setText(userPost.getPostContent());
-        String postDate = userPost.getPosteDate().replace("T", " ");
-        holder.currentdate.setText(userPost.getPosteDate());
+        String postDate = userPost.getPostDate().replace("T", " ");
+        holder.currentdate.setText(userPost.getPostDate());
 
         if (passedName.equals(userPost.getUserName()) && passedRa.equals(userPost.getUserRa())) {
             holder.deletePost.setVisibility(View.VISIBLE);
@@ -131,7 +131,14 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                             Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
-                            holder.userProfilePicture.setImageBitmap(bitmap);
+                            Matrix matrix = new Matrix();
+
+                            matrix.postRotate(90);
+
+                            Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), true);
+
+                            Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
+                            holder.userProfilePicture.setImageBitmap(rotatedBitmap);
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -151,6 +158,7 @@ public class userPostAdapter extends RecyclerView.Adapter<userPostAdapter.MyView
     public int getItemCount() {
         return list.size();
     }
+
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 

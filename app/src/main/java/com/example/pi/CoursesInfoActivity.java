@@ -9,9 +9,9 @@ import android.widget.LinearLayout;
 
 public class CoursesInfoActivity extends AppCompatActivity {
 
-    LinearLayout tiLayout, enLayout, agroLayout, admLayout, rhLayout, segLayout, markLayout, estLayout, logLayout;
-    Boolean displayVisibilityTI = false, displayVisibilityEN = false, displayVisibilityAgro = false, displayVisibilityAdm = false;
-    Boolean displayVisibilityRH = false, displayVisibilitySeg = false, displayVisibilityMark = false, displayVisibilityEst = false, displayVisibilityLog = false;
+    private LinearLayout tiLayout, enLayout, agroLayout, admLayout, rhLayout, segLayout, markLayout, estLayout, logLayout;
+    private Boolean displayVisibilityTI = false, displayVisibilityEN = false, displayVisibilityAgro = false, displayVisibilityAdm = false;
+    private Boolean displayVisibilityRH = false, displayVisibilitySeg = false, displayVisibilityMark = false, displayVisibilityEst = false, displayVisibilityLog = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +102,7 @@ public class CoursesInfoActivity extends AppCompatActivity {
             markLayout.setVisibility(View.VISIBLE);
         }
     }
+
     public void tecnicoest (View v) {
         if (displayVisibilityEst){
             displayVisibilityEst = false;
@@ -111,6 +112,7 @@ public class CoursesInfoActivity extends AppCompatActivity {
             estLayout.setVisibility(View.VISIBLE);
         }
     }
+
     public void tecnicolog (View v) {
         if (displayVisibilityLog){
             displayVisibilityLog = false;

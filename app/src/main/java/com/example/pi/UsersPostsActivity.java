@@ -129,6 +129,19 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
                 list.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     userPost userPost = dataSnapshot.getValue(userPost.class);
+
+                    dateFormat = new SimpleDateFormat("dd/MM/yyy HH:mm");
+                    String currentDate = dateFormat.format(calendar.getTime());
+                    char currentDateChar = currentDate.charAt(1);
+
+                    String postDate = userPost.getPostDate();
+                    char postDateChar = currentDate.charAt(1);
+
+                    String postID = userPost.getPostID();
+
+//                    deletePostAfterTime(postDateChar, currentDateChar, postID);
+
+
                     updateUserCourse(userPost.getUserID(), userPost.getPostID());
                     list.add(userPost);
                     for (userPost up : list) {
@@ -168,6 +181,7 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot snapshot1 : snapshot.getChildren()) {
                     UserInformation userInformation = snapshot1.getValue(UserInformation.class);
+
 //                    verifica se o nome e ra do usuario é igual a de um dos posts, se for igual ele vai permitir excluir
                     if (passedUserName.equals(userInformation.getUserName()) && passedRa.equals(userInformation.getUserRa())) {
                         profilePictureString = userInformation.getProfilePicture();
@@ -214,13 +228,13 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
         startActivity(new Intent(Intent.ACTION_VIEW, uri));
     }
 
-    public void deletePost(View v) {
-        for (userPost up : list) {
-            if (up.getUserName().equals(passedUserName) && up.getUserRa().equals(passedRa)) {
-                FirebaseDatabase.getInstance().getReference("usersposts/").child(up.getPostID()).removeValue();
-            }
-        }
-    }
+//    public void deletePost(View v) {
+//        for (userPost up : list) {
+//            if (up.getUserName().equals(passedUserName) && up.getUserRa().equals(passedRa)) {
+//                FirebaseDatabase.getInstance().getReference("usersposts/").child(up.getPostID()).removeValue();
+//            }
+//        }
+//    }
 
     public void onPostLongClick(int position) {
         list.remove(position);
@@ -238,6 +252,21 @@ public class UsersPostsActivity extends AppCompatActivity implements PostsRecycl
         intent.putExtra("keyuserstats", list.get(position).getUserStats());
         startActivity(intent);
     }
+
+//    public void deletePostAfterTime(char postDate, char currentDate, String postID){
+//        int postDateInt = postDate;
+//        int currentDateInt = currentDate;
+//
+//        if (currentDateInt - postDateInt == 0){
+//            FirebaseDatabase.getInstance().getReference("usersposts/").child(postID).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+//                @Override
+//                public void onSuccess(Void unused) {
+//
+//                }
+//            });
+//        }
+//
+//    }
 
     public void updateUserCourse(String userId, String postId) {
         FirebaseDatabase.getInstance().getReference("users").addValueEventListener(new ValueEventListener() {

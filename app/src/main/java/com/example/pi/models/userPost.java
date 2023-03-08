@@ -3,7 +3,7 @@ package com.example.pi.models;
 public class userPost {
 
     private String userName;
-    private String posteDate;
+    private String postDate;
     private String userProfilePicture;
     private String postContent;
     private String userCourses;
@@ -17,7 +17,7 @@ public class userPost {
 
     public userPost(String userName, String posteDate, String userProfilePicture, String postContent, String userCourses, String userRa, String postID, String userID, String userStats, String imageID) {
         this.userName = userName;
-        this.posteDate = posteDate;
+        this.postDate = posteDate;
         this.userProfilePicture = userProfilePicture;
         this.postContent = postContent;
         this.userCourses = userCourses;
@@ -36,12 +36,12 @@ public class userPost {
         this.userName = userName;
     }
 
-    public String getPosteDate() {
-        return posteDate;
+    public String getPostDate() {
+        return postDate;
     }
 
-    public void setPosteDate(String posteDate) {
-        this.posteDate = posteDate;
+    public void setPostDate(String postDate) {
+        this.postDate = postDate;
     }
 
     public String getUserProfilePicture() {
